@@ -1,3 +1,3 @@
-administrador_homepage:
+inicio:
     path:     /inicio
     defaults: { _controller: AdministradorBundle:Default:inicio }

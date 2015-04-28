@@ -2,17 +2,105 @@
 {% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
 
 {% block body -%}
-    <h1>Paciente edit</h1>
 
-    {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('paciente') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Editar Paciente</h2>
+            </div>
+               {{ form_start(edit_form)}}
+            
+            <p>
+                Nombre:
+                {{form_widget(edit_form.nombre)}}
+            </p>
+            <p>
+                Cedula:
+                {{form_widget(edit_form.cedula)}}
+            </p>
+            <p>
+                Fecha de Ingreso:
+                {{form_widget(edit_form.fechaDeIngreso)}}
+            </p>
+            <p>
+                Sexo:
+                {{form_widget(edit_form.sexo)}}
+            </p>
+            <p>
+                Edad:
+                {{form_widget(edit_form.edad)}}
+            </p>
+            <p>
+                Ocupacion:
+                {{form_widget(edit_form.ocupacion)}}
+            </p>
+            <p>
+                Carne:
+                {{form_widget(edit_form.carne)}}
+            </p>
+            <p>
+                Apartado Postal:
+                {{form_widget(edit_form.apartadoPostal)}}
+            </p>
+            <p>
+                Estado Civil:
+                {{form_widget(edit_form.estadoCivil)}}
+            </p>
+            <p>
+                Beca:
+                {{form_widget(edit_form.beca)}}
+            </p>
+            <p>
+                Direccion:
+                {{form_widget(edit_form.direccion)}}
+            </p> 
+            <p>
+                Carrera:
+                {{form_widget(edit_form.carrera)}}
+            </p>
+            <p>
+                Telefono de Habitacion:
+                {{form_widget(edit_form.telefonoHabitacion)}}
+            </p>
+            <p>
+                Telefono del Trabajo:
+                {{form_widget(edit_form.telefonoTrabajo)}}
+            </p>
+           <p>
+                Telefono Movil:
+                {{form_widget(edit_form.telefonoMovil)}}
+            </p>
+            <p>
+                Correo Electronico:
+                {{form_widget(edit_form.correoElectronico)}}
+            </p>
+            <p>
+                Sintoma:
+                {{form_widget(edit_form.sintoma)}}
+            </p>
+            <p>
+                 Encargado:
+                {{form_widget(edit_form.idencargado)}}
+            </p>
+            <p>
+                Odontologo:
+                {{form_widget(edit_form.idodontologo)}}
+            </p>
+            
+            
+            
+            {{ form_end(edit_form)}}
+            <table>
+                <ul class="record_actions">
+                    <td>
+                        <a href="{{ path('paciente') }}">
+                            Volver
+                        </a>
+                    </td>
+                    <td>
+                        {{ form(delete_form) }}
+                    </td>
+                </ul>
+            </table>
 {% endblock %}
   {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

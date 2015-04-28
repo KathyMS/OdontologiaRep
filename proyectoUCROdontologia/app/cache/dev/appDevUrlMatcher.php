@@ -620,9 +620,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'estudiante_homepage')), array (  '_controller' => 'EstudianteBundle\\Controller\\DefaultController::indexAction',));
         }
 
-        // administrador_homepage
+        // inicio
         if ($pathinfo === '/inicio') {
-            return array (  '_controller' => 'AdministradorBundle\\Controller\\DefaultController::inicioAction',  '_route' => 'administrador_homepage',);
+            return array (  '_controller' => 'AdministradorBundle\\Controller\\DefaultController::inicioAction',  '_route' => 'inicio',);
         }
 
         // homepage

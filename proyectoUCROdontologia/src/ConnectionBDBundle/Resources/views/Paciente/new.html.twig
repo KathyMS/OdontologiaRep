@@ -2,16 +2,22 @@
 {% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
 
 {% block body -%}
-    <h1>Paciente creation</h1>
 
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('paciente') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
-{% endblock %}
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Crear Paciente</h2>
+            </div>
+            {{ form(form) }}
+            <table>
+                <ul class="record_actions">
+                    <td>
+                        <a href="{{ path('paciente') }}">
+                            <strong>    Volver </strong>  
+                        </a>
+                    </td>
+                </ul>
+            </table>
+        </div>
+    {% endblock %}
   {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

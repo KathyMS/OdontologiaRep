@@ -2,74 +2,96 @@
 {% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
 
 {% block body -%}
-    <h1>Paciente list</h1>
+ 
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Cedula</th>
-                <th>Fechadeingreso</th>
-                <th>Sexo</th>
-                <th>Edad</th>
-                <th>Nombre</th>
-                <th>Ocupacion</th>
-                <th>Carne</th>
-                <th>Apartadopostal</th>
-                <th>Beca</th>
-                <th>Carrera</th>
-                <th>Estadocivil</th>
-                <th>Direccion</th>
-                <th>Telefonohabitacion</th>
-                <th>Telefonotrabajo</th>
-                <th>Telefonomovil</th>
-                <th>Correoelectronico</th>
-                <th>Sintoma</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('paciente_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.cedula }}</td>
-                <td>{% if entity.fechaDeIngreso %}{{ entity.fechaDeIngreso|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.sexo }}</td>
-                <td>{{ entity.edad }}</td>
-                <td>{{ entity.nombre }}</td>
-                <td>{{ entity.ocupacion }}</td>
-                <td>{{ entity.carne }}</td>
-                <td>{{ entity.apartadoPostal }}</td>
-                <td>{{ entity.beca }}</td>
-                <td>{{ entity.carrera }}</td>
-                <td>{{ entity.estadoCivil }}</td>
-                <td>{{ entity.direccion }}</td>
-                <td>{{ entity.telefonoHabitacion }}</td>
-                <td>{{ entity.telefonoTrabajo }}</td>
-                <td>{{ entity.telefonoMovil }}</td>
-                <td>{{ entity.correoElectronico }}</td>
-                <td>{{ entity.sintoma }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('paciente_show', { 'id': entity.id }) }}">show</a>
+
+
+
+
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Lista de pacientes</h2>
+
+            </div>
+            <div class="box-content">
+                <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+
+                            <th>Nombre</th>
+                            <th>Cedula</th>
+                            <th>Ingreso</th>
+                            <th>Edad</th>
+                            <th>Carne</th>
+                            <th>Beca</th>
+                            <th>Carrera</th>
+                            <th>Telefono</th>
+                            <th>Correoelectronico</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entity in entities %}
+                            <tr>
+
+                                <td><a href="{{ path('paciente_show', { 'id': entity.id }) }}">{{ entity.nombre }}</td>
+                                <td>{{ entity.cedula }}</td>
+                                <td>{% if entity.fechaDeIngreso %}{{ entity.fechaDeIngreso|date('Y-m-d') }}{% endif %}</td>
+
+                                <td>{{ entity.edad }}</td>
+
+
+                                <td>{{ entity.carne }}</td>
+
+                                <td>{{ entity.beca }}</td>
+                                <td>{{ entity.carrera }}</td>
+
+
+                                <td>{{ entity.telefonoMovil }}</td>
+                                <td>{{ entity.correoElectronico }}</td>
+
+                                <td>
+                                    <ul>
+
+                                        <a href="{{ path('paciente_show', { 'id': entity.id }) }}" class="btn btn-primary btn-sm">Ver</a>
+
+
+                                        <a href="{{ path('paciente_edit', { 'id': entity.id }) }}" class="btn btn-primary btn-sm">Editar</a>
+
+                                    </ul>
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+<center>
+                <ul class="pagination pagination-centered">
+                    <li><a href="#">Anterior</a></li>
+                    <li class="active">
+                        <a href="#">1</a>
                     </li>
-                    <li>
-                        <a href="{{ path('paciente_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">Siguiente</a></li>
                 </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    </center>
+            </div>
+<center>
+            <ul>
 
-        <ul>
-        <li>
-            <a href="{{ path('paciente_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
-  {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
+                <a href="{{ path('paciente_new') }}">
+                    <strong>Ingresar un nuevo paciente </strong>
+                </a>
+
+            </ul>
+</center>
+        </div>
+
+    </div><!--/span-->
+
+
+{% endblock %}
+{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
