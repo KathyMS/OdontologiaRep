@@ -1,0 +1,366 @@
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
+
+{% block body -%}
+    <h1>HistorialMedico</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Dolorcabezafrecuente</th>
+                <td>{{ entity.dolorCabezaFrecuente }}</td>
+            </tr>
+            <tr>
+                <th>Historialdental</th>
+                <td>{{ entity.historialDental }}</td>
+            </tr>
+            <tr>
+                <th>Vertigo</th>
+                <td>{{ entity.vertigo }}</td>
+            </tr>
+            <tr>
+                <th>Desmayo</th>
+                <td>{{ entity.desmayo }}</td>
+            </tr>
+            <tr>
+                <th>Perdidadeconsiencia</th>
+                <td>{{ entity.perdidaDeConsiencia }}</td>
+            </tr>
+            <tr>
+                <th>Problemasvisules</th>
+                <td>{{ entity.problemasVisules }}</td>
+            </tr>
+            <tr>
+                <th>Problemasauditivos</th>
+                <td>{{ entity.problemasAuditivos }}</td>
+            </tr>
+            <tr>
+                <th>Sinusitis</th>
+                <td>{{ entity.sinusitis }}</td>
+            </tr>
+            <tr>
+                <th>Obstruccionnasal</th>
+                <td>{{ entity.obstruccionNasal }}</td>
+            </tr>
+            <tr>
+                <th>Problemastiroides</th>
+                <td>{{ entity.problemasTiroides }}</td>
+            </tr>
+            <tr>
+                <th>Diabetes</th>
+                <td>{{ entity.diabetes }}</td>
+            </tr>
+            <tr>
+                <th>Cambiosinesperadospeso</th>
+                <td>{{ entity.cambiosInesperadosPeso }}</td>
+            </tr>
+            <tr>
+                <th>Disnea</th>
+                <td>{{ entity.disnea }}</td>
+            </tr>
+            <tr>
+                <th>Tos</th>
+                <td>{{ entity.tos }}</td>
+            </tr>
+            <tr>
+                <th>Tuberculosis</th>
+                <td>{{ entity.tuberculosis }}</td>
+            </tr>
+            <tr>
+                <th>Enfisemapulmonar</th>
+                <td>{{ entity.enfisemaPulmonar }}</td>
+            </tr>
+            <tr>
+                <th>Asma</th>
+                <td>{{ entity.asma }}</td>
+            </tr>
+            <tr>
+                <th>Infartomiocardio</th>
+                <td>{{ entity.infartoMiocardio }}</td>
+            </tr>
+            <tr>
+                <th>Insuficienciacadiaca</th>
+                <td>{{ entity.insuficienciaCadiaca }}</td>
+            </tr>
+            <tr>
+                <th>Hipertensionarterial</th>
+                <td>{{ entity.hipertensionArterial }}</td>
+            </tr>
+            <tr>
+                <th>Anginadepecho</th>
+                <td>{{ entity.anginaDePecho }}</td>
+            </tr>
+            <tr>
+                <th>Soplocardiaco</th>
+                <td>{{ entity.soploCardiaco }}</td>
+            </tr>
+            <tr>
+                <th>Fiebrereumatica</th>
+                <td>{{ entity.fiebreReumatica }}</td>
+            </tr>
+            <tr>
+                <th>Lesionescardiacascongenitas</th>
+                <td>{{ entity.lesionesCardiacasCongenitas }}</td>
+            </tr>
+            <tr>
+                <th>Valvulascardicasartificiales</th>
+                <td>{{ entity.valvulasCardicasArtificiales }}</td>
+            </tr>
+            <tr>
+                <th>Anemia</th>
+                <td>{{ entity.anemia }}</td>
+            </tr>
+            <tr>
+                <th>Tranfisiones</th>
+                <td>{{ entity.tranfisiones }}</td>
+            </tr>
+            <tr>
+                <th>Trobosis</th>
+                <td>{{ entity.trobosis }}</td>
+            </tr>
+            <tr>
+                <th>Anomalisasdecelulassangineas</th>
+                <td>{{ entity.anomalisasDeCelulasSangineas }}</td>
+            </tr>
+            <tr>
+                <th>Hepatitis</th>
+                <td>{{ entity.hepatitis }}</td>
+            </tr>
+            <tr>
+                <th>Ictericia</th>
+                <td>{{ entity.ictericia }}</td>
+            </tr>
+            <tr>
+                <th>Ulceragastrica</th>
+                <td>{{ entity.ulceraGastrica }}</td>
+            </tr>
+            <tr>
+                <th>Enfermedaddetramisionsexual</th>
+                <td>{{ entity.enfermedadDeTramisionSexual }}</td>
+            </tr>
+            <tr>
+                <th>Vih</th>
+                <td>{{ entity.vih }}</td>
+            </tr>
+            <tr>
+                <th>Paralisis</th>
+                <td>{{ entity.paralisis }}</td>
+            </tr>
+            <tr>
+                <th>Depresion</th>
+                <td>{{ entity.depresion }}</td>
+            </tr>
+            <tr>
+                <th>Nerviosismo</th>
+                <td>{{ entity.nerviosismo }}</td>
+            </tr>
+            <tr>
+                <th>Tension</th>
+                <td>{{ entity.tension }}</td>
+            </tr>
+            <tr>
+                <th>Convulsiones</th>
+                <td>{{ entity.convulsiones }}</td>
+            </tr>
+            <tr>
+                <th>Hemorragias</th>
+                <td>{{ entity.hemorragias }}</td>
+            </tr>
+            <tr>
+                <th>Artritis</th>
+                <td>{{ entity.artritis }}</td>
+            </tr>
+            <tr>
+                <th>Reumatismo</th>
+                <td>{{ entity.reumatismo }}</td>
+            </tr>
+            <tr>
+                <th>Transplantes</th>
+                <td>{{ entity.transplantes }}</td>
+            </tr>
+            <tr>
+                <th>Alteracionesenrinones</th>
+                <td>{{ entity.alteracionesEnRinones }}</td>
+            </tr>
+            <tr>
+                <th>Intoleranciaaalimentos</th>
+                <td>{{ entity.intoleranciaAAlimentos }}</td>
+            </tr>
+            <tr>
+                <th>Mialgias</th>
+                <td>{{ entity.mialgias }}</td>
+            </tr>
+            <tr>
+                <th>Limitaionesdemovimiento</th>
+                <td>{{ entity.limitaionesDeMovimiento }}</td>
+            </tr>
+            <tr>
+                <th>Trumatismoenlacara</th>
+                <td>{{ entity.trumatismoEnLaCara }}</td>
+            </tr>
+            <tr>
+                <th>Amigdalitis</th>
+                <td>{{ entity.amigdalitis }}</td>
+            </tr>
+            <tr>
+                <th>Cancer</th>
+                <td>{{ entity.cancer }}</td>
+            </tr>
+            <tr>
+                <th>Leucemia</th>
+                <td>{{ entity.leucemia }}</td>
+            </tr>
+            <tr>
+                <th>Embarazo</th>
+                <td>{{ entity.embarazo }}</td>
+            </tr>
+            <tr>
+                <th>Aa</th>
+                <td>{{ entity.aa }}</td>
+            </tr>
+            <tr>
+                <th>Aq</th>
+                <td>{{ entity.aq }}</td>
+            </tr>
+            <tr>
+                <th>Medicamentos</th>
+                <td>{{ entity.medicamentos }}</td>
+            </tr>
+            <tr>
+                <th>Historialfamiliarafp</th>
+                <td>{{ entity.historialFamiliarAfp }}</td>
+            </tr>
+            <tr>
+                <th>Historialfamiliarafnp</th>
+                <td>{{ entity.historialFamiliarAfnp }}</td>
+            </tr>
+            <tr>
+                <th>Historialsocialtipodieta</th>
+                <td>{{ entity.historialSocialTipoDieta }}</td>
+            </tr>
+            <tr>
+                <th>Historialsocialtabaquismo</th>
+                <td>{{ entity.historialSocialTabaquismo }}</td>
+            </tr>
+            <tr>
+                <th>Historialsocialalcoholismo</th>
+                <td>{{ entity.historialSocialAlcoholismo }}</td>
+            </tr>
+            <tr>
+                <th>Historialsocialconsumodrogas</th>
+                <td>{{ entity.historialSocialConsumoDrogas }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalultimavisita</th>
+                <td>{{ entity.historiaDentalUltimaVisita }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaltratamientorecibido</th>
+                <td>{{ entity.historiaDentalTratamientoRecibido }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalultimaradiografia</th>
+                <td>{{ entity.historiaDentalUltimaRadiografia }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalreaccionesanestecia</th>
+                <td>{{ entity.historiaDentalReaccionesAnestecia }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalexperienciasdesagradables</th>
+                <td>{{ entity.historiaDentalExperienciasDesagradables }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalfrecuendiacepillado</th>
+                <td>{{ entity.historiaDentalFrecuendiaCepillado }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaltipocepillo</th>
+                <td>{{ entity.historiaDentalTipoCepillo }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaltecnicacepillo</th>
+                <td>{{ entity.historiaDentalTecnicaCepillo }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalfrecuenciadeusohilodental</th>
+                <td>{{ entity.historiaDentalFrecuenciaDeUsoHiloDental }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaltipohilodental</th>
+                <td>{{ entity.historiaDentalTipoHiloDental }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalenguajebucal</th>
+                <td>{{ entity.historiaDentalEnguajeBucal }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaldificultadparaabrirboca</th>
+                <td>{{ entity.historiaDentalDificultadParaAbrirBoca }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalruidomandubula</th>
+                <td>{{ entity.historiaDentalRuidoMandubula }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaldislocamientomandubula</th>
+                <td>{{ entity.historiaDentalDislocamientoMandubula }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaldoloroido</th>
+                <td>{{ entity.historiaDentalDolorOido }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaldolormasticar</th>
+                <td>{{ entity.historiaDentalDolorMasticar }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalcambiosmordida</th>
+                <td>{{ entity.historiaDentalCambiosMordida }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaldoloresdecabeza</th>
+                <td>{{ entity.historiaDentalDoloresDeCabeza }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentaltraumacabeza</th>
+                <td>{{ entity.historiaDentalTraumaCabeza }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalartritis</th>
+                <td>{{ entity.historiaDentalArtritis }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalproblemamasticar</th>
+                <td>{{ entity.historiaDentalProblemaMasticar }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalrechinadodientes</th>
+                <td>{{ entity.historiaDentalRechinadoDientes }}</td>
+            </tr>
+            <tr>
+                <th>Historiadentalproblemaatm</th>
+                <td>{{ entity.historiaDentalProblemaAtm }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('historialmedico') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('historialmedico_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
+{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

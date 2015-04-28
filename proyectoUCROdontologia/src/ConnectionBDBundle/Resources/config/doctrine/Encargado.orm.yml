@@ -1,0 +1,28 @@
+ConnectionBDBundle\Entity\Encargado:
+    type: entity
+    table: encargado
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+        relacion:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+        cedula:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+    lifecycleCallbacks: {  }

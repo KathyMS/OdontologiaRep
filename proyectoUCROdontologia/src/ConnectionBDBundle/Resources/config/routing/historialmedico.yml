@@ -1,0 +1,30 @@
+historialmedico:
+    path:     /
+    defaults: { _controller: "ConnectionBDBundle:HistorialMedico:index" }
+
+historialmedico_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConnectionBDBundle:HistorialMedico:show" }
+
+historialmedico_new:
+    path:     /new
+    defaults: { _controller: "ConnectionBDBundle:HistorialMedico:new" }
+
+historialmedico_create:
+    path:     /create
+    defaults: { _controller: "ConnectionBDBundle:HistorialMedico:create" }
+    requirements: { _method: post }
+
+historialmedico_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConnectionBDBundle:HistorialMedico:edit" }
+
+historialmedico_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConnectionBDBundle:HistorialMedico:update" }
+    requirements: { _method: post|put }
+
+historialmedico_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConnectionBDBundle:HistorialMedico:delete" }
+    requirements: { _method: post|delete }

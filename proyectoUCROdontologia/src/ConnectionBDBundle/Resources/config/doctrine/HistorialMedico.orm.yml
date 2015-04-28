@@ -1,0 +1,370 @@
+ConnectionBDBundle\Entity\HistorialMedico:
+    type: entity
+    table: historial_medico
+    indexes:
+        expediente_historial_medico_idx:
+            columns:
+                - idExpediente
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        dolorCabezaFrecuente:
+            type: boolean
+            nullable: true
+            column: dolor_cabeza_frecuente
+        historialDental:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: historial_dental
+        vertigo:
+            type: boolean
+            nullable: true
+        desmayo:
+            type: boolean
+            nullable: true
+        perdidaDeConsiencia:
+            type: boolean
+            nullable: true
+            column: perdida_de_consiencia
+        problemasVisules:
+            type: boolean
+            nullable: true
+            column: problemas_visules
+        problemasAuditivos:
+            type: boolean
+            nullable: true
+            column: problemas_auditivos
+        sinusitis:
+            type: boolean
+            nullable: true
+        obstruccionNasal:
+            type: boolean
+            nullable: true
+            column: obstruccion_nasal
+        problemasTiroides:
+            type: boolean
+            nullable: true
+            column: problemas_tiroides
+        diabetes:
+            type: boolean
+            nullable: true
+        cambiosInesperadosPeso:
+            type: boolean
+            nullable: true
+            column: cambios_inesperados_peso
+        disnea:
+            type: boolean
+            nullable: true
+        tos:
+            type: boolean
+            nullable: true
+        tuberculosis:
+            type: boolean
+            nullable: true
+        enfisemaPulmonar:
+            type: boolean
+            nullable: true
+            column: enfisema_pulmonar
+        asma:
+            type: boolean
+            nullable: true
+        infartoMiocardio:
+            type: boolean
+            nullable: true
+            column: infarto_miocardio
+        insuficienciaCadiaca:
+            type: boolean
+            nullable: true
+            column: insuficiencia_cadiaca
+        hipertensionArterial:
+            type: boolean
+            nullable: true
+            column: hipertension_arterial
+        anginaDePecho:
+            type: boolean
+            nullable: true
+            column: angina_de_pecho
+        soploCardiaco:
+            type: boolean
+            nullable: true
+            column: soplo_cardiaco
+        fiebreReumatica:
+            type: boolean
+            nullable: true
+            column: fiebre_reumatica
+        lesionesCardiacasCongenitas:
+            type: boolean
+            nullable: true
+            column: lesiones_cardiacas_congenitas
+        valvulasCardicasArtificiales:
+            type: boolean
+            nullable: true
+            column: valvulas_cardicas_artificiales
+        anemia:
+            type: boolean
+            nullable: true
+        tranfisiones:
+            type: boolean
+            nullable: true
+        trobosis:
+            type: boolean
+            nullable: true
+        anomalisasDeCelulasSangineas:
+            type: boolean
+            nullable: true
+            column: anomalisas_de_celulas_sangineas
+        hepatitis:
+            type: boolean
+            nullable: true
+        ictericia:
+            type: boolean
+            nullable: true
+        ulceraGastrica:
+            type: boolean
+            nullable: true
+            column: ulcera_gastrica
+        enfermedadDeTramisionSexual:
+            type: boolean
+            nullable: true
+            column: enfermedad_de_tramision_sexual
+        vih:
+            type: boolean
+            nullable: true
+            column: VIH
+        paralisis:
+            type: boolean
+            nullable: true
+        depresion:
+            type: boolean
+            nullable: true
+        nerviosismo:
+            type: boolean
+            nullable: true
+        tension:
+            type: boolean
+            nullable: true
+        convulsiones:
+            type: boolean
+            nullable: true
+        hemorragias:
+            type: boolean
+            nullable: true
+        artritis:
+            type: boolean
+            nullable: true
+        reumatismo:
+            type: boolean
+            nullable: true
+        transplantes:
+            type: boolean
+            nullable: true
+        alteracionesEnRinones:
+            type: boolean
+            nullable: true
+            column: alteraciones_en_rinones
+        intoleranciaAAlimentos:
+            type: boolean
+            nullable: true
+            column: intolerancia_a_alimentos
+        mialgias:
+            type: boolean
+            nullable: true
+        limitaionesDeMovimiento:
+            type: boolean
+            nullable: true
+            column: limitaiones_de_movimiento
+        trumatismoEnLaCara:
+            type: boolean
+            nullable: true
+            column: trumatismo_en_la_cara
+        amigdalitis:
+            type: boolean
+            nullable: true
+        cancer:
+            type: boolean
+            nullable: true
+        leucemia:
+            type: boolean
+            nullable: true
+        embarazo:
+            type: boolean
+            nullable: true
+        aa:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: AA
+        aq:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: AQ
+        medicamentos:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+        historialFamiliarAfp:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: historial_familiar_AFP
+        historialFamiliarAfnp:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: historial_familiar_AFNP
+        historialSocialTipoDieta:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: historial_social_tipo_dieta
+        historialSocialTabaquismo:
+            type: boolean
+            nullable: true
+            column: historial_social_tabaquismo
+        historialSocialAlcoholismo:
+            type: boolean
+            nullable: true
+            column: historial_social_alcoholismo
+        historialSocialConsumoDrogas:
+            type: boolean
+            nullable: true
+            column: historial_social_consumo_drogas
+        historiaDentalUltimaVisita:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: historia_dental_ultima_visita
+        historiaDentalTratamientoRecibido:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: historia_dental_tratamiento_recibido
+        historiaDentalUltimaRadiografia:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: historia_dental_ultima_radiografia
+        historiaDentalReaccionesAnestecia:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: historia_dental_reacciones_anestecia
+        historiaDentalExperienciasDesagradables:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: historia_dental_experiencias_desagradables
+        historiaDentalFrecuendiaCepillado:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: historia_dental_frecuendia_cepillado
+        historiaDentalTipoCepillo:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: historia_dental_tipo_cepillo
+        historiaDentalTecnicaCepillo:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: historia_dental_tecnica_cepillo
+        historiaDentalFrecuenciaDeUsoHiloDental:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: historia_dental_frecuencia_de_uso_hilo_dental
+        historiaDentalTipoHiloDental:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: historia_dental_tipo_hilo_dental
+        historiaDentalEnguajeBucal:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: historia_dental_enguaje_bucal
+        historiaDentalDificultadParaAbrirBoca:
+            type: boolean
+            nullable: true
+            column: historia_dental_dificultad_para_abrir_boca
+        historiaDentalRuidoMandubula:
+            type: boolean
+            nullable: true
+            column: historia_dental_ruido_mandubula
+        historiaDentalDislocamientoMandubula:
+            type: boolean
+            nullable: true
+            column: historia_dental_dislocamiento_mandubula
+        historiaDentalDolorOido:
+            type: boolean
+            nullable: true
+            column: historia_dental_dolor_oido
+        historiaDentalDolorMasticar:
+            type: boolean
+            nullable: true
+            column: historia_dental_dolor_masticar
+        historiaDentalCambiosMordida:
+            type: boolean
+            nullable: true
+            column: historia_dental_cambios_mordida
+        historiaDentalDoloresDeCabeza:
+            type: boolean
+            nullable: true
+            column: historia_dental_dolores_de_cabeza
+        historiaDentalTraumaCabeza:
+            type: boolean
+            nullable: true
+            column: historia_dental_trauma_cabeza
+        historiaDentalArtritis:
+            type: boolean
+            nullable: true
+            column: historia_dental_artritis
+        historiaDentalProblemaMasticar:
+            type: boolean
+            nullable: true
+            column: historia_dental_problema_masticar
+        historiaDentalRechinadoDientes:
+            type: boolean
+            nullable: true
+            column: historia_dental_rechinado_dientes
+        historiaDentalProblemaAtm:
+            type: boolean
+            nullable: true
+            column: historia_dental_problema_atm
+    manyToOne:
+        idexpediente:
+            targetEntity: Expediente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idExpediente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

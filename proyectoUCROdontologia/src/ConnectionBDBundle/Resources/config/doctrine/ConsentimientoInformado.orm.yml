@@ -1,0 +1,33 @@
+ConnectionBDBundle\Entity\ConsentimientoInformado:
+    type: entity
+    table: consentimiento_informado
+    indexes:
+        expediente_consentimieinto_informado_idx:
+            columns:
+                - idExpediente
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        rutaImagen:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: ruta_imagen
+    manyToOne:
+        idexpediente:
+            targetEntity: Expediente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idExpediente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

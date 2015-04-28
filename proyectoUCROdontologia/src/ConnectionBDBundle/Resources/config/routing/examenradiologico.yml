@@ -1,0 +1,30 @@
+examenradiologico:
+    path:     /
+    defaults: { _controller: "ConnectionBDBundle:ExamenRadiologico:index" }
+
+examenradiologico_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConnectionBDBundle:ExamenRadiologico:show" }
+
+examenradiologico_new:
+    path:     /new
+    defaults: { _controller: "ConnectionBDBundle:ExamenRadiologico:new" }
+
+examenradiologico_create:
+    path:     /create
+    defaults: { _controller: "ConnectionBDBundle:ExamenRadiologico:create" }
+    requirements: { _method: post }
+
+examenradiologico_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConnectionBDBundle:ExamenRadiologico:edit" }
+
+examenradiologico_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConnectionBDBundle:ExamenRadiologico:update" }
+    requirements: { _method: post|put }
+
+examenradiologico_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConnectionBDBundle:ExamenRadiologico:delete" }
+    requirements: { _method: post|delete }

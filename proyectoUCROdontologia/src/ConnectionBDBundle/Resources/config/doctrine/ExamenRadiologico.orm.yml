@@ -1,0 +1,107 @@
+ConnectionBDBundle\Entity\ExamenRadiologico:
+    type: entity
+    table: examen_radiologico
+    indexes:
+        expediente_vigilancia_idx:
+            columns:
+                - idExpediente
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        crestaAlveolar:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: cresta_alveolar
+        laminaDura:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: lamina_dura
+        membranaPeriodontal:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: membrana_periodontal
+        calculo:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+        caries:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+        retauracionesDentales:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: retauraciones_dentales
+        furcaciones:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+        anomaliasDentales:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: anomalias_dentales
+        patologiasMaxilares:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: patologias_maxilares
+        morfologiaRadicular:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: morfologia_radicular
+        coronaRaizHuesoRematente:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: corona_raiz_hueso_rematente
+        tercerosMolares:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: terceros_molares
+        secuenciaErupcion:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            column: secuencia_erupcion
+        comentarios:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+    manyToOne:
+        idexpediente:
+            targetEntity: Expediente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idExpediente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

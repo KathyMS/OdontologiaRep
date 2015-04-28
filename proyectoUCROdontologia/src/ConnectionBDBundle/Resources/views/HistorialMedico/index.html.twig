@@ -1,0 +1,209 @@
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
+
+{% block body -%}
+    <h1>HistorialMedico list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dolorcabezafrecuente</th>
+                <th>Historialdental</th>
+                <th>Vertigo</th>
+                <th>Desmayo</th>
+                <th>Perdidadeconsiencia</th>
+                <th>Problemasvisules</th>
+                <th>Problemasauditivos</th>
+                <th>Sinusitis</th>
+                <th>Obstruccionnasal</th>
+                <th>Problemastiroides</th>
+                <th>Diabetes</th>
+                <th>Cambiosinesperadospeso</th>
+                <th>Disnea</th>
+                <th>Tos</th>
+                <th>Tuberculosis</th>
+                <th>Enfisemapulmonar</th>
+                <th>Asma</th>
+                <th>Infartomiocardio</th>
+                <th>Insuficienciacadiaca</th>
+                <th>Hipertensionarterial</th>
+                <th>Anginadepecho</th>
+                <th>Soplocardiaco</th>
+                <th>Fiebrereumatica</th>
+                <th>Lesionescardiacascongenitas</th>
+                <th>Valvulascardicasartificiales</th>
+                <th>Anemia</th>
+                <th>Tranfisiones</th>
+                <th>Trobosis</th>
+                <th>Anomalisasdecelulassangineas</th>
+                <th>Hepatitis</th>
+                <th>Ictericia</th>
+                <th>Ulceragastrica</th>
+                <th>Enfermedaddetramisionsexual</th>
+                <th>Vih</th>
+                <th>Paralisis</th>
+                <th>Depresion</th>
+                <th>Nerviosismo</th>
+                <th>Tension</th>
+                <th>Convulsiones</th>
+                <th>Hemorragias</th>
+                <th>Artritis</th>
+                <th>Reumatismo</th>
+                <th>Transplantes</th>
+                <th>Alteracionesenrinones</th>
+                <th>Intoleranciaaalimentos</th>
+                <th>Mialgias</th>
+                <th>Limitaionesdemovimiento</th>
+                <th>Trumatismoenlacara</th>
+                <th>Amigdalitis</th>
+                <th>Cancer</th>
+                <th>Leucemia</th>
+                <th>Embarazo</th>
+                <th>Aa</th>
+                <th>Aq</th>
+                <th>Medicamentos</th>
+                <th>Historialfamiliarafp</th>
+                <th>Historialfamiliarafnp</th>
+                <th>Historialsocialtipodieta</th>
+                <th>Historialsocialtabaquismo</th>
+                <th>Historialsocialalcoholismo</th>
+                <th>Historialsocialconsumodrogas</th>
+                <th>Historiadentalultimavisita</th>
+                <th>Historiadentaltratamientorecibido</th>
+                <th>Historiadentalultimaradiografia</th>
+                <th>Historiadentalreaccionesanestecia</th>
+                <th>Historiadentalexperienciasdesagradables</th>
+                <th>Historiadentalfrecuendiacepillado</th>
+                <th>Historiadentaltipocepillo</th>
+                <th>Historiadentaltecnicacepillo</th>
+                <th>Historiadentalfrecuenciadeusohilodental</th>
+                <th>Historiadentaltipohilodental</th>
+                <th>Historiadentalenguajebucal</th>
+                <th>Historiadentaldificultadparaabrirboca</th>
+                <th>Historiadentalruidomandubula</th>
+                <th>Historiadentaldislocamientomandubula</th>
+                <th>Historiadentaldoloroido</th>
+                <th>Historiadentaldolormasticar</th>
+                <th>Historiadentalcambiosmordida</th>
+                <th>Historiadentaldoloresdecabeza</th>
+                <th>Historiadentaltraumacabeza</th>
+                <th>Historiadentalartritis</th>
+                <th>Historiadentalproblemamasticar</th>
+                <th>Historiadentalrechinadodientes</th>
+                <th>Historiadentalproblemaatm</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('historialmedico_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.dolorCabezaFrecuente }}</td>
+                <td>{{ entity.historialDental }}</td>
+                <td>{{ entity.vertigo }}</td>
+                <td>{{ entity.desmayo }}</td>
+                <td>{{ entity.perdidaDeConsiencia }}</td>
+                <td>{{ entity.problemasVisules }}</td>
+                <td>{{ entity.problemasAuditivos }}</td>
+                <td>{{ entity.sinusitis }}</td>
+                <td>{{ entity.obstruccionNasal }}</td>
+                <td>{{ entity.problemasTiroides }}</td>
+                <td>{{ entity.diabetes }}</td>
+                <td>{{ entity.cambiosInesperadosPeso }}</td>
+                <td>{{ entity.disnea }}</td>
+                <td>{{ entity.tos }}</td>
+                <td>{{ entity.tuberculosis }}</td>
+                <td>{{ entity.enfisemaPulmonar }}</td>
+                <td>{{ entity.asma }}</td>
+                <td>{{ entity.infartoMiocardio }}</td>
+                <td>{{ entity.insuficienciaCadiaca }}</td>
+                <td>{{ entity.hipertensionArterial }}</td>
+                <td>{{ entity.anginaDePecho }}</td>
+                <td>{{ entity.soploCardiaco }}</td>
+                <td>{{ entity.fiebreReumatica }}</td>
+                <td>{{ entity.lesionesCardiacasCongenitas }}</td>
+                <td>{{ entity.valvulasCardicasArtificiales }}</td>
+                <td>{{ entity.anemia }}</td>
+                <td>{{ entity.tranfisiones }}</td>
+                <td>{{ entity.trobosis }}</td>
+                <td>{{ entity.anomalisasDeCelulasSangineas }}</td>
+                <td>{{ entity.hepatitis }}</td>
+                <td>{{ entity.ictericia }}</td>
+                <td>{{ entity.ulceraGastrica }}</td>
+                <td>{{ entity.enfermedadDeTramisionSexual }}</td>
+                <td>{{ entity.vih }}</td>
+                <td>{{ entity.paralisis }}</td>
+                <td>{{ entity.depresion }}</td>
+                <td>{{ entity.nerviosismo }}</td>
+                <td>{{ entity.tension }}</td>
+                <td>{{ entity.convulsiones }}</td>
+                <td>{{ entity.hemorragias }}</td>
+                <td>{{ entity.artritis }}</td>
+                <td>{{ entity.reumatismo }}</td>
+                <td>{{ entity.transplantes }}</td>
+                <td>{{ entity.alteracionesEnRinones }}</td>
+                <td>{{ entity.intoleranciaAAlimentos }}</td>
+                <td>{{ entity.mialgias }}</td>
+                <td>{{ entity.limitaionesDeMovimiento }}</td>
+                <td>{{ entity.trumatismoEnLaCara }}</td>
+                <td>{{ entity.amigdalitis }}</td>
+                <td>{{ entity.cancer }}</td>
+                <td>{{ entity.leucemia }}</td>
+                <td>{{ entity.embarazo }}</td>
+                <td>{{ entity.aa }}</td>
+                <td>{{ entity.aq }}</td>
+                <td>{{ entity.medicamentos }}</td>
+                <td>{{ entity.historialFamiliarAfp }}</td>
+                <td>{{ entity.historialFamiliarAfnp }}</td>
+                <td>{{ entity.historialSocialTipoDieta }}</td>
+                <td>{{ entity.historialSocialTabaquismo }}</td>
+                <td>{{ entity.historialSocialAlcoholismo }}</td>
+                <td>{{ entity.historialSocialConsumoDrogas }}</td>
+                <td>{{ entity.historiaDentalUltimaVisita }}</td>
+                <td>{{ entity.historiaDentalTratamientoRecibido }}</td>
+                <td>{{ entity.historiaDentalUltimaRadiografia }}</td>
+                <td>{{ entity.historiaDentalReaccionesAnestecia }}</td>
+                <td>{{ entity.historiaDentalExperienciasDesagradables }}</td>
+                <td>{{ entity.historiaDentalFrecuendiaCepillado }}</td>
+                <td>{{ entity.historiaDentalTipoCepillo }}</td>
+                <td>{{ entity.historiaDentalTecnicaCepillo }}</td>
+                <td>{{ entity.historiaDentalFrecuenciaDeUsoHiloDental }}</td>
+                <td>{{ entity.historiaDentalTipoHiloDental }}</td>
+                <td>{{ entity.historiaDentalEnguajeBucal }}</td>
+                <td>{{ entity.historiaDentalDificultadParaAbrirBoca }}</td>
+                <td>{{ entity.historiaDentalRuidoMandubula }}</td>
+                <td>{{ entity.historiaDentalDislocamientoMandubula }}</td>
+                <td>{{ entity.historiaDentalDolorOido }}</td>
+                <td>{{ entity.historiaDentalDolorMasticar }}</td>
+                <td>{{ entity.historiaDentalCambiosMordida }}</td>
+                <td>{{ entity.historiaDentalDoloresDeCabeza }}</td>
+                <td>{{ entity.historiaDentalTraumaCabeza }}</td>
+                <td>{{ entity.historiaDentalArtritis }}</td>
+                <td>{{ entity.historiaDentalProblemaMasticar }}</td>
+                <td>{{ entity.historiaDentalRechinadoDientes }}</td>
+                <td>{{ entity.historiaDentalProblemaAtm }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('historialmedico_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('historialmedico_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('historialmedico_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
+{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

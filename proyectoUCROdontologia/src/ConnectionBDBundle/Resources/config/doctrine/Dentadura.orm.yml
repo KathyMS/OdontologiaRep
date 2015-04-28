@@ -1,0 +1,32 @@
+ConnectionBDBundle\Entity\Dentadura:
+    type: entity
+    table: dentadura
+    indexes:
+        expediente_dentadura_idx:
+            columns:
+                - idExpediente
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        dientesPresentes:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: dientes_presentes
+    manyToOne:
+        idexpediente:
+            targetEntity: Expediente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idExpediente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

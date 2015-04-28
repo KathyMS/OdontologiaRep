@@ -1,0 +1,64 @@
+ConnectionBDBundle\Entity\TratamientoEfectuado:
+    type: entity
+    table: tratamiento_efectuado
+    indexes:
+        expediente_tratamiento_efectuado_idx:
+            columns:
+                - idExpediente
+        odontologo_tramiento_idx:
+            columns:
+                - idOdontologo
+        tratamiento_general_tratamiento_efecta_idx:
+            columns:
+                - idTratamiento
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        pieza:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+        descripcion:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+        fecha:
+            type: date
+            nullable: true
+    manyToOne:
+        idexpediente:
+            targetEntity: Expediente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idExpediente:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idodontologo:
+            targetEntity: Odontologo
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idOdontologo:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idtratamiento:
+            targetEntity: TratamientoGeneral
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idTratamiento:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

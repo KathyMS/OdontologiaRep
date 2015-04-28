@@ -1,0 +1,39 @@
+ConnectionBDBundle\Entity\Diente:
+    type: entity
+    table: diente
+    indexes:
+        dentadura_diente_idx:
+            columns:
+                - idDentadura
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+        existencia:
+            type: boolean
+            nullable: false
+        tipo:
+            type: integer
+            nullable: false
+            unsigned: false
+    manyToOne:
+        iddentadura:
+            targetEntity: Dentadura
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idDentadura:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

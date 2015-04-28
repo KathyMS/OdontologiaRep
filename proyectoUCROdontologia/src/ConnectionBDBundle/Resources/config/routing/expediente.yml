@@ -1,0 +1,30 @@
+expediente:
+    path:     /
+    defaults: { _controller: "ConnectionBDBundle:Expediente:index" }
+
+expediente_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConnectionBDBundle:Expediente:show" }
+
+expediente_new:
+    path:     /new
+    defaults: { _controller: "ConnectionBDBundle:Expediente:new" }
+
+expediente_create:
+    path:     /create
+    defaults: { _controller: "ConnectionBDBundle:Expediente:create" }
+    requirements: { _method: post }
+
+expediente_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConnectionBDBundle:Expediente:edit" }
+
+expediente_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConnectionBDBundle:Expediente:update" }
+    requirements: { _method: post|put }
+
+expediente_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConnectionBDBundle:Expediente:delete" }
+    requirements: { _method: post|delete }

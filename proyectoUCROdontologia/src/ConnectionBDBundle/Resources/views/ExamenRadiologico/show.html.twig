@@ -1,0 +1,84 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>ExamenRadiologico</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Crestaalveolar</th>
+                <td>{{ entity.crestaAlveolar }}</td>
+            </tr>
+            <tr>
+                <th>Laminadura</th>
+                <td>{{ entity.laminaDura }}</td>
+            </tr>
+            <tr>
+                <th>Membranaperiodontal</th>
+                <td>{{ entity.membranaPeriodontal }}</td>
+            </tr>
+            <tr>
+                <th>Calculo</th>
+                <td>{{ entity.calculo }}</td>
+            </tr>
+            <tr>
+                <th>Caries</th>
+                <td>{{ entity.caries }}</td>
+            </tr>
+            <tr>
+                <th>Retauracionesdentales</th>
+                <td>{{ entity.retauracionesDentales }}</td>
+            </tr>
+            <tr>
+                <th>Furcaciones</th>
+                <td>{{ entity.furcaciones }}</td>
+            </tr>
+            <tr>
+                <th>Anomaliasdentales</th>
+                <td>{{ entity.anomaliasDentales }}</td>
+            </tr>
+            <tr>
+                <th>Patologiasmaxilares</th>
+                <td>{{ entity.patologiasMaxilares }}</td>
+            </tr>
+            <tr>
+                <th>Morfologiaradicular</th>
+                <td>{{ entity.morfologiaRadicular }}</td>
+            </tr>
+            <tr>
+                <th>Coronaraizhuesorematente</th>
+                <td>{{ entity.coronaRaizHuesoRematente }}</td>
+            </tr>
+            <tr>
+                <th>Tercerosmolares</th>
+                <td>{{ entity.tercerosMolares }}</td>
+            </tr>
+            <tr>
+                <th>Secuenciaerupcion</th>
+                <td>{{ entity.secuenciaErupcion }}</td>
+            </tr>
+            <tr>
+                <th>Comentarios</th>
+                <td>{{ entity.comentarios }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('examenradiologico') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('examenradiologico_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

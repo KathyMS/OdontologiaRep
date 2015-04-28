@@ -1,0 +1,26 @@
+ConnectionBDBundle\Entity\Expediente:
+    type: entity
+    table: expediente
+    indexes:
+        paciente_expediente_idx:
+            columns:
+                - idPaciente
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        idpaciente:
+            targetEntity: Paciente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idPaciente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

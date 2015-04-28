@@ -1,0 +1,30 @@
+tratamientogeneral:
+    path:     /
+    defaults: { _controller: "ConnectionBDBundle:TratamientoGeneral:index" }
+
+tratamientogeneral_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConnectionBDBundle:TratamientoGeneral:show" }
+
+tratamientogeneral_new:
+    path:     /new
+    defaults: { _controller: "ConnectionBDBundle:TratamientoGeneral:new" }
+
+tratamientogeneral_create:
+    path:     /create
+    defaults: { _controller: "ConnectionBDBundle:TratamientoGeneral:create" }
+    requirements: { _method: post }
+
+tratamientogeneral_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConnectionBDBundle:TratamientoGeneral:edit" }
+
+tratamientogeneral_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConnectionBDBundle:TratamientoGeneral:update" }
+    requirements: { _method: post|put }
+
+tratamientogeneral_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConnectionBDBundle:TratamientoGeneral:delete" }
+    requirements: { _method: post|delete }

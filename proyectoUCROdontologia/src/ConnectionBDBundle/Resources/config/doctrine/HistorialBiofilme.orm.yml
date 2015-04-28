@@ -1,0 +1,35 @@
+ConnectionBDBundle\Entity\HistorialBiofilme:
+    type: entity
+    table: historial_biofilme
+    indexes:
+        expediente_idx:
+            columns:
+                - idExpediente
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fecha:
+            type: date
+            nullable: true
+        porcientoPlaca:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: porciento_placa
+    manyToOne:
+        idexpediente:
+            targetEntity: Expediente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idExpediente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

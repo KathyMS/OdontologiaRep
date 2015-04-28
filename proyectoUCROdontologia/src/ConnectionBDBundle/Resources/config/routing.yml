@@ -1,0 +1,55 @@
+connection_bd_examenradiologico:
+    resource: "@ConnectionBDBundle/Resources/config/routing/examenradiologico.yml"
+    prefix:   /examenradiologico
+
+connection_bd_historialmedico:
+    resource: "@ConnectionBDBundle/Resources/config/routing/historialmedico.yml"
+    prefix:   /historialmedico
+
+connection_bd_plandetratamiento:
+    resource: "@ConnectionBDBundle/Resources/config/routing/plandetratamiento.yml"
+    prefix:   /plandetratamiento
+
+connection_bd_paciente:
+    resource: "@ConnectionBDBundle/Resources/config/routing/paciente.yml"
+    prefix:   /paciente
+
+connection_bd_expediente:
+    resource: "@ConnectionBDBundle/Resources/config/routing/expediente.yml"
+    prefix:   /expediente
+
+connection_bd_odontologo:
+    resource: "@ConnectionBDBundle/Resources/config/routing/odontologo.yml"
+    prefix:   /odontologo
+
+connection_bd_tratamientogeneral:
+    resource: "@ConnectionBDBundle/Resources/config/routing/tratamientogeneral.yml"
+    prefix:   /tratamientogeneral
+
+connection_bd_encargado:
+    resource: "@ConnectionBDBundle/Resources/config/routing/encargado.yml"
+    prefix:   /encargado
+
+connection_bd_odontologo:
+    resource: "@ConnectionBDBundle/Resources/config/routing/odontologo.yml"
+    prefix:   /odontologo
+
+connection_bd_encargado:
+    resource: "@ConnectionBDBundle/Resources/config/routing/encargado.yml"
+    prefix:   /encargado
+
+connection_bd_odontologo:
+    resource: "@ConnectionBDBundle/Resources/config/routing/odontologo.yml"
+    prefix:   /odontologo
+
+connection_bd_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ConnectionBDBundle:Default:index }
+
+ConnectionBDBundle_odontologo:
+    resource: "@ConnectionBDBundle/Resources/config/routing/odontologo.yml"
+    prefix:   /odontologo
+    
+ConnectionBDBundle_encargado:
+    resource: "@ConnectionBDBundle/Resources/config/routing/encargado.yml"
+    prefix:   /encargado

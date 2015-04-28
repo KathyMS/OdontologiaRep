@@ -1,0 +1,35 @@
+ConnectionBDBundle\Entity\PlanDeTratamiento:
+    type: entity
+    table: plan_de_tratamiento
+    indexes:
+        expediente_plan_tratamiento_idx:
+            columns:
+                - idExpediente
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+        fecha:
+            type: date
+            nullable: false
+    manyToOne:
+        idexpediente:
+            targetEntity: Expediente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idExpediente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

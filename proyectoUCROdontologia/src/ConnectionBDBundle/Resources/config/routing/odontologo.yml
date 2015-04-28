@@ -1,0 +1,30 @@
+odontologo:
+    path:     /
+    defaults: { _controller: "ConnectionBDBundle:Odontologo:index" }
+
+odontologo_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConnectionBDBundle:Odontologo:show" }
+
+odontologo_new:
+    path:     /new
+    defaults: { _controller: "ConnectionBDBundle:Odontologo:new" }
+
+odontologo_create:
+    path:     /create
+    defaults: { _controller: "ConnectionBDBundle:Odontologo:create" }
+    requirements: { _method: post }
+
+odontologo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConnectionBDBundle:Odontologo:edit" }
+
+odontologo_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConnectionBDBundle:Odontologo:update" }
+    requirements: { _method: post|put }
+
+odontologo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConnectionBDBundle:Odontologo:delete" }
+    requirements: { _method: post|delete }

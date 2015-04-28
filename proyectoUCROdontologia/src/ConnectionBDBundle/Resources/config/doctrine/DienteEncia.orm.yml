@@ -1,0 +1,86 @@
+ConnectionBDBundle\Entity\DienteEncia:
+    type: entity
+    table: diente_encia
+    indexes:
+        diente_encia_diente_idx:
+            columns:
+                - idDiente
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        movilidad:
+            type: string
+            nullable: true
+            length: 5
+            fixed: false
+        nivelinsercion1:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: nivelInsercion1
+        nivelinsercion2:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: nivelInsercion2
+        nivelinsercion3:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: nivelInsercion3
+        profundidad1:
+            type: integer
+            nullable: true
+            unsigned: false
+        profundidad2:
+            type: integer
+            nullable: true
+            unsigned: false
+        profundidad3:
+            type: integer
+            nullable: true
+            unsigned: false
+        sondeo1:
+            type: integer
+            nullable: true
+            unsigned: false
+        sondeo2:
+            type: integer
+            nullable: true
+            unsigned: false
+        sondeo3:
+            type: integer
+            nullable: true
+            unsigned: false
+        posicionencia1:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: posicionEncia1
+        posicionencia2:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: posicionEncia2
+        posicionencia3:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: posicionEncia3
+    manyToOne:
+        iddiente:
+            targetEntity: Diente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idDiente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

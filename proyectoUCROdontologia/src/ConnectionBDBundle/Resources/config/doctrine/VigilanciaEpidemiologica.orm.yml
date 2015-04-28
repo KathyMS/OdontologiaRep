@@ -1,0 +1,128 @@
+ConnectionBDBundle\Entity\VigilanciaEpidemiologica:
+    type: entity
+    table: vigilancia_epidemiologica
+    indexes:
+        Expediente_Vigilancia_Epidemiologica_idx:
+            columns:
+                - idExpediente
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fecha:
+            type: date
+            nullable: false
+        tipoPaciente:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: tipo_paciente
+        condicionMotora:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: condicion_motora
+        placaDentobacteriana:
+            type: boolean
+            nullable: true
+            column: placa_dentobacteriana
+        placaDentobacterianaPorcentaje:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: placa_dentobacteriana_porcentaje
+        calculoDental:
+            type: boolean
+            nullable: true
+            column: calculo_dental
+        cariesActiva:
+            type: boolean
+            nullable: true
+            column: caries_activa
+        cariesActivaNumero:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: caries_activa_numero
+        fisurasProfundas:
+            type: boolean
+            nullable: true
+            column: fisuras_profundas
+        fisurasProfundasNumero:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: fisuras_profundas_numero
+        restauracionesDesajustadas:
+            type: boolean
+            nullable: true
+            column: restauraciones_desajustadas
+        restauracionesDesajustadasNumero:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: restauraciones_desajustadas_numero
+        sangradoEspontaneo:
+            type: boolean
+            nullable: true
+            column: sangrado_espontaneo
+        sangradoAlSondeo:
+            type: boolean
+            nullable: true
+            column: sangrado_al_sondeo
+        sangradoAlSondeoPorcentaje:
+            type: float
+            nullable: true
+            precision: 10
+            scale: 0
+            column: sangrado_al_sondeo_porcentaje
+        ausenciaPiezasCaries:
+            type: boolean
+            nullable: true
+            column: ausencia_piezas_caries
+        ausenciaPiezasCariesNumero:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: ausencia_piezas_caries_numero
+        tipoOclusion:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: tipo_oclusion
+        necesidadesQuirurgicas:
+            type: boolean
+            nullable: true
+            column: necesidades_quirurgicas
+        fuma:
+            type: boolean
+            nullable: true
+        instruccionesFisioterapia:
+            type: boolean
+            nullable: true
+            column: instrucciones_fisioterapia
+        odontograma:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+    manyToOne:
+        idexpediente:
+            targetEntity: Expediente
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idExpediente:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

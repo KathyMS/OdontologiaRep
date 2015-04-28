@@ -1,0 +1,24 @@
+ConnectionBDBundle\Entity\TratamientoGeneral:
+    type: entity
+    table: tratamiento_general
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreTratamiento:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            column: nombre_tratamiento
+        descripcion:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+    lifecycleCallbacks: {  }

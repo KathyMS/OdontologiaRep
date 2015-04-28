@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>ExamenRadiologico list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Crestaalveolar</th>
+                <th>Laminadura</th>
+                <th>Membranaperiodontal</th>
+                <th>Calculo</th>
+                <th>Caries</th>
+                <th>Retauracionesdentales</th>
+                <th>Furcaciones</th>
+                <th>Anomaliasdentales</th>
+                <th>Patologiasmaxilares</th>
+                <th>Morfologiaradicular</th>
+                <th>Coronaraizhuesorematente</th>
+                <th>Tercerosmolares</th>
+                <th>Secuenciaerupcion</th>
+                <th>Comentarios</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('examenradiologico_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.crestaAlveolar }}</td>
+                <td>{{ entity.laminaDura }}</td>
+                <td>{{ entity.membranaPeriodontal }}</td>
+                <td>{{ entity.calculo }}</td>
+                <td>{{ entity.caries }}</td>
+                <td>{{ entity.retauracionesDentales }}</td>
+                <td>{{ entity.furcaciones }}</td>
+                <td>{{ entity.anomaliasDentales }}</td>
+                <td>{{ entity.patologiasMaxilares }}</td>
+                <td>{{ entity.morfologiaRadicular }}</td>
+                <td>{{ entity.coronaRaizHuesoRematente }}</td>
+                <td>{{ entity.tercerosMolares }}</td>
+                <td>{{ entity.secuenciaErupcion }}</td>
+                <td>{{ entity.comentarios }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('examenradiologico_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('examenradiologico_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('examenradiologico_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
