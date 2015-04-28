@@ -53,44 +53,11 @@ class Expediente {
         return $this->idpaciente;
     }
 
-    ///
     public function __toString() {
-        $paciente = $this->idpaciente;
-        //return $this->getId()."";
-        return $this->Buscar($paciente);
+   
+       return $this->getIdpaciente()->getNombre(). " ".$this->getIdpaciente()->getCedula();
     }
+    
 
-    public function Buscar($id) {
-        printf("Entra Metodo");
-
-        $conn = new \mysqli("163.178.107.130:3306", "adm", "saucr.092", "u-dental");
-
-        $sql = 'SELECT nombre, cedula FROM paciente WHERE id = "1" ';
-        //LIKE '%" . $id . "%'
-        $sentencia = $conn->prepare($sql);
-
-        if (!$sentencia) {
-            printf("Could not run query");
-            echo 'Could not run query: ' . mysql_error();
-        } else {
-            printf("Connection works");
-        }
-
-        while ($row = mysql_fetch_array($sentencia, MYSQL_ASSOC)) {
-            echo "Nombre :{$row['nombre']}";
-            
-        }
-
-
-        /*$resultado = mysqli_fetch_assoc($sentencia);
-        printf(resultado['nombre']);
-        $nombre = $resultado['nombre'];
-        $cedula = $resultado['cedula'];
-
-//        $em = $this->getDoctrine->getManager();
-//        $entity = $em->getRepository('ConnectionBDBundle\Entity\Paciente')->find($id);
-        // >getNombre(). " ".$this->getCedula();
-        return $nombre ." ";*/
-    }
 
 }
