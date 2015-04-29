@@ -96,11 +96,13 @@
                                                  Editar
                                             </a>
                                         </td>
-                                        <td>
-                                            {{ form_start(delete_form)}}
-                                                {{ form_widget(delete_form) }}
-                                                {{ form_end(delete_form)}}
+
+                                        {{ form_start(delete_form)}}
+                                        <td>      
+                                            {{ form_widget(delete_form) }} 
                                         </td>
+                                        {{ form_end(delete_form)}}
+                                       
                                     </ul>
                                     </td>
                                 </table>

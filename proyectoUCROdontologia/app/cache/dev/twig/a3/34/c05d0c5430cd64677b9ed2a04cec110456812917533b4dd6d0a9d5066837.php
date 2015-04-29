@@ -165,7 +165,7 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
                             <center>
                                 <table>
 
-                                    
+                                    <ul class=\"record_actions\">
                                         <td>
                                             <a href=\"";
         // line 90
@@ -182,23 +182,23 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
                                                  Editar
                                             </a>
                                         </td>
-                                        <td>
-                                            <a>
-                                            ";
-        // line 101
+
+                                        ";
+        // line 100
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
         echo "
-                                                ";
+                                        <td>      
+                                            ";
         // line 102
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'widget');
-        echo "
-                                                ";
-        // line 103
+        echo " 
+                                        </td>
+                                        ";
+        // line 104
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
         echo "
-                                            </a>
-                                        </td>
-                                    
+                                       
+                                    </ul>
                                     </td>
                                 </table>
                             </center>
@@ -217,6 +217,6 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
 
     public function getDebugInfo()
     {
-        return array (  197 => 103,  193 => 102,  189 => 101,  180 => 95,  172 => 90,  159 => 80,  152 => 76,  145 => 72,  138 => 68,  131 => 64,  124 => 60,  117 => 56,  110 => 52,  103 => 48,  96 => 44,  89 => 40,  82 => 36,  74 => 31,  67 => 27,  60 => 23,  53 => 19,  46 => 15,  34 => 5,  31 => 3,  26 => 111,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  198 => 104,  193 => 102,  188 => 100,  180 => 95,  172 => 90,  159 => 80,  152 => 76,  145 => 72,  138 => 68,  131 => 64,  124 => 60,  117 => 56,  110 => 52,  103 => 48,  96 => 44,  89 => 40,  82 => 36,  74 => 31,  67 => 27,  60 => 23,  53 => 19,  46 => 15,  34 => 5,  31 => 3,  26 => 111,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

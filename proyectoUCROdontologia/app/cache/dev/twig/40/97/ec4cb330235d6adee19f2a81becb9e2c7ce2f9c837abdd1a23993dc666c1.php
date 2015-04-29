@@ -323,30 +323,30 @@ class __TwigTemplate_4097ec4cb330235d6adee19f2a81becb9e2c7ce2f9c837abdd1a23993dc
                     </table>
                 </div>
 
-                                    <table>
-                                        <tr>
+                <table>
+                    <tr>
 
-                                            <td> ";
+                        <td> ";
         // line 127
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "submit", array()), 'widget');
         echo "
-                                            </td>
-                                            <td>  <a href=\"";
+                        </td>
+                        <td>  <a href=\"";
         // line 129
         echo $this->env->getExtension('routing')->getPath("paciente");
         echo "\" class=\"btn btn-primary btn-sm\">
-                                                    Volver
-                                                </a>
-                                            </td>
-                                          
-                                        </tr>
-                                    </table>
+                                Volver
+                            </a>
+                        </td>
 
-";
+                    </tr>
+                </table>
+
+                ";
         // line 137
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-              </center>
+            </center>
         </div>
     ";
     }

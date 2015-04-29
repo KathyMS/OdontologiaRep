@@ -125,26 +125,26 @@
                     </table>
                 </div>
 
-                <table>
-                    <tr>
+                                    <table>
+                                        <tr>
 
-                        <td> {{form_widget(edit_form.submit)}}
-                        </td>
-                        <td>  <a href="{{ path('paciente') }}" class="btn btn-primary btn-sm">
-                                Volver
-                            </a>
-                        </td>
-                        <td>  {{ form_start(delete_form)}}
-                            {{ form_widget(delete_form) }}
-                            {{ form_end(delete_form)}}
-                        </td>
-                    </tr>
-                </table>
-
-                {{ form_end(edit_form)}}
+                                            <td> {{form_widget(edit_form.submit)}}
+                                            </td>
 
 
+                                            {{ form_end(edit_form)}}
+                                            <td>  <a href="{{ path('paciente') }}" class="btn btn-primary btn-sm">
+                                                    Volver
+                                                </a>
+                                            </td>
+                                            {{ form_start(delete_form)}}
+                                            <td > 
+                                                {{ form_widget(delete_form.submit) }}
+                                            </td>
+                                                {{ form_end(delete_form)}}
 
+                                        </tr>
+                                    </table>
             </center>
         </div>
 
