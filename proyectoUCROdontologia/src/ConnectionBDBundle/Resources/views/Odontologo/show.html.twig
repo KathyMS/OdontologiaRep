@@ -1,49 +1,61 @@
 {% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
 {% include 'AdministradorBundle:Default:administrador_menu_vertical.html.twig' %}
 {% block body -%}
-    <h1>Odontologo</h1>
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Odontólogo</h2>
+            </div>
+            <div class="box-content">
+                <table class="table table-bordered table-striped table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Nombre</th>
+                            <td>{{ entity.nombre }}</td>
+                        </tr>
+                        <tr>
+                            <th>Telefono</th>
+                            <td>{{ entity.telefono }}</td>
+                        </tr>
+                        <tr>
+                            <th>Correoelectronico</th>
+                            <td>{{ entity.correoElectronico }}</td>
+                        </tr>
+                        <tr>
+                            <th>Practicante</th>
+                            <td>{{ entity.practicante }}</td>
+                        </tr>
+                        <tr>
+                            <th>Cedula</th>
+                            <td>{{ entity.cedula }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <td>{{ entity.nombre }}</td>
-            </tr>
-            <tr>
-                <th>Telefono</th>
-                <td>{{ entity.telefono }}</td>
-            </tr>
-            <tr>
-                <th>Correoelectronico</th>
-                <td>{{ entity.correoElectronico }}</td>
-            </tr>
-            <tr>
-                <th>Practicante</th>
-                <td>{{ entity.practicante }}</td>
-            </tr>
-            <tr>
-                <th>Cedula</th>
-                <td>{{ entity.cedula }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <center>
+                <table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('odontologo') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('odontologo_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
-{% endblock %}
-{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
+                    <ul class="record_actions">
+                        <td>
+                            <a href="{{ path('odontologo') }}"class="btn btn-primary btn-sm">
+                                Volver
+                            </a>
+                        </td>
+                        
+                        <td>
+                            <a href="{{ path('odontologo_edit', { 'id': entity.id }) }}"class="btn btn-primary btn-sm">
+                                Editar
+                            </a>
+                        </td>
+                        <td>
+                            {{ form(delete_form) }}
+                        </td>
+                    </ul>
+                    </td>
+                </table>
+            </center>             
+
+
+        {% endblock %}
+        {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

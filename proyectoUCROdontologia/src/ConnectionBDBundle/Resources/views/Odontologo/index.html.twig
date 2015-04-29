@@ -2,50 +2,64 @@
 {% include 'AdministradorBundle:Default:administrador_menu_vertical.html.twig' %}
 
 {% block body -%}
-    <h1>Odontologo list</h1>
+<div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Lista de odontólogos</h2>
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Telefono</th>
-                <th>Correoelectronico</th>
-                <th>Practicante</th>
-                <th>Cedula</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('odontologo_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.nombre }}</td>
-                <td>{{ entity.telefono }}</td>
-                <td>{{ entity.correoElectronico }}</td>
-                <td>{{ entity.practicante }}</td>
-                <td>{{ entity.cedula }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('odontologo_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('odontologo_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </div>
+            <div class="box-content">
 
-        <ul>
-        <li>
-            <a href="{{ path('odontologo_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
-{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
+                <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Telefono</th>
+                            <th>Correoelectronico</th>
+                            <th>Practicante</th>
+                            <th>Cedula</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entity in entities %}
+                            <tr>
+                                <td><a href="{{ path('odontologo_show', { 'id': entity.id }) }}">{{ entity.nombre }}</a></td>
+                                <td>{{ entity.telefono }}</td>
+                                <td>{{ entity.correoElectronico }}</td>
+                                <td>{{ entity.practicante }}</td>
+                                <td>{{ entity.cedula }}</td>
+                                <td>
+                                    <ul>
+                                        <a href="{{ path('odontologo_show', { 'id': entity.id }) }}" class="btn btn-primary btn-sm">Ver</a>
+
+                                        <a href="{{ path('odontologo_edit', { 'id': entity.id }) }}" class="btn btn-primary btn-sm">Editar</a>
+
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <center>
+                    <ul class="pagination pagination-centered">
+                        <li><a href="#">Anterior</a></li>
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">Siguiente</a></li>
+                    </ul>
+
+
+                    <ul>
+
+                        <a href="{{ path('odontologo_new') }}">
+                            Crear un nuevo odontólogo
+                        </a>
+
+                    </ul>
+                </center>
+            {% endblock %}
+            {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
