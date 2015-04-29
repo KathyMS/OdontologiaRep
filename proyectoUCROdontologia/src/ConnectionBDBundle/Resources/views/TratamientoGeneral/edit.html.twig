@@ -1,17 +1,52 @@
 {% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
 {% include 'AdministradorBundle:Default:administrador_menu_vertical.html.twig' %}
 {% block body -%}
-    <h1>TratamientoGeneral edit</h1>
+     <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Editar tratamiento general</h2>
+            </div>
+            <center>
+                <div class="box-content">
+                    <table class="table table-bordered table-striped table-condensed">
+                        {{ form_start(edit_form)}}
+                        {{form_errors(edit_form)}}
+                        <tbody>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.nombreTratamiento) }}</th>
+                                <td>{{form_widget(edit_form.nombreTratamiento)}}
+                                    {{ form_errors(edit_form.nombreTratamiento) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.descripcion) }}</th>
+                                <td>{{form_widget(edit_form.descripcion)}}
+                                    {{ form_errors(edit_form.descripcion) }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-    {{ form(edit_form) }}
+                 <table>
+                    <tr>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('tratamientogeneral') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+                        <td> {{form_widget(edit_form.submit)}}
+                        </td>
+
+
+                        {{ form_end(edit_form)}}
+                        <td>  <a href="{{ path('tratamientogeneral') }}" class="btn btn-primary btn-sm">
+                                Volver
+                            </a>
+                        </td>
+                        {{ form_start(delete_form)}}
+                        <td > 
+                            {{ form_widget(delete_form.submit) }}
+                        </td>
+                        {{ form_end(delete_form)}}
+
+                    </tr>
+                </table>
+            </center>
+        </div>
 {% endblock %}
 {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

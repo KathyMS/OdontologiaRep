@@ -327,44 +327,44 @@ class __TwigTemplate_b674155a87d0e70d32dbf96dcec7dad9b50072200e20be768e694b2e68e
                     </table>
                 </div>
 
-                <table>
-                    <tr>
+                                    <table>
+                                        <tr>
 
-                        <td> ";
+                                            <td> ";
         // line 131
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "submit", array()), 'widget');
         echo "
-                        </td>
-                        <td>  <a href=\"";
-        // line 133
-        echo $this->env->getExtension('routing')->getPath("paciente");
-        echo "\" class=\"btn btn-primary btn-sm\">
-                                Volver
-                            </a>
-                        </td>
-                        <td>  ";
-        // line 137
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                            ";
-        // line 138
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'widget');
-        echo "
-                            ";
-        // line 139
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
-        echo "
-                        </td>
-                    </tr>
-                </table>
+                                            </td>
 
-                ";
-        // line 144
+
+                                            ";
+        // line 135
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
         echo "
+                                            <td>  <a href=\"";
+        // line 136
+        echo $this->env->getExtension('routing')->getPath("paciente");
+        echo "\" class=\"btn btn-primary btn-sm\">
+                                                    Volver
+                                                </a>
+                                            </td>
+                                            ";
+        // line 140
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
+        echo "
+                                            <td > 
+                                                ";
+        // line 142
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), "submit", array()), 'widget');
+        echo "
+                                            </td>
+                                                ";
+        // line 144
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
+        echo "
 
-
-
+                                        </tr>
+                                    </table>
             </center>
         </div>
 
@@ -383,6 +383,6 @@ class __TwigTemplate_b674155a87d0e70d32dbf96dcec7dad9b50072200e20be768e694b2e68e
 
     public function getDebugInfo()
     {
-        return array (  363 => 144,  355 => 139,  351 => 138,  347 => 137,  340 => 133,  335 => 131,  321 => 120,  317 => 119,  310 => 115,  306 => 114,  299 => 110,  295 => 109,  291 => 108,  285 => 105,  281 => 104,  277 => 103,  271 => 100,  267 => 99,  263 => 98,  257 => 95,  253 => 94,  249 => 93,  243 => 90,  239 => 89,  235 => 88,  229 => 85,  225 => 84,  221 => 83,  215 => 80,  211 => 79,  207 => 78,  201 => 75,  197 => 74,  193 => 73,  186 => 69,  182 => 68,  178 => 67,  171 => 63,  167 => 62,  163 => 61,  156 => 57,  152 => 56,  148 => 55,  141 => 51,  137 => 50,  133 => 49,  126 => 45,  122 => 44,  118 => 43,  111 => 39,  107 => 38,  103 => 37,  96 => 33,  92 => 32,  88 => 31,  81 => 27,  77 => 26,  73 => 25,  67 => 22,  63 => 21,  59 => 20,  53 => 17,  49 => 16,  37 => 6,  34 => 4,  29 => 152,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  363 => 144,  358 => 142,  353 => 140,  346 => 136,  342 => 135,  335 => 131,  321 => 120,  317 => 119,  310 => 115,  306 => 114,  299 => 110,  295 => 109,  291 => 108,  285 => 105,  281 => 104,  277 => 103,  271 => 100,  267 => 99,  263 => 98,  257 => 95,  253 => 94,  249 => 93,  243 => 90,  239 => 89,  235 => 88,  229 => 85,  225 => 84,  221 => 83,  215 => 80,  211 => 79,  207 => 78,  201 => 75,  197 => 74,  193 => 73,  186 => 69,  182 => 68,  178 => 67,  171 => 63,  167 => 62,  163 => 61,  156 => 57,  152 => 56,  148 => 55,  141 => 51,  137 => 50,  133 => 49,  126 => 45,  122 => 44,  118 => 43,  111 => 39,  107 => 38,  103 => 37,  96 => 33,  92 => 32,  88 => 31,  81 => 27,  77 => 26,  73 => 25,  67 => 22,  63 => 21,  59 => 20,  53 => 17,  49 => 16,  37 => 6,  34 => 4,  29 => 152,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
     }
 }
