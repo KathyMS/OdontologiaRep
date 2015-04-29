@@ -8,16 +8,134 @@
             <div class="box-header well" data-original-title="">
                 <h2>Crear Paciente</h2>
             </div>
-            {{ form(form) }}
-            <table>
-                <ul class="record_actions">
-                    <td>
-                        <a href="{{ path('paciente') }}">
-                            <strong>    Volver </strong>  
-                        </a>
-                    </td>
-                </ul>
-            </table>
+            <center>
+                <div class="box-content">
+                    <table class="table table-bordered table-striped table-condensed">
+                        {{ form_start(form)}}
+                        {{form_errors(form)}}
+                        <tbody>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.nombre) }}</th>
+                                <td>{{form_widget(form.nombre)}}
+                                    {{ form_errors(form.nombre) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(form.cedula)}}</th>
+                                <td> {{form_widget(form.cedula)}}
+                                    {{ form_errors(form.cedula) }}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(form.fechaDeIngreso)}}</th>
+                                <td>{{ form_errors(form.fechaDeIngreso) }}
+                                    {{form_widget(form.fechaDeIngreso)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(form.sexo)}} </th>
+                                <td> {{ form_errors(form.sexo) }}
+                                    {{form_widget(form.sexo)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(form.edad)}}</th>
+                                <td> {{ form_errors(form.edad) }}
+                                    {{form_widget(form.edad)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(form.ocupacion)}}</th>
+                                <td> {{ form_errors(form.ocupacion) }}
+                                    {{form_widget(form.ocupacion)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;">  {{form_label(form.carne)}} </th>
+                                <td> {{ form_errors(form.carne) }}
+                                    {{form_widget(form.carne)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;">  {{form_label(form.apartadoPostal)}}</th>
+                                <td> {{ form_errors(form.apartadoPostal) }}
+                                    {{form_widget(form.apartadoPostal)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(form.estadoCivil)}} </th>
+                                <td>  {{ form_errors(form.estadoCivil) }}
+                                    {{form_widget(form.estadoCivil)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;">{{form_label(form.beca)}} </th>
+                                <td> {{ form_errors(form.beca) }}
+                                    {{form_widget(form.beca)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;">{{form_label(form.direccion)}} </th>
+                                <td>{{ form_errors(form.direccion) }}
+                                    {{form_widget(form.direccion)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(form.carrera)}} </th>
+                                <td>{{ form_errors(form.carrera) }}
+                                    {{form_widget(form.carrera)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;">{{form_label(form.telefonoHabitacion)}} </th>
+                                <td>{{ form_errors(form.telefonoHabitacion) }}
+                                    {{form_widget(form.telefonoHabitacion)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;">  {{form_label(form.telefonoTrabajo)}}</th>
+                                <td>{{ form_errors(form.telefonoTrabajo) }}
+                                    {{form_widget(form.telefonoTrabajo)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(form.telefonoMovil)}}</th>
+                                <td>{{ form_errors(form.telefonoMovil) }}
+                                    {{form_widget(form.telefonoMovil)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;">{{form_label(form.correoElectronico)}} </th>
+                                <td>{{ form_errors(form.correoElectronico) }}
+                                    {{form_widget(form.correoElectronico)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(form.sintoma)}}</th>
+                                <td> {{ form_errors(form.sintoma) }}
+                                    {{form_widget(form.sintoma)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> Encargado </th>
+                                <td> {{ form_errors(form.idencargado) }}
+                                    {{form_widget(form.idencargado)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> Odontologo</th>
+                                <td>  {{ form_errors(form.idodontologo) }}
+                                    {{form_widget(form.idodontologo)}}</td>
+                            </tr>
+
+                    </table>
+                </div>
+
+                                    <table>
+                                        <tr>
+
+                                            <td> {{form_widget(form.submit)}}
+                                            </td>
+                                            <td>  <a href="{{ path('paciente') }}" class="btn btn-primary btn-sm">
+                                                    Volver
+                                                </a>
+                                            </td>
+                                          
+                                        </tr>
+                                    </table>
+
+{{ form_end(form)}}
+              </center>
         </div>
     {% endblock %}
-  {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
+    {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

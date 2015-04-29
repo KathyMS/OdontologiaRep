@@ -25,7 +25,7 @@ class __TwigTemplate_4a96dd54a0bb315e1b49df87c366f1100a6b4c7441dde6c004dfd8d7530
 ";
         // line 4
         $this->displayBlock('body', $context, $blocks);
-        // line 106
+        // line 151
         echo "  ";
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
@@ -38,170 +38,335 @@ class __TwigTemplate_4a96dd54a0bb315e1b49df87c366f1100a6b4c7441dde6c004dfd8d7530
         <div class=\"box-inner\">
             <div class=\"box-header well\" data-original-title=\"\">
                 <h2>Editar Paciente</h2>
+                
             </div>
-               ";
-        // line 11
+            <center>
+                <div class=\"box-content\">
+                    <table class=\"table table-bordered table-striped table-condensed\">
+
+                        ";
+        // line 16
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_start');
         echo "
-            
-            <p>
-                Nombre:
-                ";
-        // line 15
+                        ";
+        // line 17
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'errors');
+        echo "
+                        <tbody>
+                            <tr>
+                                <th style=\"width: 400px;\"> ";
+        // line 20
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "nombre", array()), 'label');
+        echo "</th>
+                                <td>";
+        // line 21
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "nombre", array()), 'widget');
         echo "
-            </p>
-            <p>
-                Cedula:
-                ";
-        // line 19
+                                    ";
+        // line 22
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "nombre", array()), 'errors');
+        echo "</td>
+                            </tr>
+                            <tr>
+                                <th style=\"width: 400px;\"> ";
+        // line 25
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "cedula", array()), 'label');
+        echo "</th>
+                                <td> ";
+        // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "cedula", array()), 'widget');
         echo "
-            </p>
-            <p>
-                Fecha de Ingreso:
-                ";
-        // line 23
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "fechaDeIngreso", array()), 'widget');
-        echo "
-            </p>
-            <p>
-                Sexo:
-                ";
+                                      ";
         // line 27
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "sexo", array()), 'widget');
-        echo "
-            </p>
-            <p>
-                Edad:
-                ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "cedula", array()), 'errors');
+        echo "</td>
+                            </tr>
+                            
+                            <tr>
+                                <th style=\"width: 400px;\"> ";
         // line 31
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "edad", array()), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "fechaDeIngreso", array()), 'label');
+        echo "</th>
+                                <td>";
+        // line 32
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "fechaDeIngreso", array()), 'errors');
         echo "
-            </p>
-            <p>
-                Ocupacion:
-                ";
-        // line 35
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "ocupacion", array()), 'widget');
+                                    ";
+        // line 33
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "fechaDeIngreso", array()), 'widget');
+        echo "</td>
+                            </tr>
+                            
+                            <tr>
+                                <th style=\"width: 400px;\"> ";
+        // line 37
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "sexo", array()), 'label');
+        echo " </th>
+                                <td> ";
+        // line 38
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "sexo", array()), 'errors');
         echo "
-            </p>
-            <p>
-                Carne:
-                ";
+                                      ";
         // line 39
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "carne", array()), 'widget');
-        echo "
-            </p>
-            <p>
-                Apartado Postal:
-                ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "sexo", array()), 'widget');
+        echo "</td>
+                            </tr>
+                            
+                            <tr>
+                                <th style=\"width: 400px;\"> ";
         // line 43
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "apartadoPostal", array()), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "edad", array()), 'label');
+        echo "</th>
+                                <td> ";
+        // line 44
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "edad", array()), 'errors');
         echo "
-            </p>
-            <p>
-                Estado Civil:
-                ";
-        // line 47
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "estadoCivil", array()), 'widget');
+                                    ";
+        // line 45
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "edad", array()), 'widget');
+        echo "</td>
+                            </tr>
+                            
+                            <tr>
+                                <th style=\"width: 400px;\"> ";
+        // line 49
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "ocupacion", array()), 'label');
+        echo "</th>
+                                <td> ";
+        // line 50
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "ocupacion", array()), 'errors');
         echo "
-            </p>
-            <p>
-                Beca:
                 ";
         // line 51
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "beca", array()), 'widget');
-        echo "
-            </p>
-            <p>
-                Direccion:
-                ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "ocupacion", array()), 'widget');
+        echo "</td>
+                            </tr>
+                            
+                            <tr>
+                                <th style=\"width: 400px;\">  ";
         // line 55
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "direccion", array()), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "carne", array()), 'label');
+        echo " </th>
+                                <td> ";
+        // line 56
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "carne", array()), 'errors');
         echo "
-            </p> 
-            <p>
-                Carrera:
                 ";
-        // line 59
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "carrera", array()), 'widget');
+        // line 57
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "carne", array()), 'widget');
+        echo "</td>
+                            </tr>
+                            
+                            <tr>
+                                <th style=\"width: 400px;\">  ";
+        // line 61
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "apartadoPostal", array()), 'label');
+        echo "</th>
+                                <td> ";
+        // line 62
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "apartadoPostal", array()), 'errors');
         echo "
-            </p>
-            <p>
-                Telefono de Habitacion:
                 ";
         // line 63
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoHabitacion", array()), 'widget');
-        echo "
-            </p>
-            <p>
-                Telefono del Trabajo:
-                ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "apartadoPostal", array()), 'widget');
+        echo "</td>
+                            </tr>
+                            
+                            <tr>
+                                <th style=\"width: 400px;\"> ";
         // line 67
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoTrabajo", array()), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "estadoCivil", array()), 'label');
+        echo " </th>
+                                <td>  ";
+        // line 68
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "estadoCivil", array()), 'errors');
         echo "
-            </p>
-           <p>
-                Telefono Movil:
                 ";
-        // line 71
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoMovil", array()), 'widget');
+        // line 69
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "estadoCivil", array()), 'widget');
+        echo "</td>
+                            </tr>
+                            
+                            <tr>
+                                <th style=\"width: 400px;\">";
+        // line 73
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "beca", array()), 'label');
+        echo " </th>
+                                <td> ";
+        // line 74
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "beca", array()), 'errors');
         echo "
-            </p>
-            <p>
-                Correo Electronico:
                 ";
         // line 75
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "correoElectronico", array()), 'widget');
-        echo "
-            </p>
-            <p>
-                Sintoma:
-                ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "beca", array()), 'widget');
+        echo "</td>
+                            </tr>
+                             <tr>
+                                <th style=\"width: 400px;\">";
+        // line 78
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "direccion", array()), 'label');
+        echo " </th>
+                                <td>";
         // line 79
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "sintoma", array()), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "direccion", array()), 'errors');
         echo "
-            </p>
-            <p>
-                 Encargado:
                 ";
+        // line 80
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "direccion", array()), 'widget');
+        echo "</td>
+                            </tr>
+                             <tr>
+                                <th style=\"width: 400px;\"> ";
         // line 83
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "idencargado", array()), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "carrera", array()), 'label');
+        echo " </th>
+                                <td>";
+        // line 84
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "carrera", array()), 'errors');
         echo "
-            </p>
-            <p>
-                Odontologo:
                 ";
-        // line 87
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "idodontologo", array()), 'widget');
+        // line 85
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "carrera", array()), 'widget');
+        echo "</td>
+                            </tr>
+                             <tr>
+                                <th style=\"width: 400px;\">";
+        // line 88
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoHabitacion", array()), 'label');
+        echo " </th>
+                                <td>";
+        // line 89
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoHabitacion", array()), 'errors');
         echo "
-            </p>
-            
-            
-            
+                ";
+        // line 90
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoHabitacion", array()), 'widget');
+        echo "</td>
+                            </tr>
+                             <tr>
+                                <th style=\"width: 400px;\">  ";
+        // line 93
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoTrabajo", array()), 'label');
+        echo "</th>
+                                <td>";
+        // line 94
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoTrabajo", array()), 'errors');
+        echo "
+                ";
+        // line 95
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoTrabajo", array()), 'widget');
+        echo "</td>
+                            </tr>
+                             <tr>
+                                <th style=\"width: 400px;\"> ";
+        // line 98
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoMovil", array()), 'label');
+        echo "</th>
+                                <td>";
+        // line 99
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoMovil", array()), 'errors');
+        echo "
+                ";
+        // line 100
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "telefonoMovil", array()), 'widget');
+        echo "</td>
+                            </tr>
+                             <tr>
+                                <th style=\"width: 400px;\">";
+        // line 103
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "correoElectronico", array()), 'label');
+        echo " </th>
+                                <td>";
+        // line 104
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "correoElectronico", array()), 'errors');
+        echo "
+                ";
+        // line 105
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "correoElectronico", array()), 'widget');
+        echo "</td>
+                            </tr>
+                             <tr>
+                                <th style=\"width: 400px;\"> ";
+        // line 108
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "sintoma", array()), 'label');
+        echo "</th>
+                                <td> ";
+        // line 109
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "sintoma", array()), 'errors');
+        echo "
+                ";
+        // line 110
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "sintoma", array()), 'widget');
+        echo "</td>
+                            </tr>
+                             <tr>
+                                <th style=\"width: 400px;\"> Encargado </th>
+                                <td> ";
+        // line 114
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "idencargado", array()), 'errors');
+        echo "
+                ";
+        // line 115
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "idencargado", array()), 'widget');
+        echo "</td>
+                            </tr>
+                            <tr>
+                                <th style=\"width: 400px;\"> Odontologo</th>
+                                <td>  ";
+        // line 119
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "idodontologo", array()), 'errors');
+        echo "
+                                    ";
+        // line 120
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "idodontologo", array()), 'widget');
+        echo "</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+                                    <table>
+                                        <tr>
+
+                                            <td> ";
+        // line 131
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "submit", array()), 'widget');
+        echo "
+                                            </td>
+                                            <td>  <a href=\"";
+        // line 133
+        echo $this->env->getExtension('routing')->getPath("paciente");
+        echo "\" class=\"btn btn-primary btn-sm\">
+                                                    Volver
+                                                </a>
+                                            </td>
+                                            <td>  ";
+        // line 137
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
+        echo "
+                                                ";
+        // line 138
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'widget');
+        echo "
+                                                ";
+        // line 139
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
+        echo "
+                                            </td>
+                                        </tr>
+                                    </table>
+
             ";
-        // line 92
+        // line 144
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
         echo "
-            <table>
-                <ul class=\"record_actions\">
-                    <td>
-                        <a href=\"";
-        // line 96
-        echo $this->env->getExtension('routing')->getPath("paciente");
-        echo "\">
-                            Volver
-                        </a>
-                    </td>
-                    <td>
-                        ";
-        // line 101
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
-        echo "
-                    </td>
-                </ul>
-            </table>
+          
+                 
+                 
+               </center>
+           
 ";
     }
 
@@ -217,6 +382,6 @@ class __TwigTemplate_4a96dd54a0bb315e1b49df87c366f1100a6b4c7441dde6c004dfd8d7530
 
     public function getDebugInfo()
     {
-        return array (  200 => 101,  192 => 96,  185 => 92,  177 => 87,  170 => 83,  163 => 79,  156 => 75,  149 => 71,  142 => 67,  135 => 63,  128 => 59,  121 => 55,  114 => 51,  107 => 47,  100 => 43,  93 => 39,  86 => 35,  79 => 31,  72 => 27,  65 => 23,  58 => 19,  51 => 15,  44 => 11,  37 => 6,  34 => 4,  29 => 106,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  363 => 144,  355 => 139,  351 => 138,  347 => 137,  340 => 133,  335 => 131,  321 => 120,  317 => 119,  310 => 115,  306 => 114,  299 => 110,  295 => 109,  291 => 108,  285 => 105,  281 => 104,  277 => 103,  271 => 100,  267 => 99,  263 => 98,  257 => 95,  253 => 94,  249 => 93,  243 => 90,  239 => 89,  235 => 88,  229 => 85,  225 => 84,  221 => 83,  215 => 80,  211 => 79,  207 => 78,  201 => 75,  197 => 74,  193 => 73,  186 => 69,  182 => 68,  178 => 67,  171 => 63,  167 => 62,  163 => 61,  156 => 57,  152 => 56,  148 => 55,  141 => 51,  137 => 50,  133 => 49,  126 => 45,  122 => 44,  118 => 43,  111 => 39,  107 => 38,  103 => 37,  96 => 33,  92 => 32,  88 => 31,  81 => 27,  77 => 26,  73 => 25,  67 => 22,  63 => 21,  59 => 20,  53 => 17,  49 => 16,  37 => 6,  34 => 4,  29 => 151,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

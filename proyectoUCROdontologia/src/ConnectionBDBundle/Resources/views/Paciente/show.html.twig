@@ -87,17 +87,19 @@
 
                                     <ul class="record_actions">
                                         <td>
-                                            <a href="{{ path('paciente') }}">
-                                                <strong>Volver</strong>
+                                            <a href="{{ path('paciente') }}"class="btn btn-primary btn-sm">
+                                                Volver
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ path('paciente_edit', { 'id': entity.id }) }}">
-                                                <strong>  Editar</strong>
+                                            <a href="{{ path('paciente_edit', { 'id': entity.id }) }} " class="btn btn-primary btn-sm">
+                                                 Editar
                                             </a>
                                         </td>
                                         <td>
-                                            {{ form(delete_form) }}
+                                            {{ form_start(delete_form)}}
+                                                {{ form_widget(delete_form) }}
+                                                {{ form_end(delete_form)}}
                                         </td>
                                     </ul>
                                     </td>

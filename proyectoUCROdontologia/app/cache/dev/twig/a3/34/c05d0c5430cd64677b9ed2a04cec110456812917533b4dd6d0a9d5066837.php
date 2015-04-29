@@ -22,7 +22,7 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_menu_horizontal.html.twig")->display($context);
         // line 3
         $this->displayBlock('body', $context, $blocks);
-        // line 107
+        // line 111
         echo "        ";
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
@@ -165,30 +165,40 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
                             <center>
                                 <table>
 
-                                    <ul class=\"record_actions\">
+                                    
                                         <td>
                                             <a href=\"";
         // line 90
         echo $this->env->getExtension('routing')->getPath("paciente");
-        echo "\">
-                                                <strong>Volver</strong>
+        echo "\"class=\"btn btn-primary btn-sm\">
+                                                Volver
                                             </a>
                                         </td>
                                         <td>
                                             <a href=\"";
         // line 95
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("paciente_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
-        echo "\">
-                                                <strong>  Editar</strong>
+        echo " \" class=\"btn btn-primary btn-sm\">
+                                                 Editar
                                             </a>
                                         </td>
                                         <td>
+                                            <a>
                                             ";
-        // line 100
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
+        // line 101
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
         echo "
+                                                ";
+        // line 102
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'widget');
+        echo "
+                                                ";
+        // line 103
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
+        echo "
+                                            </a>
                                         </td>
-                                    </ul>
+                                    
                                     </td>
                                 </table>
                             </center>
@@ -207,6 +217,6 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
 
     public function getDebugInfo()
     {
-        return array (  188 => 100,  180 => 95,  172 => 90,  159 => 80,  152 => 76,  145 => 72,  138 => 68,  131 => 64,  124 => 60,  117 => 56,  110 => 52,  103 => 48,  96 => 44,  89 => 40,  82 => 36,  74 => 31,  67 => 27,  60 => 23,  53 => 19,  46 => 15,  34 => 5,  31 => 3,  26 => 107,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  197 => 103,  193 => 102,  189 => 101,  180 => 95,  172 => 90,  159 => 80,  152 => 76,  145 => 72,  138 => 68,  131 => 64,  124 => 60,  117 => 56,  110 => 52,  103 => 48,  96 => 44,  89 => 40,  82 => 36,  74 => 31,  67 => 27,  60 => 23,  53 => 19,  46 => 15,  34 => 5,  31 => 3,  26 => 111,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

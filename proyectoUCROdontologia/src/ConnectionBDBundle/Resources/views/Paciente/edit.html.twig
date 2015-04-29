@@ -7,100 +7,145 @@
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
                 <h2>Editar Paciente</h2>
+
             </div>
-               {{ form_start(edit_form)}}
-            
-            <p>
-                Nombre:
-                {{form_widget(edit_form.nombre)}}
-            </p>
-            <p>
-                Cedula:
-                {{form_widget(edit_form.cedula)}}
-            </p>
-            <p>
-                Fecha de Ingreso:
-                {{form_widget(edit_form.fechaDeIngreso)}}
-            </p>
-            <p>
-                Sexo:
-                {{form_widget(edit_form.sexo)}}
-            </p>
-            <p>
-                Edad:
-                {{form_widget(edit_form.edad)}}
-            </p>
-            <p>
-                Ocupacion:
-                {{form_widget(edit_form.ocupacion)}}
-            </p>
-            <p>
-                Carne:
-                {{form_widget(edit_form.carne)}}
-            </p>
-            <p>
-                Apartado Postal:
-                {{form_widget(edit_form.apartadoPostal)}}
-            </p>
-            <p>
-                Estado Civil:
-                {{form_widget(edit_form.estadoCivil)}}
-            </p>
-            <p>
-                Beca:
-                {{form_widget(edit_form.beca)}}
-            </p>
-            <p>
-                Direccion:
-                {{form_widget(edit_form.direccion)}}
-            </p> 
-            <p>
-                Carrera:
-                {{form_widget(edit_form.carrera)}}
-            </p>
-            <p>
-                Telefono de Habitacion:
-                {{form_widget(edit_form.telefonoHabitacion)}}
-            </p>
-            <p>
-                Telefono del Trabajo:
-                {{form_widget(edit_form.telefonoTrabajo)}}
-            </p>
-           <p>
-                Telefono Movil:
-                {{form_widget(edit_form.telefonoMovil)}}
-            </p>
-            <p>
-                Correo Electronico:
-                {{form_widget(edit_form.correoElectronico)}}
-            </p>
-            <p>
-                Sintoma:
-                {{form_widget(edit_form.sintoma)}}
-            </p>
-            <p>
-                 Encargado:
-                {{form_widget(edit_form.idencargado)}}
-            </p>
-            <p>
-                Odontologo:
-                {{form_widget(edit_form.idodontologo)}}
-            </p>
-            
-            
-            
-            {{ form_end(edit_form)}}
-            <table>
-                <ul class="record_actions">
-                    <td>
-                        <a href="{{ path('paciente') }}">
-                            Volver
-                        </a>
-                    </td>
-                    <td>
-                        {{ form(delete_form) }}
-                    </td>
-                </ul>
-            </table>
-{% endblock %}
-  {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
+            <center>
+                <div class="box-content">
+                    <table class="table table-bordered table-striped table-condensed">
+
+                        {{ form_start(edit_form)}}
+                        {{form_errors(edit_form)}}
+                        <tbody>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.nombre) }}</th>
+                                <td>{{form_widget(edit_form.nombre)}}
+                                    {{ form_errors(edit_form.nombre) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(edit_form.cedula)}}</th>
+                                <td> {{form_widget(edit_form.cedula)}}
+                                    {{ form_errors(edit_form.cedula) }}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(edit_form.fechaDeIngreso)}}</th>
+                                <td>{{ form_errors(edit_form.fechaDeIngreso) }}
+                                    {{form_widget(edit_form.fechaDeIngreso)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(edit_form.sexo)}} </th>
+                                <td> {{ form_errors(edit_form.sexo) }}
+                                    {{form_widget(edit_form.sexo)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(edit_form.edad)}}</th>
+                                <td> {{ form_errors(edit_form.edad) }}
+                                    {{form_widget(edit_form.edad)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(edit_form.ocupacion)}}</th>
+                                <td> {{ form_errors(edit_form.ocupacion) }}
+                                    {{form_widget(edit_form.ocupacion)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;">  {{form_label(edit_form.carne)}} </th>
+                                <td> {{ form_errors(edit_form.carne) }}
+                                    {{form_widget(edit_form.carne)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;">  {{form_label(edit_form.apartadoPostal)}}</th>
+                                <td> {{ form_errors(edit_form.apartadoPostal) }}
+                                    {{form_widget(edit_form.apartadoPostal)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(edit_form.estadoCivil)}} </th>
+                                <td>  {{ form_errors(edit_form.estadoCivil) }}
+                                    {{form_widget(edit_form.estadoCivil)}}</td>
+                            </tr>
+
+                            <tr>
+                                <th style="width: 400px;">{{form_label(edit_form.beca)}} </th>
+                                <td> {{ form_errors(edit_form.beca) }}
+                                    {{form_widget(edit_form.beca)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;">{{form_label(edit_form.direccion)}} </th>
+                                <td>{{ form_errors(edit_form.direccion) }}
+                                    {{form_widget(edit_form.direccion)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(edit_form.carrera)}} </th>
+                                <td>{{ form_errors(edit_form.carrera) }}
+                                    {{form_widget(edit_form.carrera)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;">{{form_label(edit_form.telefonoHabitacion)}} </th>
+                                <td>{{ form_errors(edit_form.telefonoHabitacion) }}
+                                    {{form_widget(edit_form.telefonoHabitacion)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;">  {{form_label(edit_form.telefonoTrabajo)}}</th>
+                                <td>{{ form_errors(edit_form.telefonoTrabajo) }}
+                                    {{form_widget(edit_form.telefonoTrabajo)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(edit_form.telefonoMovil)}}</th>
+                                <td>{{ form_errors(edit_form.telefonoMovil) }}
+                                    {{form_widget(edit_form.telefonoMovil)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;">{{form_label(edit_form.correoElectronico)}} </th>
+                                <td>{{ form_errors(edit_form.correoElectronico) }}
+                                    {{form_widget(edit_form.correoElectronico)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{form_label(edit_form.sintoma)}}</th>
+                                <td> {{ form_errors(edit_form.sintoma) }}
+                                    {{form_widget(edit_form.sintoma)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> Encargado </th>
+                                <td> {{ form_errors(edit_form.idencargado) }}
+                                    {{form_widget(edit_form.idencargado)}}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> Odontologo</th>
+                                <td>  {{ form_errors(edit_form.idodontologo) }}
+                                    {{form_widget(edit_form.idodontologo)}}</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <table>
+                    <tr>
+
+                        <td> {{form_widget(edit_form.submit)}}
+                        </td>
+                        <td>  <a href="{{ path('paciente') }}" class="btn btn-primary btn-sm">
+                                Volver
+                            </a>
+                        </td>
+                        <td>  {{ form_start(delete_form)}}
+                            {{ form_widget(delete_form) }}
+                            {{ form_end(delete_form)}}
+                        </td>
+                    </tr>
+                </table>
+
+                {{ form_end(edit_form)}}
+
+
+
+            </center>
+
+        {% endblock %}
+        {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
