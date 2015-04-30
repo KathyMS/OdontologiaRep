@@ -25,7 +25,10 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
                     </div>
                     <ul class=\"nav nav-pills nav-stacked main-menu\">
                         <li class=\"nav-header\">Menu Principal</li>
-                        <li><a class=\"ajax-link\" href=\"index.html\"><i class=\"glyphicon glyphicon-home\"></i><span> Inicio</span></a>
+                        <li><a class=\"ajax-link\" href=\"";
+        // line 10
+        echo $this->env->getExtension('routing')->getUrl("inicio");
+        echo "\"><i class=\"glyphicon glyphicon-home\"></i><span> Inicio</span></a>
                         </li>
                          <li><a class=\"ajax-link\" href=\"";
         // line 12
@@ -98,10 +101,13 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
     </div>
 
     <div class=\"col-md-3 col-sm-3 col-xs-6\">
-        <a data-toggle=\"tooltip\" title=\"12 new messages.\" class=\"well top-block\" href=\"#\">
+        <a data-toggle=\"tooltip\" title=\"12 new messages.\" class=\"well top-block\" href=\"";
+        // line 65
+        echo $this->env->getExtension('routing')->getUrl("examenradiologico");
+        echo "\">
             <i class=\"glyphicon glyphicon-envelope red\"></i>
 
-            <div>Messages</div>
+            <div>Examen Radiologico</div>
            
            
         </a>
@@ -125,6 +131,6 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
 
     public function getDebugInfo()
     {
-        return array (  90 => 55,  77 => 45,  64 => 35,  44 => 18,  39 => 16,  32 => 12,  19 => 1,);
+        return array (  106 => 65,  93 => 55,  80 => 45,  67 => 35,  47 => 18,  42 => 16,  35 => 12,  30 => 10,  19 => 1,);
     }
 }

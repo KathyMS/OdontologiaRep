@@ -81,7 +81,7 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
             // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "historiaDentalRechinadoDientes", array()), "html", null, true);
             echo "</td>
-                                <td>
+                               
                                     <ul>
                                         <a href=\"";
             // line 32
