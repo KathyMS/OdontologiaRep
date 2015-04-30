@@ -1,84 +1,104 @@
-{% extends '::base.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_vertical.html.twig' %}
 
 {% block body -%}
-    <h1>ExamenRadiologico</h1>
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Examen Radiológico</h2>
+            </div>
+            <table class="table table-bordered table-striped table-condensed">
+                <tbody>
+                    <tr>
+                        <th>Cresta Alveolar</th>
+                        <td>{{ entity.crestaAlveolar }}</td>
+                    </tr>
+                    <tr>
+                        <th>Lamina Dura</th>
+                        <td>{{ entity.laminaDura }}</td>
+                    </tr>
+                    <tr>
+                        <th>Espacio de la Membrana Periodontal</th>
+                        <td>{{ entity.membranaPeriodontal }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cálculo</th>
+                        <td>{{ entity.calculo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Caries</th>
+                        <td>{{ entity.caries }}</td>
+                    </tr>
+                    <tr>
+                        <th>Restauraciones Dentales</th>
+                        <td>{{ entity.retauracionesDentales }}</td>
+                    </tr>
+                    <tr>
+                        <th>Condiciones de Furcaciones</th>
+                        <td>{{ entity.furcaciones }}</td>
+                    </tr>                    
+                    <tr>
+                        <th>Anomalias Dentales</th>
+                        <td>{{ entity.anomaliasDentales }}</td>
+                    </tr>                   
+                    <tr>
+                        <th>Patologias Maxilares</th>
+                        <td>{{ entity.patologiasMaxilares }}</td>
+                    </tr>
+                    <tr>
+                        <th>Morfologia Radicular</th>
+                        <td>{{ entity.morfologiaRadicular }}</td>
+                    </tr>
+                    <tr>
+                        <th>Relacion Corona-raiz/Hueso rematente</th>
+                        <td>{{ entity.coronaRaizHuesoRematente }}</td>
+                    </tr>
+                    <tr>
+                        <th>Terceros Morales</th>
+                        <td>{{ entity.tercerosMolares }}</td>
+                    </tr>                   
+                    <tr>
+                        <th>Secuencia de Erupción</th>
+                        <td>{{ entity.secuenciaErupcion }}</td>
+                    </tr>      
+                    <tr>
+                        <th>Comentarios</th>
+                        <td>{{ entity.comentarios }}</td>
+                    </tr>
+                    <tr>
+                        <th>Expediente</th>
+                        <td>{{ entity.idexpediente }}</td>
+                    </tr>
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Crestaalveolar</th>
-                <td>{{ entity.crestaAlveolar }}</td>
-            </tr>
-            <tr>
-                <th>Laminadura</th>
-                <td>{{ entity.laminaDura }}</td>
-            </tr>
-            <tr>
-                <th>Membranaperiodontal</th>
-                <td>{{ entity.membranaPeriodontal }}</td>
-            </tr>
-            <tr>
-                <th>Calculo</th>
-                <td>{{ entity.calculo }}</td>
-            </tr>
-            <tr>
-                <th>Caries</th>
-                <td>{{ entity.caries }}</td>
-            </tr>
-            <tr>
-                <th>Retauracionesdentales</th>
-                <td>{{ entity.retauracionesDentales }}</td>
-            </tr>
-            <tr>
-                <th>Furcaciones</th>
-                <td>{{ entity.furcaciones }}</td>
-            </tr>
-            <tr>
-                <th>Anomaliasdentales</th>
-                <td>{{ entity.anomaliasDentales }}</td>
-            </tr>
-            <tr>
-                <th>Patologiasmaxilares</th>
-                <td>{{ entity.patologiasMaxilares }}</td>
-            </tr>
-            <tr>
-                <th>Morfologiaradicular</th>
-                <td>{{ entity.morfologiaRadicular }}</td>
-            </tr>
-            <tr>
-                <th>Coronaraizhuesorematente</th>
-                <td>{{ entity.coronaRaizHuesoRematente }}</td>
-            </tr>
-            <tr>
-                <th>Tercerosmolares</th>
-                <td>{{ entity.tercerosMolares }}</td>
-            </tr>
-            <tr>
-                <th>Secuenciaerupcion</th>
-                <td>{{ entity.secuenciaErupcion }}</td>
-            </tr>
-            <tr>
-                <th>Comentarios</th>
-                <td>{{ entity.comentarios }}</td>
-            </tr>
-        </tbody>
-    </table>
+                </tbody>
+            </table>
+        </div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('examenradiologico') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('examenradiologico_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
-{% endblock %}
+        <center>
+            <table>
+
+                <ul class="record_actions">
+                    <td>
+                        <a href="{{ path('examenradiologico') }}"class="btn btn-primary btn-sm">
+                            Volver
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('examenradiologico_edit', { 'id': entity.id }) }} " class="btn btn-primary btn-sm">
+                            Editar
+                        </a>
+                    </td>
+
+                    {{ form_start(delete_form)}}
+                    <td>      
+                        {{ form_widget(delete_form) }} 
+                    </td>
+                    {{ form_end(delete_form)}}
+
+                </ul>
+                </td>
+            </table>
+        </center>
+    {% endblock %}
+
+    {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

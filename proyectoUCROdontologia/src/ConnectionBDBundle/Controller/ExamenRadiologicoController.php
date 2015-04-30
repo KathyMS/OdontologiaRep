@@ -67,7 +67,7 @@ class ExamenRadiologicoController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm')));
 
         return $form;
     }
@@ -147,7 +147,7 @@ class ExamenRadiologicoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm' )));
 
         return $form;
     }
@@ -217,8 +217,6 @@ class ExamenRadiologicoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('examenradiologico_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+            ->add('submit', 'submit', array('label' => 'Eliminar', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm' )))->getForm();
     }
 }
