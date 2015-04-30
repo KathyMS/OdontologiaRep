@@ -1,43 +1,75 @@
-{% extends '::base.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
 
 {% block body -%}
-    <h1>PlanDeTratamiento list</h1>
+    
+     <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Plan de Tratamiento</h2>
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
+            </div>
+            <div class="box-content">
+                <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+
+                   
                 <th>Descripcion</th>
                 <th>Fecha</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+               
+
+                        </tr>
+                    </thead>
+  
         <tbody>
+            
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('plandetratamiento_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+               
                 <td>{{ entity.descripcion }}</td>
-                <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td><a href="{{ path('plandetratamiento_show', { 'id': entity.id }) }}">{% if entity.fecha %}{{ entity.fecha|date('Y-m-d') }}{% endif %}</td>
                 <td>
                 <ul>
-                    <li>
-                        <a href="{{ path('plandetratamiento_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('plandetratamiento_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+                   
+                        <a href="{{ path('plandetratamiento_show', { 'id': entity.id }) }}" class="btn btn-primary btn-sm">Mostar</a>
+                    
+                        <a href="{{ path('plandetratamiento_edit', { 'id': entity.id }) }}" class="btn btn-primary btn-sm">Editar</a>
+                    
                 </ul>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+  
+        
+          </table>
+<center>
+                <ul class="pagination pagination-centered">
+                    <li><a href="#">Anterior</a></li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">Siguiente</a></li>
+                </ul>
+    </center>
+            </div>
+<center>
+            <ul>
 
-        <ul>
-        <li>
-            <a href="{{ path('plandetratamiento_new') }}">
-                Create a new entry
+                <a href="{{ path('plandetratamiento_new') }}">
+                Ingresar un nuevo tratamieinto
             </a>
-        </li>
-    </ul>
+
+            </ul>
+</center>
+        </div>
+
+    </div><!--/span-->
+
+     
     {% endblock %}
+{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

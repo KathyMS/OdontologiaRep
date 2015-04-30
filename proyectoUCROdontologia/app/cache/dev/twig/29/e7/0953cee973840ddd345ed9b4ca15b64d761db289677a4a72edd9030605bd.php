@@ -27,15 +27,20 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
                         <li class=\"nav-header\">Menu Principal</li>
                         <li><a class=\"ajax-link\" href=\"index.html\"><i class=\"glyphicon glyphicon-home\"></i><span> Inicio</span></a>
                         </li>
+                         <li><a class=\"ajax-link\" href=\"";
+        // line 12
+        echo $this->env->getExtension('routing')->getUrl("paciente");
+        echo "\"><i
+                                    class=\"glyphicon glyphicon-user\"></i><span> Paciente</span></a></li>
                         <li><a class=\"ajax-link\" href=\"calendar.html\"><i class=\"glyphicon glyphicon-calendar\"></i><span> Citas</span></a>
                         </li>
                         <li><a class=\"ajax-link\" href=\"";
-        // line 14
+        // line 16
         echo $this->env->getExtension('routing')->getUrl("odontologo");
         echo "\"><i
                                     class=\"glyphicon glyphicon-user\"></i><span> Odontologos</span></a></li>
                         <li><a class=\"ajax-link\" href=\"";
-        // line 16
+        // line 18
         echo $this->env->getExtension('routing')->getUrl("tratamientogeneral");
         echo "\"><i class=\"glyphicon glyphicon-plus-sign\"></i><span> Tratamientos</span></a>
                         </li>
@@ -55,7 +60,7 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
 <div class=\" row\">
     <div class=\"col-md-3 col-sm-3 col-xs-6\">
         <a data-toggle=\"tooltip\" title=\"6 new members.\" class=\"well top-block\" href=\"";
-        // line 33
+        // line 35
         echo $this->env->getExtension('routing')->getUrl("paciente");
         echo "\">
             <i class=\"glyphicon glyphicon-user blue\"></i>
@@ -68,7 +73,7 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
 
     <div class=\"col-md-3 col-sm-3 col-xs-6\">
         <a data-toggle=\"tooltip\" title=\"4 new pro members.\" class=\"well top-block\" href=\"";
-        // line 43
+        // line 45
         echo $this->env->getExtension('routing')->getUrl("encargado");
         echo "\">
             <i class=\"glyphicon glyphicon-star green\"></i>
@@ -81,7 +86,7 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
 
     <div class=\"col-md-3 col-sm-3 col-xs-6\">
         <a data-toggle=\"tooltip\" title=\"\$34 new sales.\" class=\"well top-block\" href=\"";
-        // line 53
+        // line 55
         echo $this->env->getExtension('routing')->getUrl("historialmedico");
         echo "\">
             <i class=\"glyphicon glyphicon-shopping-cart yellow\"></i>
@@ -120,6 +125,6 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
 
     public function getDebugInfo()
     {
-        return array (  85 => 53,  72 => 43,  59 => 33,  39 => 16,  34 => 14,  19 => 1,);
+        return array (  90 => 55,  77 => 45,  64 => 35,  44 => 18,  39 => 16,  32 => 12,  19 => 1,);
     }
 }

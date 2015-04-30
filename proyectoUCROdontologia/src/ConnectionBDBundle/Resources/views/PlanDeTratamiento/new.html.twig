@@ -1,15 +1,58 @@
-{% extends '::base.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
 
 {% block body -%}
-    <h1>PlanDeTratamiento creation</h1>
 
-    {{ form(form) }}
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2> Crear Plan De Tratamiento </h2>
+            </div>
+            <center>
+                <div class="box-content">
+                    <table class="table table-bordered table-striped table-condensed">
+                        {{ form_start(form)}}
+                        {{form_errors(form)}}
+                        <tbody>
+                             <tr>
+                                <th style="width: 400px;"> Expediente</th>
+                                <td>  {{ form_errors(form.idexpediente) }}
+                                    {{form_widget(form.idexpediente)}}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> Fecha</th>
+                                <td>  {{ form_errors(form.fecha) }}
+                                    {{form_widget(form.fecha)}}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th style="width: 400px;"> Descripcion</th>
+                                <td>  {{ form_errors(form.descripcion) }}
+                                    {{form_widget(form.descripcion)}}</td>
+                            </tr>
+                            
+                            <tbody>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('plandetratamiento') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
-{% endblock %}
+                    </table>
+
+
+                    <table>
+                        <tr>
+
+                            <td> {{form_widget(form.submit)}}
+                            </td>
+                            <td> <a href="{{ path('plandetratamiento') }}" class="btn btn-primary btn-sm">
+                                    Volver
+                                </a>
+                            </td>
+
+                        </tr>
+                    </table>
+
+                    {{ form_end(form)}}
+            </center>
+        </div>
+
+
+    {% endblock %}
+    {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
