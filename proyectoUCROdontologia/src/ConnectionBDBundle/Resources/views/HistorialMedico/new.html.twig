@@ -1,17 +1,460 @@
 {% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
 {% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
-
+ 
 {% block body -%}
-    <h1>HistorialMedico creation</h1>
-
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('historialmedico') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
-{% endblock %}
-{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Crear historial médico</h2>
+            </div>
+            <center>
+                <div class="box-content">
+                    <table class="table table-bordered table-striped table-condensed">
+                        {{ form_start(form)}}
+                        {{form_errors(form)}}
+                        <tbody>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.dolorCabezaFrecuente) }}</th>
+                                <td>{{form_widget(form.dolorCabezaFrecuente)}}
+                                    {{ form_errors(form.dolorCabezaFrecuente) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historialDental) }}</th>
+                                <td>{{form_widget(form.historialDental)}}
+                                    {{ form_errors(form.historialDental) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.vertigo) }}</th>
+                                <td>{{form_widget(form.vertigo)}}
+                                    {{ form_errors(form.vertigo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.desmayo) }}</th>
+                                <td>{{form_widget(form.desmayo)}}
+                                    {{ form_errors(form.desmayo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.perdidaDeConsiencia) }}</th>
+                                <td>{{form_widget(form.perdidaDeConsiencia)}}
+                                    {{ form_errors(form.perdidaDeConsiencia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.problemasVisules) }}</th>
+                                <td>{{form_widget(form.problemasVisules)}}
+                                    {{ form_errors(form.problemasVisules) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.problemasAuditivos) }}</th>
+                                <td>{{form_widget(form.problemasAuditivos)}}
+                                    {{ form_errors(form.problemasAuditivos) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.sinusitis) }}</th>
+                                <td>{{form_widget(form.sinusitis)}}
+                                    {{ form_errors(form.sinusitis) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.obstruccionNasal) }}</th>
+                                <td>{{form_widget(form.obstruccionNasal)}}
+                                    {{ form_errors(form.obstruccionNasal) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.problemasTiroides) }}</th>
+                                <td>{{form_widget(form.problemasTiroides)}}
+                                    {{ form_errors(form.problemasTiroides) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.diabetes) }}</th>
+                                <td>{{form_widget(form.diabetes)}}
+                                    {{ form_errors(form.diabetes) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.cambiosInesperadosPeso) }}</th>
+                                <td>{{form_widget(form.cambiosInesperadosPeso)}}
+                                    {{ form_errors(form.cambiosInesperadosPeso) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.disnea) }}</th>
+                                <td>{{form_widget(form.disnea)}}
+                                    {{ form_errors(form.disnea) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.tos) }}</th>
+                                <td>{{form_widget(form.tos)}}
+                                    {{ form_errors(form.tos) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.tuberculosis) }}</th>
+                                <td>{{form_widget(form.tuberculosis)}}
+                                    {{ form_errors(form.tuberculosis) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.enfisemaPulmonar) }}</th>
+                                <td>{{form_widget(form.enfisemaPulmonar)}}
+                                    {{ form_errors(form.enfisemaPulmonar) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.asma) }}</th>
+                                <td>{{form_widget(form.asma)}}
+                                    {{ form_errors(form.asma) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.infartoMiocardio) }}</th>
+                                <td>{{form_widget(form.infartoMiocardio)}}
+                                    {{ form_errors(form.infartoMiocardio) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.insuficienciaCadiaca) }}</th>
+                                <td>{{form_widget(form.insuficienciaCadiaca)}}
+                                    {{ form_errors(form.insuficienciaCadiaca) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.hipertensionArterial) }}</th>
+                                <td>{{form_widget(form.hipertensionArterial)}}
+                                    {{ form_errors(form.hipertensionArterial) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.anginaDePecho) }}</th>
+                                <td>{{form_widget(form.anginaDePecho)}}
+                                    {{ form_errors(form.anginaDePecho) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.soploCardiaco) }}</th>
+                                <td>{{form_widget(form.soploCardiaco)}}
+                                    {{ form_errors(form.soploCardiaco) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.fiebreReumatica) }}</th>
+                                <td>{{form_widget(form.fiebreReumatica)}}
+                                    {{ form_errors(form.fiebreReumatica) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.lesionesCardiacasCongenitas) }}</th>
+                                <td>{{form_widget(form.lesionesCardiacasCongenitas)}}
+                                    {{ form_errors(form.lesionesCardiacasCongenitas) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.valvulasCardicasArtificiales) }}</th>
+                                <td>{{form_widget(form.valvulasCardicasArtificiales)}}
+                                    {{ form_errors(form.valvulasCardicasArtificiales) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.anemia) }}</th>
+                                <td>{{form_widget(form.anemia)}}
+                                    {{ form_errors(form.anemia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.tranfisiones) }}</th>
+                                <td>{{form_widget(form.tranfisiones)}}
+                                    {{ form_errors(form.tranfisiones) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.trobosis) }}</th>
+                                <td>{{form_widget(form.trobosis)}}
+                                    {{ form_errors(form.trobosis) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.anomalisasDeCelulasSangineas) }}</th>
+                                <td>{{form_widget(form.anomalisasDeCelulasSangineas)}}
+                                    {{ form_errors(form.anomalisasDeCelulasSangineas) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.hepatitis) }}</th>
+                                <td>{{form_widget(form.hepatitis)}}
+                                    {{ form_errors(form.hepatitis) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.ictericia) }}</th>
+                                <td>{{form_widget(form.ictericia)}}
+                                    {{ form_errors(form.ictericia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.ulceraGastrica) }}</th>
+                                <td>{{form_widget(form.ulceraGastrica)}}
+                                    {{ form_errors(form.ulceraGastrica) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.enfermedadDeTramisionSexual) }}</th>
+                                <td>{{form_widget(form.enfermedadDeTramisionSexual)}}
+                                    {{ form_errors(form.enfermedadDeTramisionSexual) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.paralisis) }}</th>
+                                <td>{{form_widget(form.paralisis)}}
+                                    {{ form_errors(form.paralisis) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.depresion) }}</th>
+                                <td>{{form_widget(form.depresion)}}
+                                    {{ form_errors(form.depresion) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.nerviosismo) }}</th>
+                                <td>{{form_widget(form.nerviosismo)}}
+                                    {{ form_errors(form.nerviosismo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.tension) }}</th>
+                                <td>{{form_widget(form.tension)}}
+                                    {{ form_errors(form.tension) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.hemorragias) }}</th>
+                                <td>{{form_widget(form.hemorragias)}}
+                                    {{ form_errors(form.hemorragias) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.artritis) }}</th>
+                                <td>{{form_widget(form.artritis)}}
+                                    {{ form_errors(form.artritis) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.reumatismo) }}</th>
+                                <td>{{form_widget(form.reumatismo)}}
+                                    {{ form_errors(form.reumatismo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.transplantes) }}</th>
+                                <td>{{form_widget(form.transplantes)}}
+                                    {{ form_errors(form.transplantes) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.alteracionesEnRinones) }}</th>
+                                <td>{{form_widget(form.alteracionesEnRinones)}}
+                                    {{ form_errors(form.alteracionesEnRinones) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.intoleranciaAAlimentos) }}</th>
+                                <td>{{form_widget(form.intoleranciaAAlimentos)}}
+                                    {{ form_errors(form.intoleranciaAAlimentos) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.mialgias) }}</th>
+                                <td>{{form_widget(form.mialgias)}}
+                                    {{ form_errors(form.mialgias) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.limitaionesDeMovimiento) }}</th>
+                                <td>{{form_widget(form.limitaionesDeMovimiento)}}
+                                    {{ form_errors(form.limitaionesDeMovimiento) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.trumatismoEnLaCara) }}</th>
+                                <td>{{form_widget(form.trumatismoEnLaCara)}}
+                                    {{ form_errors(form.trumatismoEnLaCara) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.amigdalitis) }}</th>
+                                <td>{{form_widget(form.amigdalitis)}}
+                                    {{ form_errors(form.amigdalitis) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.cancer) }}</th>
+                                <td>{{form_widget(form.cancer)}}
+                                    {{ form_errors(form.cancer) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.leucemia) }}</th>
+                                <td>{{form_widget(form.leucemia)}}
+                                    {{ form_errors(form.leucemia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.embarazo) }}</th>
+                                <td>{{form_widget(form.embarazo)}}
+                                    {{ form_errors(form.embarazo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.aa) }}</th>
+                                <td>{{form_widget(form.aa)}}
+                                    {{ form_errors(form.aa) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.aq) }}</th>
+                                <td>{{form_widget(form.aq)}}
+                                    {{ form_errors(form.aq) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.medicamentos) }}</th>
+                                <td>{{form_widget(form.medicamentos)}}
+                                    {{ form_errors(form.medicamentos) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historialFamiliarAfp) }}</th>
+                                <td>{{form_widget(form.historialFamiliarAfp)}}
+                                    {{ form_errors(form.historialFamiliarAfp) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historialFamiliarAfp) }}</th>
+                                <td>{{form_widget(form.historialFamiliarAfnp)}}
+                                    {{ form_errors(form.historialFamiliarAfnp) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historialSocialTipoDieta) }}</th>
+                                <td>{{form_widget(form.historialSocialTipoDieta)}}
+                                    {{ form_errors(form.historialSocialTipoDieta) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historialSocialTabaquismo) }}</th>
+                                <td>{{form_widget(form.historialSocialTabaquismo)}}
+                                    {{ form_errors(form.historialSocialTabaquismo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historialSocialAlcoholismo) }}</th>
+                                <td>{{form_widget(form.historialSocialAlcoholismo)}}
+                                    {{ form_errors(form.historialSocialAlcoholismo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historialSocialConsumoDrogas) }}</th>
+                                <td>{{form_widget(form.historialSocialConsumoDrogas)}}
+                                    {{ form_errors(form.historialSocialConsumoDrogas) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalUltimaVisita) }}</th>
+                                <td>{{form_widget(form.historiaDentalUltimaVisita)}}
+                                    {{ form_errors(form.historiaDentalUltimaVisita) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalTratamientoRecibido) }}</th>
+                                <td>{{form_widget(form.historiaDentalTratamientoRecibido)}}
+                                    {{ form_errors(form.historiaDentalTratamientoRecibido) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalUltimaRadiografia) }}</th>
+                                <td>{{form_widget(form.historiaDentalUltimaRadiografia)}}
+                                    {{ form_errors(form.historiaDentalUltimaRadiografia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalReaccionesAnestecia) }}</th>
+                                <td>{{form_widget(form.historiaDentalReaccionesAnestecia)}}
+                                    {{ form_errors(form.historiaDentalReaccionesAnestecia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalExperienciasDesagradables) }}</th>
+                                <td>{{form_widget(form.historiaDentalExperienciasDesagradables)}}
+                                    {{ form_errors(form.historiaDentalExperienciasDesagradables) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalFrecuendiaCepillado) }}</th>
+                                <td>{{form_widget(form.historiaDentalFrecuendiaCepillado)}}
+                                    {{ form_errors(form.historiaDentalFrecuendiaCepillado) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalTipoCepillo) }}</th>
+                                <td>{{form_widget(form.historiaDentalTipoCepillo)}}
+                                    {{ form_errors(form.historiaDentalTipoCepillo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalTecnicaCepillo) }}</th>
+                                <td>{{form_widget(form.historiaDentalTecnicaCepillo)}}
+                                    {{ form_errors(form.historiaDentalTecnicaCepillo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalFrecuenciaDeUsoHiloDental) }}</th>
+                                <td>{{form_widget(form.historiaDentalFrecuenciaDeUsoHiloDental)}}
+                                    {{ form_errors(form.historiaDentalFrecuenciaDeUsoHiloDental) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalTipoHiloDental) }}</th>
+                                <td>{{form_widget(form.historiaDentalTipoHiloDental)}}
+                                    {{ form_errors(form.historiaDentalTipoHiloDental) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalEnguajeBucal) }}</th>
+                                <td>{{form_widget(form.historiaDentalEnguajeBucal)}}
+                                    {{ form_errors(form.historiaDentalEnguajeBucal) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalDificultadParaAbrirBoca) }}</th>
+                                <td>{{form_widget(form.historiaDentalDificultadParaAbrirBoca)}}
+                                    {{ form_errors(form.historiaDentalDificultadParaAbrirBoca) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalRuidoMandubula) }}</th>
+                                <td>{{form_widget(form.historiaDentalRuidoMandubula)}}
+                                    {{ form_errors(form.historiaDentalRuidoMandubula) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalDislocamientoMandubula) }}</th>
+                                <td>{{form_widget(form.historiaDentalDislocamientoMandubula)}}
+                                    {{ form_errors(form.historiaDentalDislocamientoMandubula) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalDolorOido) }}</th>
+                                <td>{{form_widget(form.historiaDentalDolorOido)}}
+                                    {{ form_errors(form.historiaDentalDolorOido) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalDolorMasticar) }}</th>
+                                <td>{{form_widget(form.historiaDentalDolorMasticar)}}
+                                    {{ form_errors(form.historiaDentalDolorMasticar) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalCambiosMordida) }}</th>
+                                <td>{{form_widget(form.historiaDentalCambiosMordida)}}
+                                    {{ form_errors(form.historiaDentalCambiosMordida) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalDoloresDeCabeza) }}</th>
+                                <td>{{form_widget(form.historiaDentalDoloresDeCabeza)}}
+                                    {{ form_errors(form.historiaDentalDoloresDeCabeza) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalTraumaCabeza) }}</th>
+                                <td>{{form_widget(form.historiaDentalTraumaCabeza)}}
+                                    {{ form_errors(form.historiaDentalTraumaCabeza) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalArtritis) }}</th>
+                                <td>{{form_widget(form.historiaDentalArtritis)}}
+                                    {{ form_errors(form.historiaDentalArtritis) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalProblemaMasticar) }}</th>
+                                <td>{{form_widget(form.historiaDentalProblemaMasticar)}}
+                                    {{ form_errors(form.historiaDentalProblemaMasticar) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalProblemaAtm) }}</th>
+                                <td>{{form_widget(form.historiaDentalProblemaAtm)}}
+                                    {{ form_errors(form.historiaDentalProblemaAtm) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.historiaDentalRechinadoDientes) }}</th>
+                                <td>{{form_widget(form.historiaDentalRechinadoDientes)}}
+                                    {{ form_errors(form.historiaDentalRechinadoDientes) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.vih) }}</th>
+                                <td>{{form_widget(form.vih)}}
+                                    {{ form_errors(form.vih) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.convulsiones) }}</th>
+                                <td>{{form_widget(form.convulsiones)}}
+                                    {{ form_errors(form.convulsiones) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.idexpediente) }}</th>
+                                <td>{{form_widget(form.idexpediente)}}
+                                    {{ form_errors(form.idexpediente) }}</td>
+                            </tr>
+                    </table>          
+                </div>
+                <table>
+                    <tr>
+ 
+                        <td> {{form_widget(form.submit)}}
+                        </td>
+                        <td>  <a href="{{ path('historialmedico') }}" class="btn btn-primary btn-sm">
+                                Volver
+                            </a>
+                        </td>
+ 
+                    </tr>
+                </table>
+ 
+                {{ form_end(form)}}
+            </center>
+        </div>
+    {% endblock %}
+    {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
