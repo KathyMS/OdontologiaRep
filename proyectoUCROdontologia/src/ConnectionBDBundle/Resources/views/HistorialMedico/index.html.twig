@@ -1,12 +1,12 @@
 {% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
 {% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
- 
+
 {% block body -%}
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
                 <h2>Historial Médico</h2>
- 
+
             </div>
             <div class="box-content">
                 <table class="table table-bordered table-striped table-condensed">
@@ -16,23 +16,22 @@
                             <th>Alcoholismo</th>
                             <th>Dolor al masticar</th>
                             <th>Rechinado de dientes</th>
- 
+
                         </tr>
                     </thead>
                     <tbody>
                         {% for entity in entities %}
                             <tr>
                                 <td><a href="{{ path('historialmedico_show', { 'id': entity.id }) }}">{{ entity.historialSocialTabaquismo }}</a></td>
-                                <td>{{ entity.historialSocialTabaquismo }}</td>
                                 <td>{{ entity.historialSocialAlcoholismo }}</td>
                                 <td>{{ entity.historiaDentalDolorMasticar }}</td>
                                 <td>{{ entity.historiaDentalRechinadoDientes }}</td>
-                               
+                                <td>
                                     <ul>
                                         <a href="{{ path('historialmedico_show', { 'id': entity.id }) }}" class="btn btn-primary btn-sm">Ver</a>
- 
+
                                         <a href="{{ path('historialmedico_edit', { 'id': entity.id }) }}" class="btn btn-primary btn-sm">Editar</a>
- 
+
                                     </ul>
                                 </td>
                             </tr>
@@ -50,17 +49,17 @@
                         <li><a href="#">4</a></li>
                         <li><a href="#">Siguiente</a></li>
                     </ul>
- 
- 
+
+
                     <ul>
- 
+
                         <a href="{{ path('historialmedico_new') }}">
-                            Crear un nuevo odontólogo
+                            Crear un nuevo historial médico
                         </a>
- 
+
                     </ul>
                 </center>
- 
- 
+
+
             {% endblock %}
             {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

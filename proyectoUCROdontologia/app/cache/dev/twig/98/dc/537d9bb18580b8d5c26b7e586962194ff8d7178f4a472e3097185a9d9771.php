@@ -25,17 +25,25 @@ class __TwigTemplate_98dc537d9bb18580b8d5c26b7e586962194ff8d7178f4a472e3097185a9
                     </div>
                     <ul class=\"nav nav-pills nav-stacked main-menu\">
                         <li class=\"nav-header\">Menu Principal</li>
-                        <li><a class=\"ajax-link\" href=\"index.html\"><i class=\"glyphicon glyphicon-home\"></i><span> Inicio</span></a>
+                        <li><a class=\"ajax-link\" href=\"";
+        // line 10
+        echo $this->env->getExtension('routing')->getUrl("inicio");
+        echo "\"><i class=\"glyphicon glyphicon-home\"></i><span> Inicio</span></a>
                         </li>
+                         <li><a class=\"ajax-link\" href=\"";
+        // line 12
+        echo $this->env->getExtension('routing')->getUrl("paciente");
+        echo "\"><i
+                                    class=\"glyphicon glyphicon-user\"></i><span> Paciente</span></a></li>
                         <li><a class=\"ajax-link\" href=\"calendar.html\"><i class=\"glyphicon glyphicon-calendar\"></i><span> Citas</span></a>
                         </li>
                         <li><a class=\"ajax-link\" href=\"";
-        // line 14
+        // line 16
         echo $this->env->getExtension('routing')->getUrl("odontologo");
         echo "\"><i
                                     class=\"glyphicon glyphicon-user\"></i><span> Odontologos</span></a></li>
                         <li><a class=\"ajax-link\" href=\"";
-        // line 16
+        // line 18
         echo $this->env->getExtension('routing')->getUrl("tratamientogeneral");
         echo "\"><i class=\"glyphicon glyphicon-plus-sign\"></i><span> Tratamientos</span></a>
                         </li>
@@ -55,7 +63,7 @@ class __TwigTemplate_98dc537d9bb18580b8d5c26b7e586962194ff8d7178f4a472e3097185a9
 <div class=\" row\">
     <div class=\"col-md-3 col-sm-3 col-xs-6\">
         <a data-toggle=\"tooltip\" title=\"6 new members.\" class=\"well top-block\" href=\"";
-        // line 33
+        // line 35
         echo $this->env->getExtension('routing')->getUrl("paciente");
         echo "\">
             <i class=\"glyphicon glyphicon-user blue\"></i>
@@ -68,7 +76,7 @@ class __TwigTemplate_98dc537d9bb18580b8d5c26b7e586962194ff8d7178f4a472e3097185a9
 
     <div class=\"col-md-3 col-sm-3 col-xs-6\">
         <a data-toggle=\"tooltip\" title=\"4 new pro members.\" class=\"well top-block\" href=\"";
-        // line 43
+        // line 45
         echo $this->env->getExtension('routing')->getUrl("encargado");
         echo "\">
             <i class=\"glyphicon glyphicon-star green\"></i>
@@ -81,7 +89,7 @@ class __TwigTemplate_98dc537d9bb18580b8d5c26b7e586962194ff8d7178f4a472e3097185a9
 
     <div class=\"col-md-3 col-sm-3 col-xs-6\">
         <a data-toggle=\"tooltip\" title=\"\$34 new sales.\" class=\"well top-block\" href=\"";
-        // line 53
+        // line 55
         echo $this->env->getExtension('routing')->getUrl("historialmedico");
         echo "\">
             <i class=\"glyphicon glyphicon-shopping-cart yellow\"></i>
@@ -93,10 +101,13 @@ class __TwigTemplate_98dc537d9bb18580b8d5c26b7e586962194ff8d7178f4a472e3097185a9
     </div>
 
     <div class=\"col-md-3 col-sm-3 col-xs-6\">
-        <a data-toggle=\"tooltip\" title=\"12 new messages.\" class=\"well top-block\" href=\"#\">
+        <a data-toggle=\"tooltip\" title=\"12 new messages.\" class=\"well top-block\" href=\"";
+        // line 65
+        echo $this->env->getExtension('routing')->getUrl("examenradiologico");
+        echo "\">
             <i class=\"glyphicon glyphicon-envelope red\"></i>
 
-            <div>Messages</div>
+            <div>Examen Radiologico</div>
            
            
         </a>
@@ -120,6 +131,6 @@ class __TwigTemplate_98dc537d9bb18580b8d5c26b7e586962194ff8d7178f4a472e3097185a9
 
     public function getDebugInfo()
     {
-        return array (  85 => 53,  72 => 43,  59 => 33,  39 => 16,  34 => 14,  19 => 1,);
+        return array (  106 => 65,  93 => 55,  80 => 45,  67 => 35,  47 => 18,  42 => 16,  35 => 12,  30 => 10,  19 => 1,);
     }
 }
