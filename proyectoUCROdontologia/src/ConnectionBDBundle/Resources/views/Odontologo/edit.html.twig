@@ -41,17 +41,29 @@
                         </tbody>
                     </table>
                 </div>
+                <table>
+                    <tr>
 
-                {{ form_end(edit_form)}}
+                        <td> {{form_widget(edit_form.submit)}}
+                        </td>
 
+
+                        {{ form_end(edit_form)}}
+                        <td>  <a href="{{ path('odontologo') }}" class="btn btn-primary btn-sm">
+                                Volver
+                            </a>
+                        </td>
+                        {{ form_start(delete_form)}}
+                        <td > 
+                            {{ form_widget(delete_form.submit) }}
+                        </td>
+                        {{ form_end(delete_form)}}
+
+                    </tr>
+                </table>
             </center>
-
-            <a href="{{ path('odontologo') }}" class="btn btn-primary btn-sm">
-                Volver
-            </a>
-
-            {{ form(delete_form) }}</li>
+        </div>
 
 
-        {% endblock %}
-        {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
+    {% endblock %}
+    {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

@@ -22,7 +22,7 @@ class __TwigTemplate_f9fc835b89e9157f6667a89ce7ffcf284ee77a430e2bf47a6a812b346ec
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_menu_vertical.html.twig")->display($context);
         // line 3
         $this->displayBlock('body', $context, $blocks);
-        // line 61
+        // line 64
         echo "        ";
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
@@ -90,7 +90,7 @@ class __TwigTemplate_f9fc835b89e9157f6667a89ce7ffcf284ee77a430e2bf47a6a812b346ec
                                 Volver
                             </a>
                         </td>
-                        
+
                         <td>
                             <a href=\"";
         // line 47
@@ -99,12 +99,21 @@ class __TwigTemplate_f9fc835b89e9157f6667a89ce7ffcf284ee77a430e2bf47a6a812b346ec
                                 Editar
                             </a>
                         </td>
-                        <td>
-                            ";
+
+                        ";
         // line 52
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
         echo "
+                        <td>      
+                            ";
+        // line 54
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'widget');
+        echo " 
                         </td>
+                        ";
+        // line 56
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
+        echo "
                     </ul>
                     </td>
                 </table>
@@ -126,6 +135,6 @@ class __TwigTemplate_f9fc835b89e9157f6667a89ce7ffcf284ee77a430e2bf47a6a812b346ec
 
     public function getDebugInfo()
     {
-        return array (  105 => 52,  97 => 47,  88 => 41,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  34 => 4,  31 => 3,  26 => 61,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  115 => 56,  110 => 54,  105 => 52,  97 => 47,  88 => 41,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  34 => 4,  31 => 3,  26 => 64,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

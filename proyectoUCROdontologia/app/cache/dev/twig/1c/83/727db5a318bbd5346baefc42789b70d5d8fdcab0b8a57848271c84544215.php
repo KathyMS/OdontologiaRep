@@ -25,8 +25,8 @@ class __TwigTemplate_1c83727db5a318bbd5346baefc42789b70d5d8fdcab0b8a57848271c845
 ";
         // line 4
         $this->displayBlock('body', $context, $blocks);
-        // line 57
-        echo "        ";
+        // line 69
+        echo "    ";
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
 
@@ -124,28 +124,49 @@ class __TwigTemplate_1c83727db5a318bbd5346baefc42789b70d5d8fdcab0b8a57848271c845
                         </tbody>
                     </table>
                 </div>
+                <table>
+                    <tr>
 
-                ";
-        // line 45
+                        <td> ";
+        // line 47
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "submit", array()), 'widget');
+        echo "
+                        </td>
+
+
+                        ";
+        // line 51
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
         echo "
-
-            </center>
-
-            <a href=\"";
-        // line 49
+                        <td>  <a href=\"";
+        // line 52
         echo $this->env->getExtension('routing')->getPath("odontologo");
         echo "\" class=\"btn btn-primary btn-sm\">
-                Volver
-            </a>
+                                Volver
+                            </a>
+                        </td>
+                        ";
+        // line 56
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
+        echo "
+                        <td > 
+                            ";
+        // line 58
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), "submit", array()), 'widget');
+        echo "
+                        </td>
+                        ";
+        // line 60
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
+        echo "
 
-            ";
-        // line 53
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
-        echo "</li>
+                    </tr>
+                </table>
+            </center>
+        </div>
 
 
-        ";
+    ";
     }
 
     public function getTemplateName()
@@ -160,6 +181,6 @@ class __TwigTemplate_1c83727db5a318bbd5346baefc42789b70d5d8fdcab0b8a57848271c845
 
     public function getDebugInfo()
     {
-        return array (  144 => 53,  137 => 49,  130 => 45,  121 => 39,  117 => 38,  113 => 37,  107 => 34,  103 => 33,  99 => 32,  93 => 29,  89 => 28,  85 => 27,  79 => 24,  75 => 23,  71 => 22,  65 => 19,  61 => 18,  57 => 17,  51 => 14,  47 => 13,  37 => 5,  34 => 4,  29 => 57,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  160 => 60,  155 => 58,  150 => 56,  143 => 52,  139 => 51,  132 => 47,  121 => 39,  117 => 38,  113 => 37,  107 => 34,  103 => 33,  99 => 32,  93 => 29,  89 => 28,  85 => 27,  79 => 24,  75 => 23,  71 => 22,  65 => 19,  61 => 18,  57 => 17,  51 => 14,  47 => 13,  37 => 5,  34 => 4,  29 => 69,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
     }
 }
