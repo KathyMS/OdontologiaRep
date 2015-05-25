@@ -146,9 +146,10 @@ class __TwigTemplate_19d50b3c87b59bb1451d336d3a4394d99aab848e6bafae2418e8dd8b388
                     <span class=\"caret\"></span>
                 </button>
                 <ul class=\"dropdown-menu\">
-                    <li><a href=\"#\">Perfil</a></li>
-                    <li class=\"divider\"></li>
-                    <li><a href=\"login.html\">Salir</a></li>
+                    <li><a href=\"";
+        // line 75
+        echo $this->env->getExtension('routing')->getUrl("login");
+        echo "\">Salir</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -191,6 +192,6 @@ class __TwigTemplate_19d50b3c87b59bb1451d336d3a4394d99aab848e6bafae2418e8dd8b388
 
     public function getDebugInfo()
     {
-        return array (  138 => 65,  131 => 63,  105 => 40,  99 => 37,  95 => 36,  91 => 35,  87 => 34,  83 => 33,  79 => 32,  75 => 31,  71 => 30,  67 => 29,  63 => 28,  59 => 27,  55 => 26,  51 => 25,  47 => 24,  42 => 22,  19 => 1,);
+        return array (  151 => 75,  138 => 65,  131 => 63,  105 => 40,  99 => 37,  95 => 36,  91 => 35,  87 => 34,  83 => 33,  79 => 32,  75 => 31,  71 => 30,  67 => 29,  63 => 28,  59 => 27,  55 => 26,  51 => 25,  47 => 24,  42 => 22,  19 => 1,);
     }
 }

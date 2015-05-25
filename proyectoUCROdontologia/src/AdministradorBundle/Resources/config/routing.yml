@@ -1,3 +1,6 @@
 inicio:
     path:     /inicio
     defaults: { _controller: AdministradorBundle:Default:inicio }
+login:
+    path:     /login
+    defaults: { _controller: AdministradorBundle:Default:login }
