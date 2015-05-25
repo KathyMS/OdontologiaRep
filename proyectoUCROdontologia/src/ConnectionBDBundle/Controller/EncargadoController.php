@@ -19,15 +19,25 @@ class EncargadoController extends Controller
      * Lists all Encargado entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        $session=$request->getSession();
+        if($session->has("id")){
+             $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('ConnectionBDBundle:Encargado')->findAll();
 
         return $this->render('ConnectionBDBundle:Encargado:index.html.twig', array(
             'entities' => $entities,
         ));
+        }else{
+             $this->get('session')->getFlashBag()->add(
+                   'mensaje',
+                   'Debe estar logueado para ver este contenido'
+           );
+               return $this->redirect($this->generateUrl('login'));
+        }
+       
     }
     /**
      * Creates a new Encargado entity.
@@ -91,31 +101,41 @@ class EncargadoController extends Controller
      * Finds and displays a Encargado entity.
      *
      */
-    public function showAction($id)
+    public function showAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+         $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:Encargado')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:Encargado')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Encargado entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Encargado entity.');
+            }
+
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:Encargado:show.html.twig', array(
+                        'entity' => $entity,
+                        'delete_form' => $deleteForm->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:Encargado:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**
      * Displays a form to edit an existing Encargado entity.
      *
      */
-    public function editAction($id)
+    public function editAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+           $session = $request->getSession();
+        if ($session->has("id")) {
+           $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('ConnectionBDBundle:Encargado')->find($id);
 
@@ -131,6 +151,13 @@ class EncargadoController extends Controller
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
+       
     }
 
     /**

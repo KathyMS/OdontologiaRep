@@ -4,3 +4,6 @@ inicio:
 login:
     path:     /login
     defaults: { _controller: AdministradorBundle:Default:login }
+logout:
+    path:     /logout
+    defaults: { _controller: AdministradorBundle:Default:logout }

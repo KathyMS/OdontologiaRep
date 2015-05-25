@@ -148,7 +148,7 @@ class __TwigTemplate_19d50b3c87b59bb1451d336d3a4394d99aab848e6bafae2418e8dd8b388
                 <ul class=\"dropdown-menu\">
                     <li><a href=\"";
         // line 75
-        echo $this->env->getExtension('routing')->getUrl("login");
+        echo $this->env->getExtension('routing')->getUrl("logout");
         echo "\">Salir</a></li>
                 </ul>
             </div>

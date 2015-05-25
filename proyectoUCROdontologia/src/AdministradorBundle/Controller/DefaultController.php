@@ -7,9 +7,19 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    public function inicioAction()
+    public function inicioAction(Request $request)
     {
-        return $this->render('AdministradorBundle:Default:index.html.twig');
+        $session=$request->getSession();
+        if($session->has("id")){
+            return $this->render('AdministradorBundle:Default:index.html.twig');
+        }else{
+             $this->get('session')->getFlashBag()->add(
+                   'mensaje',
+                   'Debe estar logueado para ver este contenido'
+           );
+               return $this->redirect($this->generateUrl('login'));
+        }
+       
     }
     
     public function loginAction(Request $request)
@@ -22,7 +32,10 @@ class DefaultController extends Controller
            if($user){
                $session=$request->getSession();
                $session->set("id",$user->getId());
-               $session->set("user",$user->getNombreUsuario());
+               $session->set("user",$user->getUser());
+               
+               if(strcasecmp($user->getUser(),"administrador")==0 && strcasecmp($user->getPassword(),$pass)==0){
+               return $this->redirect($this->generateUrl('inicio'));}
            }else{
                $this->get('session')->getFlashBag()->add(
                    'mensaje',
@@ -35,4 +48,14 @@ class DefaultController extends Controller
         }
         return $this->render('AdministradorBundle:Default:inicio_de_sesion.html.twig');
     }
+    
+     public function logoutAction(Request $request)
+    {
+        $session=$request->getSession();
+        $session->clear();
+       
+               return $this->redirect($this->generateUrl('login'));
+        
+    }
+    
 }

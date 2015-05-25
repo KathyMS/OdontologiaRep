@@ -171,9 +171,7 @@ class __TwigTemplate_cc773776fa8a4c22fa67141f9794c059e02b745af24b638645e1520fe8a
                     </div>
                     <div class=\"clearfix\"></div>
 
-                    <div class=\"input-prepend\">
-                        <label class=\"remember\" for=\"remember\"><input type=\"checkbox\" id=\"remember\"> Recuerdame me</label>
-                    </div>
+                  
                     <div class=\"clearfix\"></div>
 
                     <p class=\"center col-md-5\">
@@ -191,71 +189,71 @@ class __TwigTemplate_cc773776fa8a4c22fa67141f9794c059e02b745af24b638645e1520fe8a
 <!-- external javascript -->
 
 <script src=\"";
-        // line 112
+        // line 110
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/bower_components/bootstrap/dist/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
 <!-- library for cookie management -->
 <!-- calender plugin -->
 <script src='";
-        // line 116
+        // line 114
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/bower_components/moment/min/moment.min.js"), "html", null, true);
         echo "'></script>
 <script src='";
-        // line 117
+        // line 115
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/bower_components/fullcalendar/dist/fullcalendar.min.js"), "html", null, true);
         echo "'></script>
 <!-- data table plugin -->
 <script src='";
-        // line 119
+        // line 117
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/js/jquery.dataTables.min.js"), "html", null, true);
         echo "'></script>
 
 <!-- select or dropdown enhancer -->
 <script src=\"";
-        // line 122
+        // line 120
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/bower_components/chosen/chosen.jquery.min.js"), "html", null, true);
         echo "\"></script>
 <!-- plugin for gallery image view -->
 <script src=\"";
-        // line 124
+        // line 122
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/bower_components/colorbox/jquery.colorbox-min.js"), "html", null, true);
         echo "\"></script>
 <!-- notification plugin -->
 <script src=\"";
-        // line 126
+        // line 124
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/js/jquery.noty.js"), "html", null, true);
         echo "\"></script>
 <!-- library for making tables responsive -->
 <!-- tour plugin -->
 <script src=\"";
-        // line 129
+        // line 127
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"), "html", null, true);
         echo "\"></script>
 <!-- star rating plugin -->
 <script src=\"";
-        // line 131
+        // line 129
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/js/jquery.raty.min.js"), "html", null, true);
         echo "\"></script>
 <!-- for iOS style toggle switch -->
 <!-- autogrowing textarea plugin -->
 <script src=\"";
-        // line 134
+        // line 132
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/js/jquery.autogrow-textarea.js"), "html", null, true);
         echo "\"></script>
 <!-- multiple file upload plugin -->
 <script src=\"";
-        // line 136
+        // line 134
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/js/jquery.uploadify-3.1.min.js"), "html", null, true);
         echo "\"></script>
 <!-- history.js for cross-browser state change on ajax -->
 <script src=\"";
-        // line 138
+        // line 136
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/js/jquery.history.js"), "html", null, true);
         echo "\"></script>
 <!-- application script for Charisma demo -->
 <script src=\"";
-        // line 140
+        // line 138
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/js/charisma.js"), "html", null, true);
         echo "\"></script>
 
@@ -277,6 +275,6 @@ class __TwigTemplate_cc773776fa8a4c22fa67141f9794c059e02b745af24b638645e1520fe8a
 
     public function getDebugInfo()
     {
-        return array (  259 => 140,  254 => 138,  249 => 136,  244 => 134,  238 => 131,  233 => 129,  227 => 126,  222 => 124,  217 => 122,  211 => 119,  206 => 117,  202 => 116,  195 => 112,  159 => 79,  153 => 75,  143 => 71,  139 => 69,  135 => 68,  106 => 42,  100 => 39,  96 => 38,  92 => 37,  88 => 36,  84 => 35,  80 => 34,  76 => 33,  72 => 32,  68 => 31,  64 => 30,  60 => 29,  56 => 28,  52 => 27,  48 => 26,  43 => 24,  19 => 2,);
+        return array (  257 => 138,  252 => 136,  247 => 134,  242 => 132,  236 => 129,  231 => 127,  225 => 124,  220 => 122,  215 => 120,  209 => 117,  204 => 115,  200 => 114,  193 => 110,  159 => 79,  153 => 75,  143 => 71,  139 => 69,  135 => 68,  106 => 42,  100 => 39,  96 => 38,  92 => 37,  88 => 36,  84 => 35,  80 => 34,  76 => 33,  72 => 32,  68 => 31,  64 => 30,  60 => 29,  56 => 28,  52 => 27,  48 => 26,  43 => 24,  19 => 2,);
     }
 }
