@@ -1,0 +1,155 @@
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_vertical.html.twig' %}
+
+{% block body -%}
+     <div class="box col-md-12">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Crear Vigilancia Epidemiologica</h2>
+                </div>
+                <center>
+                    <div class="box-content">
+                        <table class="table table-bordered table-striped table-condensed">
+                            {{ form_start(form)}}
+                            {{form_errors(form)}}
+                             <tbody>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.fecha) }}</th>
+                                <td>{{form_widget(form.fecha)}}
+                                    {{ form_errors(form.fecha) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.tipoPaciente) }}</th>
+                                <td>{{form_widget(form.tipoPaciente)}}
+                                    {{ form_errors(form.tipoPaciente) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.condicionMotora) }}</th>
+                                <td>{{form_widget(form.condicionMotora)}}
+                                    {{ form_errors(form.condicionMotora) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.placaDentobacteriana) }}</th>
+                                <td>{{form_widget(form.placaDentobacteriana)}}
+                                    {{ form_errors(form.placaDentobacteriana) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(form.placaDentobacterianaPorcentaje) }}</th>
+                                <td>{{form_widget(form.placaDentobacterianaPorcentaje)}}
+                                    {{ form_errors(form.placaDentobacterianaPorcentaje) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(form.calculoDental) }}</th>
+                                <td>{{form_widget(form.calculoDental)}}
+                                    {{ form_errors(form.calculoDental) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(form.cariesActiva) }}</th>
+                                <td>{{form_widget(form.cariesActiva)}}
+                                    {{ form_errors(form.cariesActiva) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.cariesActivaNumero) }}</th>
+                                <td>{{form_widget(form.cariesActivaNumero)}}
+                                    {{ form_errors(form.cariesActivaNumero) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.fisurasProfundas) }}</th>
+                                <td>{{form_widget(form.fisurasProfundas)}}
+                                    {{ form_errors(form.fisurasProfundas) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(form.fisurasProfundasNumero) }}</th>
+                                <td>{{form_widget(form.fisurasProfundasNumero)}}
+                                    {{ form_errors(form.fisurasProfundasNumero) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(form.restauracionesDesajustadas) }}</th>
+                                <td>{{form_widget(form.restauracionesDesajustadas)}}
+                                    {{ form_errors(form.restauracionesDesajustadas) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.restauracionesDesajustadasNumero) }}</th>
+                                <td>{{form_widget(form.restauracionesDesajustadasNumero)}}
+                                    {{ form_errors(form.restauracionesDesajustadasNumero) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.sangradoEspontaneo) }}</th>
+                                <td>{{form_widget(form.sangradoEspontaneo)}}
+                                    {{ form_errors(form.sangradoEspontaneo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.sangradoAlSondeo) }}</th>
+                                <td>{{form_widget(form.sangradoAlSondeo)}}
+                                    {{ form_errors(form.sangradoAlSondeo) }}</td>
+                            </tr>
+                              <tr>
+                                <th style="width: 400px;"> {{ form_label(form.sangradoAlSondeoPorcentaje) }}</th>
+                                <td>{{form_widget(form.sangradoAlSondeoPorcentaje)}}
+                                    {{ form_errors(form.sangradoAlSondeoPorcentaje) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(form.ausenciaPiezasCaries) }}</th>
+                                <td>{{form_widget(form.ausenciaPiezasCaries)}}
+                                    {{ form_errors(form.ausenciaPiezasCaries) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.ausenciaPiezasCariesNumero) }}</th>
+                                <td>{{form_widget(form.ausenciaPiezasCariesNumero)}}
+                                    {{ form_errors(form.ausenciaPiezasCariesNumero) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.tipoOclusion) }}</th>
+                                <td>{{form_widget(form.tipoOclusion)}}
+                                    {{ form_errors(form.tipoOclusion) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.necesidadesQuirurgicas) }}</th>
+                                <td>{{form_widget(form.necesidadesQuirurgicas)}}
+                                    {{ form_errors(form.necesidadesQuirurgicas) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.fuma) }}</th>
+                                <td>{{form_widget(form.fuma)}}
+                                    {{ form_errors(form.fuma) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.instruccionesFisioterapia) }}</th>
+                                <td>{{form_widget(form.instruccionesFisioterapia)}}
+                                    {{ form_errors(form.instruccionesFisioterapia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.odontograma) }}</th>
+                                <td>{{form_widget(form.odontograma)}}
+                                    {{ form_errors(form.odontograma) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(form.idexpediente) }}</th>
+                                <td>{{form_widget(form.idexpediente)}}
+                                    {{ form_errors(form.idexpediente) }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                 <table>
+                    <tr>
+
+                        <td> {{form_widget(form.submit)}}
+                        </td>
+
+
+                        {{ form_end(form)}}
+                        <td>  <a href="{{ path('vigilanciaepidemiologica') }}" class="btn btn-primary btn-sm">
+                                Volver
+                            </a>
+                        </td>
+                        
+                    </tr>
+                </table>
+             {{ form_end(form)}}
+                </center>
+            </div>
+{% endblock %}
+{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
+

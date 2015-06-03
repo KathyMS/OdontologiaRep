@@ -1,0 +1,30 @@
+vigilanciaepidemiologica:
+    path:     /
+    defaults: { _controller: "ConnectionBDBundle:VigilanciaEpidemiologica:index" }
+
+vigilanciaepidemiologica_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConnectionBDBundle:VigilanciaEpidemiologica:show" }
+
+vigilanciaepidemiologica_new:
+    path:     /new
+    defaults: { _controller: "ConnectionBDBundle:VigilanciaEpidemiologica:new" }
+
+vigilanciaepidemiologica_create:
+    path:     /create
+    defaults: { _controller: "ConnectionBDBundle:VigilanciaEpidemiologica:create" }
+    requirements: { _method: post }
+
+vigilanciaepidemiologica_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConnectionBDBundle:VigilanciaEpidemiologica:edit" }
+
+vigilanciaepidemiologica_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConnectionBDBundle:VigilanciaEpidemiologica:update" }
+    requirements: { _method: post|put }
+
+vigilanciaepidemiologica_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConnectionBDBundle:VigilanciaEpidemiologica:delete" }
+    requirements: { _method: post|delete }

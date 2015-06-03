@@ -1,3 +1,7 @@
+connection_bd_vigilanciaepidemiologica:
+    resource: "@ConnectionBDBundle/Resources/config/routing/vigilanciaepidemiologica.yml"
+    prefix:   /vigilanciaepidemiologica
+
 connection_bd_examenradiologico:
     resource: "@ConnectionBDBundle/Resources/config/routing/examenradiologico.yml"
     prefix:   /examenradiologico

@@ -1,0 +1,134 @@
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_vertical.html.twig' %}
+
+{% block body -%}
+     <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Vigilancia Epidemiologica</h2>
+            </div>
+            <div class="box-content">
+                <table class="table table-bordered table-striped table-condensed">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ entity.fecha|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Tipopaciente</th>
+                <td>{{ entity.tipoPaciente }}</td>
+            </tr>
+            <tr>
+                <th>Condicionmotora</th>
+                <td>{{ entity.condicionMotora }}</td>
+            </tr>
+            <tr>
+                <th>Placadentobacteriana</th>
+                <td>{{ entity.placaDentobacteriana }}</td>
+            </tr>
+            <tr>
+                <th>Placadentobacterianaporcentaje</th>
+                <td>{{ entity.placaDentobacterianaPorcentaje }}</td>
+            </tr>
+            <tr>
+                <th>Calculodental</th>
+                <td>{{ entity.calculoDental }}</td>
+            </tr>
+            <tr>
+                <th>Cariesactiva</th>
+                <td>{{ entity.cariesActiva }}</td>
+            </tr>
+            <tr>
+                <th>Cariesactivanumero</th>
+                <td>{{ entity.cariesActivaNumero }}</td>
+            </tr>
+            <tr>
+                <th>Fisurasprofundas</th>
+                <td>{{ entity.fisurasProfundas }}</td>
+            </tr>
+            <tr>
+                <th>Fisurasprofundasnumero</th>
+                <td>{{ entity.fisurasProfundasNumero }}</td>
+            </tr>
+            <tr>
+                <th>Restauracionesdesajustadas</th>
+                <td>{{ entity.restauracionesDesajustadas }}</td>
+            </tr>
+            <tr>
+                <th>Restauracionesdesajustadasnumero</th>
+                <td>{{ entity.restauracionesDesajustadasNumero }}</td>
+            </tr>
+            <tr>
+                <th>Sangradoespontaneo</th>
+                <td>{{ entity.sangradoEspontaneo }}</td>
+            </tr>
+            <tr>
+                <th>Sangradoalsondeo</th>
+                <td>{{ entity.sangradoAlSondeo }}</td>
+            </tr>
+            <tr>
+                <th>Sangradoalsondeoporcentaje</th>
+                <td>{{ entity.sangradoAlSondeoPorcentaje }}</td>
+            </tr>
+            <tr>
+                <th>Ausenciapiezascaries</th>
+                <td>{{ entity.ausenciaPiezasCaries }}</td>
+            </tr>
+            <tr>
+                <th>Ausenciapiezascariesnumero</th>
+                <td>{{ entity.ausenciaPiezasCariesNumero }}</td>
+            </tr>
+            <tr>
+                <th>Tipooclusion</th>
+                <td>{{ entity.tipoOclusion }}</td>
+            </tr>
+            <tr>
+                <th>Necesidadesquirurgicas</th>
+                <td>{{ entity.necesidadesQuirurgicas }}</td>
+            </tr>
+            <tr>
+                <th>Fuma</th>
+                <td>{{ entity.fuma }}</td>
+            </tr>
+            <tr>
+                <th>Instruccionesfisioterapia</th>
+                <td>{{ entity.instruccionesFisioterapia }}</td>
+            </tr>
+            <tr>
+                <th>Odontograma</th>
+                <td>{{ entity.odontograma }}</td>
+            </tr>
+        </tbody>
+    </table>
+             <center>
+                    <table>
+
+                        <ul class="record_actions">
+                            <td>
+                                <a href="{{ path('vigilanciaepidemiologica') }}"class="btn btn-primary btn-sm">
+                                    Volver
+                                </a>
+                            </td>
+
+                            <td>
+                                <a href="{{ path('vigilanciaepidemiologica_edit', { 'id': entity.id }) }}"class="btn btn-primary btn-sm">
+                                    Editar
+                                </a>
+                            </td>
+                            </td>
+                            {{ form_start(delete_form)}}
+                            <td > 
+                                {{ form_widget(delete_form.submit) }}
+                            </td>
+                            {{ form_end(delete_form)}}
+                        </ul>
+                        </td>
+                    </table>
+                </center>  
+            </div>
+{% endblock %}
+{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

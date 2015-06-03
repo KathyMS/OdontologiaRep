@@ -1,0 +1,59 @@
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_vertical.html.twig' %}
+
+{% block body -%}
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Lista de vigilancia epidemiologica</h2>
+
+            </div>
+            <div class="box-content">
+
+                <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fecha</th>
+                <th>Tipopaciente</th>
+                <th>Placadentobacteriana</th>
+                <th>Calculodental</th>
+                <th>Cariesactiva</th>
+                <th>Ausenciapiezascaries</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('vigilanciaepidemiologica_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ entity.tipoPaciente }}</td>
+                <td>{{ entity.placaDentobacteriana }}</td>
+                <td>{{ entity.calculoDental }}</td>
+                <td>{{ entity.cariesActiva }}</td>
+                <td>{{ entity.ausenciaPiezasCaries }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('vigilanciaepidemiologica_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('vigilanciaepidemiologica_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('vigilanciaepidemiologica_new') }}">
+                Crear un nueva vigilancia epidemiologica
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
+ {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

@@ -1,0 +1,170 @@
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_vertical.html.twig' %}
+
+{% block body -%}
+      <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Editar Vigilancia Epidemiologica</h2>
+            </div>
+            <center>
+                <div class="box-content">
+                    <table class="table table-bordered table-striped table-condensed">
+                        {{ form_start(edit_form)}}
+                        {{form_errors(edit_form)}}
+                        <tbody>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.fecha) }}</th>
+                                <td>{{form_widget(edit_form.fecha)}}
+                                    {{ form_errors(edit_form.fecha) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.tipoPaciente) }}</th>
+                                <td>{{form_widget(edit_form.tipoPaciente)}}
+                                    {{ form_errors(edit_form.tipoPaciente) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.condicionMotora) }}</th>
+                                <td>{{form_widget(edit_form.condicionMotora)}}
+                                    {{ form_errors(edit_form.condicionMotora) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.placaDentobacteriana) }}</th>
+                                <td>{{form_widget(edit_form.placaDentobacteriana)}}
+                                    {{ form_errors(edit_form.placaDentobacteriana) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.placaDentobacterianaPorcentaje) }}</th>
+                                <td>{{form_widget(edit_form.placaDentobacterianaPorcentaje)}}
+                                    {{ form_errors(edit_form.placaDentobacterianaPorcentaje) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.calculoDental) }}</th>
+                                <td>{{form_widget(edit_form.calculoDental)}}
+                                    {{ form_errors(edit_form.calculoDental) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.cariesActiva) }}</th>
+                                <td>{{form_widget(edit_form.cariesActiva)}}
+                                    {{ form_errors(edit_form.cariesActiva) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.cariesActivaNumero) }}</th>
+                                <td>{{form_widget(edit_form.cariesActivaNumero)}}
+                                    {{ form_errors(edit_form.cariesActivaNumero) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.fisurasProfundas) }}</th>
+                                <td>{{form_widget(edit_form.fisurasProfundas)}}
+                                    {{ form_errors(edit_form.fisurasProfundas) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.fisurasProfundasNumero) }}</th>
+                                <td>{{form_widget(edit_form.fisurasProfundasNumero)}}
+                                    {{ form_errors(edit_form.fisurasProfundasNumero) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.restauracionesDesajustadas) }}</th>
+                                <td>{{form_widget(edit_form.restauracionesDesajustadas)}}
+                                    {{ form_errors(edit_form.restauracionesDesajustadas) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.restauracionesDesajustadasNumero) }}</th>
+                                <td>{{form_widget(edit_form.restauracionesDesajustadasNumero)}}
+                                    {{ form_errors(edit_form.restauracionesDesajustadasNumero) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.sangradoEspontaneo) }}</th>
+                                <td>{{form_widget(edit_form.sangradoEspontaneo)}}
+                                    {{ form_errors(edit_form.sangradoEspontaneo) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.sangradoAlSondeo) }}</th>
+                                <td>{{form_widget(edit_form.sangradoAlSondeo)}}
+                                    {{ form_errors(edit_form.sangradoAlSondeo) }}</td>
+                            </tr>
+                              <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.sangradoAlSondeoPorcentaje) }}</th>
+                                <td>{{form_widget(edit_form.sangradoAlSondeoPorcentaje)}}
+                                    {{ form_errors(edit_form.sangradoAlSondeoPorcentaje) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.ausenciaPiezasCaries) }}</th>
+                                <td>{{form_widget(edit_form.ausenciaPiezasCaries)}}
+                                    {{ form_errors(edit_form.ausenciaPiezasCaries) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.ausenciaPiezasCariesNumero) }}</th>
+                                <td>{{form_widget(edit_form.ausenciaPiezasCariesNumero)}}
+                                    {{ form_errors(edit_form.ausenciaPiezasCariesNumero) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.tipoOclusion) }}</th>
+                                <td>{{form_widget(edit_form.tipoOclusion)}}
+                                    {{ form_errors(edit_form.tipoOclusion) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.necesidadesQuirurgicas) }}</th>
+                                <td>{{form_widget(edit_form.necesidadesQuirurgicas)}}
+                                    {{ form_errors(edit_form.necesidadesQuirurgicas) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.fuma) }}</th>
+                                <td>{{form_widget(edit_form.fuma)}}
+                                    {{ form_errors(edit_form.fuma) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.instruccionesFisioterapia) }}</th>
+                                <td>{{form_widget(edit_form.instruccionesFisioterapia)}}
+                                    {{ form_errors(edit_form.instruccionesFisioterapia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.odontograma) }}</th>
+                                <td>{{form_widget(edit_form.odontograma)}}
+                                    {{ form_errors(edit_form.odontograma) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 400px;"> {{ form_label(edit_form.idexpediente) }}</th>
+                                <td>{{form_widget(edit_form.idexpediente)}}
+                                    {{ form_errors(edit_form.idexpediente) }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                 <table>
+                    <tr>
+
+                        <td> {{form_widget(edit_form.submit)}}
+                        </td>
+
+
+                        {{ form_end(edit_form)}}
+                        <td>  <a href="{{ path('vigilanciaepidemiologica') }}" class="btn btn-primary btn-sm">
+                                Volver
+                            </a>
+                        </td>
+                        {{ form_start(delete_form)}}
+                        <td > 
+                            {{ form_widget(delete_form.submit) }}
+                        </td>
+                        {{ form_end(delete_form)}}
+
+                    </tr>
+                </table>
+            </center>
+        </div>
+    <h1>VigilanciaEpidemiologica edit</h1>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('vigilanciaepidemiologica') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
+{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

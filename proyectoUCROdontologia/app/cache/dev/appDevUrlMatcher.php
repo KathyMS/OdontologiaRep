@@ -127,6 +127,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/vigilanciaepidemiologica')) {
+            // vigilanciaepidemiologica
+            if (rtrim($pathinfo, '/') === '/vigilanciaepidemiologica') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'vigilanciaepidemiologica');
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\VigilanciaEpidemiologicaController::indexAction',  '_route' => 'vigilanciaepidemiologica',);
+            }
+
+            // vigilanciaepidemiologica_show
+            if (preg_match('#^/vigilanciaepidemiologica/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'vigilanciaepidemiologica_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\VigilanciaEpidemiologicaController::showAction',));
+            }
+
+            // vigilanciaepidemiologica_new
+            if ($pathinfo === '/vigilanciaepidemiologica/new') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\VigilanciaEpidemiologicaController::newAction',  '_route' => 'vigilanciaepidemiologica_new',);
+            }
+
+            // vigilanciaepidemiologica_create
+            if ($pathinfo === '/vigilanciaepidemiologica/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_vigilanciaepidemiologica_create;
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\VigilanciaEpidemiologicaController::createAction',  '_route' => 'vigilanciaepidemiologica_create',);
+            }
+            not_vigilanciaepidemiologica_create:
+
+            // vigilanciaepidemiologica_edit
+            if (preg_match('#^/vigilanciaepidemiologica/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'vigilanciaepidemiologica_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\VigilanciaEpidemiologicaController::editAction',));
+            }
+
+            // vigilanciaepidemiologica_update
+            if (preg_match('#^/vigilanciaepidemiologica/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_vigilanciaepidemiologica_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'vigilanciaepidemiologica_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\VigilanciaEpidemiologicaController::updateAction',));
+            }
+            not_vigilanciaepidemiologica_update:
+
+            // vigilanciaepidemiologica_delete
+            if (preg_match('#^/vigilanciaepidemiologica/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_vigilanciaepidemiologica_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'vigilanciaepidemiologica_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\VigilanciaEpidemiologicaController::deleteAction',));
+            }
+            not_vigilanciaepidemiologica_delete:
+
+        }
+
         if (0 === strpos($pathinfo, '/examenradiologico')) {
             // examenradiologico
             if (rtrim($pathinfo, '/') === '/examenradiologico') {
