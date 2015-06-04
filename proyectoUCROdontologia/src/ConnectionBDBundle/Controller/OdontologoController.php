@@ -19,38 +19,52 @@ class OdontologoController extends Controller
      * Lists all Odontologo entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('ConnectionBDBundle:Odontologo')->findAll();
+            $entities = $em->getRepository('ConnectionBDBundle:Odontologo')->findAll();
 
-        return $this->render('ConnectionBDBundle:Odontologo:index.html.twig', array(
-            'entities' => $entities,
-        ));
+            return $this->render('ConnectionBDBundle:Odontologo:index.html.twig', array(
+                        'entities' => $entities,
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
     }
+
     /**
      * Creates a new Odontologo entity.
      *
      */
-    public function createAction(Request $request)
-    {
-        $entity = new Odontologo();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+    public function createAction(Request $request) {
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $entity = new Odontologo();
+            $form = $this->createCreateForm($entity);
+            $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+                $em->flush();
 
-            return $this->redirect($this->generateUrl('odontologo_show', array('id' => $entity->getId())));
+                return $this->redirect($this->generateUrl('odontologo_show', array('id' => $entity->getId())));
+            }
+
+            return $this->render('ConnectionBDBundle:Odontologo:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(), ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido');
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        return $this->render('ConnectionBDBundle:Odontologo:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
     }
 
     /**
@@ -76,61 +90,84 @@ class OdontologoController extends Controller
      * Displays a form to create a new Odontologo entity.
      *
      */
-    public function newAction()
-    {
-        $entity = new Odontologo();
-        $form   = $this->createCreateForm($entity);
+    public function newAction(Request $request) {
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $entity = new Odontologo();
+            $form = $this->createCreateForm($entity);
 
-        return $this->render('ConnectionBDBundle:Odontologo:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+            return $this->render('ConnectionBDBundle:Odontologo:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
     }
 
     /**
      * Finds and displays a Odontologo entity.
      *
      */
-    public function showAction($id)
+    public function showAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+            $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:Odontologo')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:Odontologo')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Odontologo entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Odontologo entity.');
+            }
+
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:Odontologo:show.html.twig', array(
+                        'entity' => $entity,
+                        'delete_form' => $deleteForm->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:Odontologo:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**
      * Displays a form to edit an existing Odontologo entity.
      *
      */
-    public function editAction($id)
+    public function editAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:Odontologo')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:Odontologo')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Odontologo entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Odontologo entity.');
+            }
+
+            $editForm = $this->createEditForm($entity);
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:Odontologo:edit.html.twig', array(
+                        'entity' => $entity,
+                        'edit_form' => $editForm->createView(),
+                        'delete_form' => $deleteForm->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:Odontologo:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**

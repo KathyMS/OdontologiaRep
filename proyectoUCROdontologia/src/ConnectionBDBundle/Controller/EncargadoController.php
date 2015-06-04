@@ -45,7 +45,10 @@ class EncargadoController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity = new Encargado();
+        
+            $session=$request->getSession();
+        if($session->has("id")){
+          $entity = new Encargado();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -59,8 +62,14 @@ class EncargadoController extends Controller
 
         return $this->render('ConnectionBDBundle:Encargado:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+            'form'   => $form->createView(),));
+        }else{
+             $this->get('session')->getFlashBag()->add(
+                   'mensaje',
+                   'Debe estar logueado para ver este contenido');
+               return $this->redirect($this->generateUrl('login'));
+        }
+        
     }
 
     /**
@@ -86,15 +95,25 @@ class EncargadoController extends Controller
      * Displays a form to create a new Encargado entity.
      *
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
-        $entity = new Encargado();
+            $session=$request->getSession();
+        if($session->has("id")){
+          $entity = new Encargado();
         $form   = $this->createCreateForm($entity);
 
         return $this->render('ConnectionBDBundle:Encargado:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
+        }else{
+             $this->get('session')->getFlashBag()->add(
+                   'mensaje',
+                   'Debe estar logueado para ver este contenido'
+           );
+               return $this->redirect($this->generateUrl('login'));
+        }
+        
     }
 
     /**

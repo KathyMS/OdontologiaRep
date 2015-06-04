@@ -19,38 +19,56 @@ class TratamientoGeneralController extends Controller
      * Lists all TratamientoGeneral entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('ConnectionBDBundle:TratamientoGeneral')->findAll();
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        return $this->render('ConnectionBDBundle:TratamientoGeneral:index.html.twig', array(
-            'entities' => $entities,
-        ));
+            $entities = $em->getRepository('ConnectionBDBundle:TratamientoGeneral')->findAll();
+
+            return $this->render('ConnectionBDBundle:TratamientoGeneral:index.html.twig', array(
+                        'entities' => $entities,
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
     }
+
     /**
      * Creates a new TratamientoGeneral entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new TratamientoGeneral();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $entity = new TratamientoGeneral();
+            $form = $this->createCreateForm($entity);
+            $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+                $em->flush();
 
-            return $this->redirect($this->generateUrl('tratamientogeneral_show', array('id' => $entity->getId())));
+                return $this->redirect($this->generateUrl('tratamientogeneral_show', array('id' => $entity->getId())));
+            }
+
+            return $this->render('ConnectionBDBundle:TratamientoGeneral:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        return $this->render('ConnectionBDBundle:TratamientoGeneral:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
     }
 
     /**
@@ -76,61 +94,84 @@ class TratamientoGeneralController extends Controller
      * Displays a form to create a new TratamientoGeneral entity.
      *
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
-        $entity = new TratamientoGeneral();
-        $form   = $this->createCreateForm($entity);
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $entity = new TratamientoGeneral();
+            $form = $this->createCreateForm($entity);
 
-        return $this->render('ConnectionBDBundle:TratamientoGeneral:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+            return $this->render('ConnectionBDBundle:TratamientoGeneral:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
     }
 
     /**
      * Finds and displays a TratamientoGeneral entity.
      *
      */
-    public function showAction($id)
+    public function showAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+            $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:TratamientoGeneral')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:TratamientoGeneral')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find TratamientoGeneral entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find TratamientoGeneral entity.');
+            }
+
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:TratamientoGeneral:show.html.twig', array(
+                        'entity' => $entity,
+                        'delete_form' => $deleteForm->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:TratamientoGeneral:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**
      * Displays a form to edit an existing TratamientoGeneral entity.
      *
      */
-    public function editAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
+    public function editAction($id, Request $request) {
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:TratamientoGeneral')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:TratamientoGeneral')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find TratamientoGeneral entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find TratamientoGeneral entity.');
+            }
+
+            $editForm = $this->createEditForm($entity);
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:TratamientoGeneral:edit.html.twig', array(
+                        'entity' => $entity,
+                        'edit_form' => $editForm->createView(),
+                        'delete_form' => $deleteForm->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:TratamientoGeneral:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**

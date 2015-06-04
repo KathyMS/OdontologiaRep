@@ -19,38 +19,54 @@ class ExpedienteController extends Controller
      * Lists all Expediente entities.
      *
      */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
+    public function indexAction(Request $request) {
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('ConnectionBDBundle:Expediente')->findAll();
+            $entities = $em->getRepository('ConnectionBDBundle:Expediente')->findAll();
 
-        return $this->render('ConnectionBDBundle:Expediente:index.html.twig', array(
-            'entities' => $entities,
-        ));
+            return $this->render('ConnectionBDBundle:Expediente:index.html.twig', array(
+                        'entities' => $entities,
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
     }
+
     /**
      * Creates a new Expediente entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Expediente();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $entity = new Expediente();
+            $form = $this->createCreateForm($entity);
+            $form->handleRequest($request);
 
-            return $this->redirect($this->generateUrl('expediente_show', array('id' => $entity->getId())));
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('expediente_show', array('id' => $entity->getId())));
+            }
+
+            return $this->render('ConnectionBDBundle:Expediente:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido');
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        return $this->render('ConnectionBDBundle:Expediente:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
     }
 
     /**
@@ -76,61 +92,82 @@ class ExpedienteController extends Controller
      * Displays a form to create a new Expediente entity.
      *
      */
-    public function newAction()
-    {
-        $entity = new Expediente();
-        $form   = $this->createCreateForm($entity);
+    public function newAction(Request $request) {
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $entity = new Expediente();
+            $form = $this->createCreateForm($entity);
 
-        return $this->render('ConnectionBDBundle:Expediente:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+            return $this->render('ConnectionBDBundle:Expediente:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido');
+            return $this->redirect($this->generateUrl('login'));
+        }
     }
 
     /**
      * Finds and displays a Expediente entity.
      *
      */
-    public function showAction($id)
+    public function showAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+            $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:Expediente')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:Expediente')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Expediente entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Expediente entity.');
+            }
+
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:Expediente:show.html.twig', array(
+                        'entity' => $entity,
+                        'delete_form' => $deleteForm->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:Expediente:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**
      * Displays a form to edit an existing Expediente entity.
      *
      */
-    public function editAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
+    public function editAction($id, Request $request) {
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:Expediente')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:Expediente')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Expediente entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Expediente entity.');
+            }
+
+            $editForm = $this->createEditForm($entity);
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:Expediente:edit.html.twig', array(
+                        'entity' => $entity,
+                        'edit_form' => $editForm->createView(),
+                        'delete_form' => $deleteForm->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:Expediente:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**

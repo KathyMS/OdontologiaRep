@@ -19,38 +19,53 @@ class HistorialMedicoController extends Controller
      * Lists all HistorialMedico entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+            $session = $request->getSession();
+        if ($session->has("id")) {
+           $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('ConnectionBDBundle:HistorialMedico')->findAll();
 
         return $this->render('ConnectionBDBundle:HistorialMedico:index.html.twig', array(
             'entities' => $entities,
         ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
+        
     }
     /**
      * Creates a new HistorialMedico entity.
      *
      */
-    public function createAction(Request $request)
-    {
-        $entity = new HistorialMedico();
-        $form = $this->createCreateForm($entity);
-        $form->handleRequest($request);
+    public function createAction(Request $request) {
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $entity = new HistorialMedico();
+            $form = $this->createCreateForm($entity);
+            $form->handleRequest($request);
 
-            return $this->redirect($this->generateUrl('historialmedico_show', array('id' => $entity->getId())));
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('historialmedico_show', array('id' => $entity->getId())));
+            }
+
+            return $this->render('ConnectionBDBundle:HistorialMedico:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(), ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido' );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        return $this->render('ConnectionBDBundle:HistorialMedico:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
     }
 
     /**
@@ -76,61 +91,86 @@ class HistorialMedicoController extends Controller
      * Displays a form to create a new HistorialMedico entity.
      *
      */
-    public function newAction()
-    {
-        $entity = new HistorialMedico();
-        $form   = $this->createCreateForm($entity);
+    public function newAction(Request $request) {
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $entity = new HistorialMedico();
+            $form = $this->createCreateForm($entity);
 
-        return $this->render('ConnectionBDBundle:HistorialMedico:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+            return $this->render('ConnectionBDBundle:HistorialMedico:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
     }
 
     /**
      * Finds and displays a HistorialMedico entity.
      *
      */
-    public function showAction($id)
+    public function showAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        
+            $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:HistorialMedico')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:HistorialMedico')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find HistorialMedico entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find HistorialMedico entity.');
+            }
+
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:HistorialMedico:show.html.twig', array(
+                        'entity' => $entity,
+                        'delete_form' => $deleteForm->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:HistorialMedico:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**
      * Displays a form to edit an existing HistorialMedico entity.
      *
      */
-    public function editAction($id)
+    public function editAction($id, Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        
+            $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:HistorialMedico')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:HistorialMedico')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find HistorialMedico entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find HistorialMedico entity.');
+            }
+
+            $editForm = $this->createEditForm($entity);
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:HistorialMedico:edit.html.twig', array(
+                        'entity' => $entity,
+                        'edit_form' => $editForm->createView(),
+                        'delete_form' => $deleteForm->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:HistorialMedico:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**
