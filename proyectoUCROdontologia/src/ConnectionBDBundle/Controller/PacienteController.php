@@ -19,23 +19,34 @@ class PacienteController extends Controller
      * Lists all Paciente entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+            $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('ConnectionBDBundle:Paciente')->findAll();
+            $entities = $em->getRepository('ConnectionBDBundle:Paciente')->findAll();
 
-        return $this->render('ConnectionBDBundle:Paciente:index.html.twig', array(
-            'entities' => $entities,
-        ));
+            return $this->render('ConnectionBDBundle:Paciente:index.html.twig', array(
+                        'entities' => $entities,
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
     }
+
     /**
      * Creates a new Paciente entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Paciente();
+            $session = $request->getSession();
+        if ($session->has("id")) {
+           $entity = new Paciente();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -49,8 +60,14 @@ class PacienteController extends Controller
 
         return $this->render('ConnectionBDBundle:Paciente:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+            'form'   => $form->createView(),));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido');
+            return $this->redirect($this->generateUrl('login'));
+        }
+        
+        
     }
 
     /**
@@ -76,46 +93,61 @@ class PacienteController extends Controller
      * Displays a form to create a new Paciente entity.
      *
      */
-    public function newAction()
-    {
-        $entity = new Paciente();
-        $form   = $this->createCreateForm($entity);
+    public function newAction(Request $request) {
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $entity = new Paciente();
+            $form = $this->createCreateForm($entity);
 
-        return $this->render('ConnectionBDBundle:Paciente:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+            return $this->render('ConnectionBDBundle:Paciente:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(),
+            ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
     }
 
     /**
      * Finds and displays a Paciente entity.
      *
      */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
+    public function showAction($id, Request $request) {
+        $session = $request->getSession();
+        if ($session->has("id")) {
+            $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ConnectionBDBundle:Paciente')->find($id);
+            $entity = $em->getRepository('ConnectionBDBundle:Paciente')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Paciente entity.');
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Paciente entity.');
+            }
+
+            $deleteForm = $this->createDeleteForm($id);
+
+            return $this->render('ConnectionBDBundle:Paciente:show.html.twig', array(
+                        'entity' => $entity,
+                        'delete_form' => $deleteForm->createView(),));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido');
+            return $this->redirect($this->generateUrl('login'));
         }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return $this->render('ConnectionBDBundle:Paciente:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
 
     /**
      * Displays a form to edit an existing Paciente entity.
      *
      */
-    public function editAction($id)
+    public function editAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        
+            $session = $request->getSession();
+        if ($session->has("id")) {
+           $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('ConnectionBDBundle:Paciente')->find($id);
 
@@ -131,6 +163,13 @@ class PacienteController extends Controller
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                    'mensaje', 'Debe estar logueado para ver este contenido'
+            );
+            return $this->redirect($this->generateUrl('login'));
+        }
+        
     }
 
     /**

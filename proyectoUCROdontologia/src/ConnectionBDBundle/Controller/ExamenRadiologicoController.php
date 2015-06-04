@@ -19,15 +19,28 @@ class ExamenRadiologicoController extends Controller
      * Lists all ExamenRadiologico entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        
+           $session=$request->getSession();
+        if($session->has("id")){
+          $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('ConnectionBDBundle:ExamenRadiologico')->findAll();
 
         return $this->render('ConnectionBDBundle:ExamenRadiologico:index.html.twig', array(
             'entities' => $entities,
         ));
+        
+        }else{
+             $this->get('session')->getFlashBag()->add(
+                   'mensaje',
+                   'Debe estar logueado para ver este contenido'
+           );
+               return $this->redirect($this->generateUrl('login'));
+        }
+        
+       
     }
     /**
      * Creates a new ExamenRadiologico entity.
@@ -35,10 +48,12 @@ class ExamenRadiologicoController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity = new ExamenRadiologico();
+        
+           $session=$request->getSession();
+        if($session->has("id")){
+           $entity = new ExamenRadiologico();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -49,8 +64,14 @@ class ExamenRadiologicoController extends Controller
 
         return $this->render('ConnectionBDBundle:ExamenRadiologico:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+            'form'   => $form->createView(),));
+        }else{
+             $this->get('session')->getFlashBag()->add(
+                   'mensaje',
+                   'Debe estar logueado para ver este contenido');
+               return $this->redirect($this->generateUrl('login'));
+        }
+       
     }
 
     /**
@@ -76,24 +97,37 @@ class ExamenRadiologicoController extends Controller
      * Displays a form to create a new ExamenRadiologico entity.
      *
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
-        $entity = new ExamenRadiologico();
+            $session=$request->getSession();
+        if($session->has("id")){
+          $entity = new ExamenRadiologico();
         $form   = $this->createCreateForm($entity);
 
         return $this->render('ConnectionBDBundle:ExamenRadiologico:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
+        }else{
+             $this->get('session')->getFlashBag()->add(
+                   'mensaje',
+                   'Debe estar logueado para ver este contenido'
+           );
+               return $this->redirect($this->generateUrl('login'));
+        }
+        
+        
     }
 
     /**
      * Finds and displays a ExamenRadiologico entity.
      *
      */
-    public function showAction($id)
+    public function showAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+            $session=$request->getSession();
+        if($session->has("id")){
+          $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('ConnectionBDBundle:ExamenRadiologico')->find($id);
 
@@ -107,15 +141,25 @@ class ExamenRadiologicoController extends Controller
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
+        }else{
+             $this->get('session')->getFlashBag()->add(
+                   'mensaje',
+                   'Debe estar logueado para ver este contenido'
+           );
+               return $this->redirect($this->generateUrl('login'));
+        }
+        
     }
 
     /**
      * Displays a form to edit an existing ExamenRadiologico entity.
      *
      */
-    public function editAction($id)
+    public function editAction($id,Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+            $session=$request->getSession();
+        if($session->has("id")){
+           $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('ConnectionBDBundle:ExamenRadiologico')->find($id);
 
@@ -131,6 +175,13 @@ class ExamenRadiologicoController extends Controller
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
+        }else{
+             $this->get('session')->getFlashBag()->add(
+                   'mensaje',
+                   'Debe estar logueado para ver este contenido');
+               return $this->redirect($this->generateUrl('login'));
+        }
+       
     }
 
     /**
