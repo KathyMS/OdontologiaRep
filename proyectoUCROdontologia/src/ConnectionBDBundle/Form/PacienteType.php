@@ -17,7 +17,8 @@ class PacienteType extends AbstractType
         $builder
             ->add('cedula')
             ->add('fechaDeIngreso')
-            ->add('sexo')
+            ->add('sexo', 'choice', array('choices' => array('1' => 'Masculino', '2'=> 'Femenino'),
+    'required'  => false))
             ->add('edad')
             ->add('nombre')
             ->add('ocupacion')
@@ -25,7 +26,8 @@ class PacienteType extends AbstractType
             ->add('apartadoPostal')
             ->add('beca')
             ->add('carrera')
-            ->add('estadoCivil')
+            ->add('estadoCivil','choice', array('choices'   => array('1' => 'Soltero', '2' => 'Casado', '3' => 'Divorciado', '4' => 'Viudo'),
+    'required'  => false))
             ->add('direccion')
             ->add('telefonoHabitacion')
             ->add('telefonoTrabajo')

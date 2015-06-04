@@ -24,7 +24,12 @@
                         </tr>
                         <tr>
                             <th>Sexo</th>
-                            <td>{{ entity.sexo }}</td>
+                            {%if entity.sexo== 1%}
+                            <td> Masculino </td>
+                            {%endif%}
+                            {%if entity.sexo== 2%}
+                            <td> Femenino </td>
+                            {%endif%}                            
                         </tr>
                         <tr>
                             <th>Edad</th>
@@ -45,15 +50,40 @@
                         </tr>
                         <tr>
                             <th>Beca</th>
-                            <td>{{ entity.beca }}</td>
+                            {%if entity.beca== 1%}
+                            <td> Beca 1 </td>
+                            {%endif%}
+                            {%if entity.beca== 2%}
+                            <td> Beca 2 </td>
+                            {%endif%}
+                            {%if entity.beca== 3%}
+                            <td> Beca 3 </td>
+                            {%endif%}
+                            {%if entity.beca== 4%}
+                            <td> Beca 4 </td>
+                            {%endif%}
+                            {%if entity.beca== 5%}
+                            <td> Beca 5 </td>
+                            {%endif%}
                         </tr>
                         <tr>
                             <th>Carrera</th>
                             <td>{{ entity.carrera }}</td>
                         </tr>
                         <tr>
-                            <th>Estado civil</th>
-                            <td>{{ entity.estadoCivil }}</td>
+                             <th>Estado civil</th>
+                            {%if entity.estadoCivil== 1%}
+                            <td> Soltero </td>
+                            {%endif%}
+                            {%if entity.estadoCivil== 2%}
+                            <td> Casado </td>
+                            {%endif%}
+                            {%if entity.estadoCivil== 3%}
+                            <td> Divorciado </td>
+                            {%endif%}
+                            {%if entity.estadoCivil== 4%}
+                            <td> Viudo </td>
+                            {%endif%}
                         </tr>
                         <tr>
                             <th>Direccion</th>

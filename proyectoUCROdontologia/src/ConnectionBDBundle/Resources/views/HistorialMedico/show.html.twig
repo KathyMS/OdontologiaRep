@@ -10,17 +10,24 @@
             <div class="box-content">
                 <table class="table table-bordered table-striped table-condensed">
                     <tbody>
-                        <tr>
-                            <th>Id</th>
-                            <td>{{ entity.id }}</td>
-                        </tr>
+                       
                         <tr>
                             <th>Dolorcabezafrecuente</th>
-                            <td>{{ entity.dolorCabezaFrecuente }}</td>
+                            {%if entity.dolorCabezaFrecuente== 1%}
+                            <td> &#x2713 </td>
+                            {%endif%}
+                            {%if entity.dolorCabezaFrecuente!= 1%}
+                            <td> Sin Síntomas </td>
+                            {%endif%}
                         </tr>
                         <tr>
                             <th>Historialdental</th>
-                            <td>{{ entity.historialDental }}</td>
+                            {%if entity.historialDental== 1%}
+                            <td> &#x2713 </td>
+                            {%endif%}
+                            {%if entity.historialDental!= 1%}
+                            <td> Sin Síntomas </td>
+                            {%endif%}
                         </tr>
                         <tr>
                             <th>Vertigo</th>

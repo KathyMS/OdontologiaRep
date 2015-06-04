@@ -22,10 +22,35 @@
                     <tbody>
                         {% for entity in entities %}
                             <tr>
-                                <td><a href="{{ path('historialmedico_show', { 'id': entity.id }) }}">{{ entity.historialSocialTabaquismo }}</a></td>
-                                <td>{{ entity.historialSocialAlcoholismo }}</td>
-                                <td>{{ entity.historiaDentalDolorMasticar }}</td>
-                                <td>{{ entity.historiaDentalRechinadoDientes }}</td>
+                                <td><a href="{{ path('historialmedico_show', { 'id': entity.id }) }}">
+                                    {%if entity.historialSocialTabaquismo== 1%}
+                                        &#x2713 
+                                    {%endif%}
+                                    {%if entity.historialSocialTabaquismo!= 1%}
+                                        Sin Sintomas
+                                    {%endif%}</a></td>
+                                <td>
+                                    {%if entity.historialSocialAlcoholismo== 1%}
+                                        &#x2713 
+                                    {%endif%}
+                                    {%if entity.historialSocialAlcoholismo!= 1%}
+                                        Sin Sintomas 
+                                    {%endif%}
+                                </td>
+                                <td>
+                                {%if entity.historiaDentalDolorMasticar== 1%}
+                                        &#x2713 
+                                    {%endif%}
+                                {%if entity.historiaDentalDolorMasticar!= 1%}
+                                        &#x2713 
+                                    {%endif%}</td>
+                                <td>
+                                {%if entity.historiaDentalRechinadoDientes== 1%}
+                                        &#x2713 
+                                    {%endif%}
+                                {%if entity.historiaDentalRechinadoDientes!= 1%}
+                                        Sin Sintomas 
+                                    {%endif%}</td>
                                 <td>
                                     <ul>
                                         <a href="{{ path('historialmedico_show', { 'id': entity.id }) }}" class="btn btn-primary btn-sm">Ver</a>

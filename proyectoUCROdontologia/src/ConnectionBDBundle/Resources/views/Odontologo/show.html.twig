@@ -23,7 +23,12 @@
                         </tr>
                         <tr>
                             <th>Practicante</th>
-                            <td>{{ entity.practicante }}</td>
+                            {%if entity.practicante== 1%}
+                            <td> &#x2713 </td>
+                            {%endif%}
+                            {%if entity.practicante!= 1%}
+                            <td> No es Practicante </td>
+                            {%endif%}
                         </tr>
                         <tr>
                             <th>Cedula</th>

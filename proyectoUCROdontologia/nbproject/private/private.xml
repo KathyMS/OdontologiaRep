@@ -4,8 +4,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/OdontologiaRep/proyectoUCROdontologia/src/ConnectionBDBundle/Controller/OdontologoController.php</file>
-            <file>file:/C:/xampp/htdocs/OdontologiaRep/proyectoUCROdontologia/src/ConnectionBDBundle/Resources/views/Odontologo/show.html.twig</file>
+            <file>file:/C:/xampp/htdocs/pruebas/proyectoUCROdontologia/src/ConnectionBDBundle/Resources/views/VigilanciaEpidemiologica/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/pruebas/proyectoUCROdontologia/src/ConnectionBDBundle/Resources/views/Paciente/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/pruebas/proyectoUCROdontologia/src/ConnectionBDBundle/Resources/views/VigilanciaEpidemiologica/edit.html.twig</file>
+            <file>file:/C:/xampp/htdocs/pruebas/proyectoUCROdontologia/src/ConnectionBDBundle/Resources/views/VigilanciaEpidemiologica/show.html.twig</file>
+            <file>file:/C:/xampp/htdocs/pruebas/proyectoUCROdontologia/src/ConnectionBDBundle/Resources/views/Paciente/show.html.twig</file>
+            <file>file:/C:/xampp/htdocs/pruebas/proyectoUCROdontologia/src/ConnectionBDBundle/Form/PacienteType.php</file>
+            <file>file:/C:/xampp/htdocs/pruebas/proyectoUCROdontologia/src/ConnectionBDBundle/Resources/views/TratamientoGeneral/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/pruebas/proyectoUCROdontologia/src/ConnectionBDBundle/Resources/views/TratamientoGeneral/edit.html.twig</file>
         </group>
     </open-files>
 </project-private>
