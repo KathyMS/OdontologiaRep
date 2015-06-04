@@ -36,13 +36,10 @@ class __TwigTemplate_21474607caf49bead5ceed281961b905717ed5e8fc72edf84bfbe34786b
             </div> <!--/fin caja de contenido-->
       
 
- 
-
-
 ";
-        // line 22
+        // line 19
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
-        // line 23
+        // line 20
         echo "
 ";
     }
@@ -59,6 +56,6 @@ class __TwigTemplate_21474607caf49bead5ceed281961b905717ed5e8fc72edf84bfbe34786b
 
     public function getDebugInfo()
     {
-        return array (  46 => 23,  44 => 22,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  43 => 20,  41 => 19,  23 => 3,  21 => 2,  19 => 1,);
     }
 }
