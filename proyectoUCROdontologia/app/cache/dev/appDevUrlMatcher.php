@@ -127,6 +127,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/cita')) {
+            // cita
+            if (rtrim($pathinfo, '/') === '/cita') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'cita');
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\CitaController::indexAction',  '_route' => 'cita',);
+            }
+
+            // cita_show
+            if (preg_match('#^/cita/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cita_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\CitaController::showAction',));
+            }
+
+            // cita_new
+            if ($pathinfo === '/cita/new') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\CitaController::newAction',  '_route' => 'cita_new',);
+            }
+
+            // cita_create
+            if ($pathinfo === '/cita/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_cita_create;
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\CitaController::createAction',  '_route' => 'cita_create',);
+            }
+            not_cita_create:
+
+            // cita_edit
+            if (preg_match('#^/cita/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cita_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\CitaController::editAction',));
+            }
+
+            // cita_update
+            if (preg_match('#^/cita/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_cita_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cita_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\CitaController::updateAction',));
+            }
+            not_cita_update:
+
+            // cita_delete
+            if (preg_match('#^/cita/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_cita_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cita_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\CitaController::deleteAction',));
+            }
+            not_cita_delete:
+
+        }
+
         if (0 === strpos($pathinfo, '/vigilanciaepidemiologica')) {
             // vigilanciaepidemiologica
             if (rtrim($pathinfo, '/') === '/vigilanciaepidemiologica') {

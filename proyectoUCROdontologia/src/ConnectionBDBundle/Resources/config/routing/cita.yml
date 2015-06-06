@@ -1,0 +1,30 @@
+cita:
+    path:     /
+    defaults: { _controller: "ConnectionBDBundle:Cita:index" }
+
+cita_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConnectionBDBundle:Cita:show" }
+
+cita_new:
+    path:     /new
+    defaults: { _controller: "ConnectionBDBundle:Cita:new" }
+
+cita_create:
+    path:     /create
+    defaults: { _controller: "ConnectionBDBundle:Cita:create" }
+    requirements: { _method: post }
+
+cita_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConnectionBDBundle:Cita:edit" }
+
+cita_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConnectionBDBundle:Cita:update" }
+    requirements: { _method: post|put }
+
+cita_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConnectionBDBundle:Cita:delete" }
+    requirements: { _method: post|delete }

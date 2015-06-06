@@ -1,0 +1,52 @@
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
+
+{% block body -%}
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Crear Cita</h2>
+            </div>
+            <center>
+                <div class="box-content">
+                    <table class="table table-bordered table-striped table-condensed">
+                        {{ form_start(form)}}
+                        {{form_errors(form)}}
+                        <tbody>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.idpaciente) }}</th>
+                                <td>{{form_widget(form.idpaciente)}}
+                                    {{ form_errors(form.idpaciente) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.fecha) }}</th>
+                                <td>{{form_widget(form.fecha)}}
+                                    {{ form_errors(form.fecha) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.hora) }}</th>
+                                <td>{{form_widget(form.hora)}}
+                                    {{ form_errors(form.hora) }}</td>
+                            </tr>
+                            </table>
+                </div>
+
+                <table>
+                    <tr>
+
+                        <td> {{form_widget(form.submit)}}
+                        </td>
+                        <td>  <a href="{{ path('cita') }}" class="btn btn-primary btn-sm">
+                                Volver
+                            </a>
+                        </td>
+
+                    </tr>
+                </table>
+
+                {{ form_end(form)}}
+            </center>
+        </div>
+    {% endblock %}
+    {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
+  

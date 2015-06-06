@@ -1,3 +1,7 @@
+connection_bd_cita:
+    resource: "@ConnectionBDBundle/Resources/config/routing/cita.yml"
+    prefix:   /cita
+
 connection_bd_vigilanciaepidemiologica:
     resource: "@ConnectionBDBundle/Resources/config/routing/vigilanciaepidemiologica.yml"
     prefix:   /vigilanciaepidemiologica
