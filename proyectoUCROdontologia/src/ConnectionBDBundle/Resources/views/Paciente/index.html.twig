@@ -21,7 +21,6 @@
 
                             <th>Nombre</th>
                             <th>Cedula</th>
-                            <th>Ingreso</th>
                             <th>Edad</th>
                             <th>Carne</th>
                             <th>Beca</th>
@@ -37,8 +36,7 @@
 
                                 <td><a href="{{ path('paciente_show', { 'id': entity.id }) }}">{{ entity.nombre }}</td>
                                 <td>{{ entity.cedula }}</td>
-                                <td>{% if entity.fechaDeIngreso %}{{ entity.fechaDeIngreso|date('Y-m-d') }}{% endif %}</td>
-
+                                
                                 <td>{{ entity.edad }}</td>
 
 

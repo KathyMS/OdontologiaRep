@@ -25,7 +25,7 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
 ";
         // line 4
         $this->displayBlock('body', $context, $blocks);
-        // line 97
+        // line 95
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
 
@@ -46,7 +46,6 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
 
                             <th>Nombre</th>
                             <th>Cedula</th>
-                            <th>Ingreso</th>
                             <th>Edad</th>
                             <th>Carne</th>
                             <th>Beca</th>
@@ -58,57 +57,51 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
                     </thead>
                     <tbody>
                         ";
-        // line 35
+        // line 34
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 36
+            // line 35
             echo "                            <tr>
 
                                 <td><a href=\"";
-            // line 38
+            // line 37
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("paciente_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombre", array()), "html", null, true);
             echo "</td>
                                 <td>";
-            // line 39
+            // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "cedula", array()), "html", null, true);
             echo "</td>
+                                
                                 <td>";
             // line 40
-            if ($this->getAttribute($context["entity"], "fechaDeIngreso", array())) {
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "fechaDeIngreso", array()), "Y-m-d"), "html", null, true);
-            }
-            echo "</td>
-
-                                <td>";
-            // line 42
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "edad", array()), "html", null, true);
             echo "</td>
 
 
                                 <td>";
-            // line 45
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "carne", array()), "html", null, true);
             echo "</td>
 
                                 <td>";
-            // line 47
+            // line 45
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "beca", array()), "html", null, true);
             echo "</td>
                                 <td>";
-            // line 48
+            // line 46
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "carrera", array()), "html", null, true);
             echo "</td>
 
 
                                 <td>";
-            // line 51
+            // line 49
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "telefonoMovil", array()), "html", null, true);
             echo "</td>
                                 <td>";
-            // line 52
+            // line 50
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "correoElectronico", array()), "html", null, true);
             echo "</td>
 
@@ -116,13 +109,13 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
                                     <ul>
 
                                         <a href=\"";
-            // line 57
+            // line 55
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("paciente_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">Ver</a>
 
 
                                         <a href=\"";
-            // line 60
+            // line 58
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("paciente_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">Editar</a>
 
@@ -135,7 +128,7 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 67
+        // line 65
         echo "                    </tbody>
                 </table>
 <center>
@@ -155,7 +148,7 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
             <ul>
 
                 <a href=\"";
-        // line 85
+        // line 83
         echo $this->env->getExtension('routing')->getPath("paciente_new");
         echo "\">
                     <strong>Ingresar un nuevo paciente </strong>
@@ -183,6 +176,6 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
 
     public function getDebugInfo()
     {
-        return array (  159 => 85,  139 => 67,  126 => 60,  120 => 57,  112 => 52,  108 => 51,  102 => 48,  98 => 47,  93 => 45,  87 => 42,  80 => 40,  76 => 39,  70 => 38,  66 => 36,  62 => 35,  36 => 11,  33 => 4,  29 => 97,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  152 => 83,  132 => 65,  119 => 58,  113 => 55,  105 => 50,  101 => 49,  95 => 46,  91 => 45,  86 => 43,  80 => 40,  75 => 38,  69 => 37,  65 => 35,  61 => 34,  36 => 11,  33 => 4,  29 => 95,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

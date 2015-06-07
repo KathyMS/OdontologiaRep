@@ -22,8 +22,8 @@ class __TwigTemplate_dcc5c795ae638380aa6de4afc13b906033c0f32e117cb828fe16c5b1a28
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_menu_vertical.html.twig")->display($context);
         // line 3
         $this->displayBlock('body', $context, $blocks);
-        // line 44
-        echo "    ";
+        // line 56
+        echo "            ";
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
 
@@ -31,76 +31,85 @@ class __TwigTemplate_dcc5c795ae638380aa6de4afc13b906033c0f32e117cb828fe16c5b1a28
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>TratamientoGeneral list</h1>
+        echo "<div class=\"box col-md-12\">
+        <div class=\"box-inner\">
+            <div class=\"box-header well\" data-original-title=\"\">
+                <h2>Lista de tratamientos generales</h2>
 
-    <table class=\"records_list\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombretratamiento</th>
-                <th>Descripcion</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 16
+            </div>
+            <div class=\"box-content\">
+
+                <table class=\"table table-bordered table-striped table-condensed\">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ";
+        // line 20
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 17
-            echo "            <tr>
-                <td><a href=\"";
-            // line 18
+            // line 21
+            echo "                            <tr>
+                                <td><a href=\"";
+            // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tratamientogeneral_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
-            echo "</a></td>
-                <td>";
-            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombreTratamiento", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 20
+            echo "</a></td>
+                                <td>";
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "descripcion", array()), "html", null, true);
             echo "</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href=\"";
-            // line 24
+                                <td>
+                                    <ul>
+                                        <a href=\"";
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tratamientogeneral_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">show</a>
-                    </li>
-                    <li>
-                        <a href=\"";
-            // line 27
+            echo "\"class=\"btn btn-primary btn-sm\">Ver</a>
+
+                                        <a href=\"";
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tratamientogeneral_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        ";
+            echo "\"class=\"btn btn-primary btn-sm\">Editar</a>
+
+                                    </ul>
+                                </td>
+                            </tr>
+                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
-        echo "        </tbody>
-    </table>
+        // line 34
+        echo "                    </tbody>
+                </table>
+                <center>
+                    <ul class=\"pagination pagination-centered\">
+                        <li><a href=\"#\">Anterior</a></li>
+                        <li class=\"active\">
+                            <a href=\"#\">1</a>
+                        </li>
+                        <li><a href=\"#\">2</a></li>
+                        <li><a href=\"#\">3</a></li>
+                        <li><a href=\"#\">4</a></li>
+                        <li><a href=\"#\">Siguiente</a></li>
+                    </ul>
 
-        <ul>
-        <li>
-            <a href=\"";
-        // line 38
+
+                    <ul>
+                        <a href=\"";
+        // line 50
         echo $this->env->getExtension('routing')->getPath("tratamientogeneral_new");
         echo "\">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    ";
+                            Crear un nuevo tratamiento general
+                        </a>
+                    </ul>
+                </center>
+            ";
     }
 
     public function getTemplateName()
@@ -115,6 +124,6 @@ class __TwigTemplate_dcc5c795ae638380aa6de4afc13b906033c0f32e117cb828fe16c5b1a28
 
     public function getDebugInfo()
     {
-        return array (  97 => 38,  90 => 33,  78 => 27,  72 => 24,  65 => 20,  61 => 19,  55 => 18,  52 => 17,  48 => 16,  34 => 4,  31 => 3,  26 => 44,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  106 => 50,  88 => 34,  76 => 28,  71 => 26,  65 => 23,  59 => 22,  56 => 21,  52 => 20,  34 => 4,  31 => 3,  26 => 56,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

@@ -98,7 +98,10 @@ class __TwigTemplate_19d50b3c87b59bb1451d336d3a4394d99aab848e6bafae2418e8dd8b388
         // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/css/animate.min.css"), "html", null, true);
         echo "' rel='stylesheet'>
-
+    <link href='";
+        // line 38
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/administrador/css/calendar.css"), "html", null, true);
+        echo "' rel='stylesheet'>
     <!-- jQuery -->
     <script src=\"";
         // line 40
@@ -192,6 +195,6 @@ class __TwigTemplate_19d50b3c87b59bb1451d336d3a4394d99aab848e6bafae2418e8dd8b388
 
     public function getDebugInfo()
     {
-        return array (  151 => 75,  138 => 65,  131 => 63,  105 => 40,  99 => 37,  95 => 36,  91 => 35,  87 => 34,  83 => 33,  79 => 32,  75 => 31,  71 => 30,  67 => 29,  63 => 28,  59 => 27,  55 => 26,  51 => 25,  47 => 24,  42 => 22,  19 => 1,);
+        return array (  154 => 75,  141 => 65,  134 => 63,  108 => 40,  103 => 38,  99 => 37,  95 => 36,  91 => 35,  87 => 34,  83 => 33,  79 => 32,  75 => 31,  71 => 30,  67 => 29,  63 => 28,  59 => 27,  55 => 26,  51 => 25,  47 => 24,  42 => 22,  19 => 1,);
     }
 }

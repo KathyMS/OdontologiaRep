@@ -35,7 +35,10 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
         echo $this->env->getExtension('routing')->getUrl("paciente");
         echo "\"><i
                                     class=\"glyphicon glyphicon-user\"></i><span> Paciente</span></a></li>
-                        <li><a class=\"ajax-link\" href=\"calendar.html\"><i class=\"glyphicon glyphicon-calendar\"></i><span> Citas</span></a>
+                        <li><a class=\"ajax-link\" href=\"";
+        // line 14
+        echo $this->env->getExtension('routing')->getUrl("cita");
+        echo "\"><i class=\"glyphicon glyphicon-calendar\"></i><span> Citas</span></a>
                         </li>
                         <li><a class=\"ajax-link\" href=\"";
         // line 16
@@ -131,6 +134,6 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
 
     public function getDebugInfo()
     {
-        return array (  106 => 65,  93 => 55,  80 => 45,  67 => 35,  47 => 18,  42 => 16,  35 => 12,  30 => 10,  19 => 1,);
+        return array (  109 => 65,  96 => 55,  83 => 45,  70 => 35,  50 => 18,  45 => 16,  40 => 14,  35 => 12,  30 => 10,  19 => 1,);
     }
 }
