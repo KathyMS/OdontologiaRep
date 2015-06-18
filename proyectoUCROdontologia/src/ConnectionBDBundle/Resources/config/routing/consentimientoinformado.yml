@@ -1,0 +1,34 @@
+consentimientoinformado:
+    path:     /
+    defaults: { _controller: "ConnectionBDBundle:ConsentimientoInformado:index"}
+
+consentimientoinformado_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConnectionBDBundle:ConsentimientoInformado:show" }
+
+consentimientoinformado_new:
+    path:     /new
+    defaults: { _controller: "ConnectionBDBundle:ConsentimientoInformado:new" }
+
+consentimientoinformado_create:
+    path:     /create
+    defaults: { _controller: "ConnectionBDBundle:ConsentimientoInformado:create" }
+    requirements: { _method: post }
+
+consentimientoinformado_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConnectionBDBundle:ConsentimientoInformado:edit" }
+
+consentimientoinformado_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConnectionBDBundle:ConsentimientoInformado:update" }
+    requirements: { _method: post|put }
+
+consentimientoinformado_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConnectionBDBundle:ConsentimientoInformado:delete" }
+    requirements: { _method: post|delete }
+
+aSubirImagen:
+    pattern: /aSubirImagen
+    defaults: {_controller: "ConnectionBDBundle:ConsentimientoInformado:aSubirImagen" }

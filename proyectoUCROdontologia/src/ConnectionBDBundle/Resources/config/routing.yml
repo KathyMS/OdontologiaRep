@@ -1,3 +1,7 @@
+connection_bd_consentimientoinformado:
+    resource: "@ConnectionBDBundle/Resources/config/routing/consentimientoinformado.yml"
+    prefix:   /consentimientoinformado
+
 connection_bd_cita:
     resource: "@ConnectionBDBundle/Resources/config/routing/cita.yml"
     prefix:   /cita
@@ -61,3 +65,12 @@ ConnectionBDBundle_odontologo:
 ConnectionBDBundle_encargado:
     resource: "@ConnectionBDBundle/Resources/config/routing/encargado.yml"
     prefix:   /encargado
+    
+ConnectionBDBundle_aSubirImagen:
+    resource: "@ConnectionBDBundle/Resources/config/routing/consentimientoinformado.yml"
+    prefix:   /aSubirImagen
+    
+    
+aSubirImagen:
+    resource: "@ConnectionBDBundle/Resources/config/routing/consentimientoinformado.yml"
+    prefix:   /aSubirImagen

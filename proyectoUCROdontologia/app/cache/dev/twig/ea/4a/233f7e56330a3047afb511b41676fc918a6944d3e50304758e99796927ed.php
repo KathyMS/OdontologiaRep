@@ -25,7 +25,7 @@ class __TwigTemplate_ea4a233f7e56330a3047afb511b41676fc918a6944d3e50304758e99796
 ";
         // line 4
         $this->displayBlock('body', $context, $blocks);
-        // line 65
+        // line 70
         echo "            ";
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
@@ -76,21 +76,33 @@ class __TwigTemplate_ea4a233f7e56330a3047afb511b41676fc918a6944d3e50304758e99796
             echo "</td>
                                 <td>";
             // line 29
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "practicante", array()), "html", null, true);
+            if (($this->getAttribute($context["entity"], "practicante", array()) == 1)) {
+                // line 30
+                echo "                                        &#x2713 
+                                     ";
+            }
+            // line 32
+            echo "                                     ";
+            if (($this->getAttribute($context["entity"], "practicante", array()) == 2)) {
+                // line 33
+                echo "                                         
+                                     ";
+            }
+            // line 34
             echo "</td>
                                 <td>";
-            // line 30
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "cedula", array()), "html", null, true);
             echo "</td>
                                 <td>
                                     <ul>
                                         <a href=\"";
-            // line 33
+            // line 38
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("odontologo_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">Ver</a>
 
                                         <a href=\"";
-            // line 35
+            // line 40
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("odontologo_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">Editar</a>
 
@@ -102,7 +114,7 @@ class __TwigTemplate_ea4a233f7e56330a3047afb511b41676fc918a6944d3e50304758e99796
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 46
         echo "                    </tbody>
                 </table>
                 <center>
@@ -121,7 +133,7 @@ class __TwigTemplate_ea4a233f7e56330a3047afb511b41676fc918a6944d3e50304758e99796
                     <ul>
 
                         <a href=\"";
-        // line 58
+        // line 63
         echo $this->env->getExtension('routing')->getPath("odontologo_new");
         echo "\">
                             Crear un nuevo odontólogo
@@ -144,6 +156,6 @@ class __TwigTemplate_ea4a233f7e56330a3047afb511b41676fc918a6944d3e50304758e99796
 
     public function getDebugInfo()
     {
-        return array (  125 => 58,  106 => 41,  94 => 35,  89 => 33,  83 => 30,  79 => 29,  75 => 28,  71 => 27,  65 => 26,  62 => 25,  58 => 24,  37 => 5,  34 => 4,  29 => 65,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  137 => 63,  118 => 46,  106 => 40,  101 => 38,  95 => 35,  92 => 34,  88 => 33,  85 => 32,  81 => 30,  79 => 29,  75 => 28,  71 => 27,  65 => 26,  62 => 25,  58 => 24,  37 => 5,  34 => 4,  29 => 70,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

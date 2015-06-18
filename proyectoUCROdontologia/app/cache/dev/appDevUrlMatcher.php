@@ -735,6 +735,71 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/aSubirImagen')) {
+            // consentimientoinformado
+            if (rtrim($pathinfo, '/') === '/aSubirImagen') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'consentimientoinformado');
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ConsentimientoInformadoController::indexAction',  '_route' => 'consentimientoinformado',);
+            }
+
+            // consentimientoinformado_show
+            if (preg_match('#^/aSubirImagen/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'consentimientoinformado_show')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ConsentimientoInformadoController::showAction',));
+            }
+
+            // consentimientoinformado_new
+            if ($pathinfo === '/aSubirImagen/new') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ConsentimientoInformadoController::newAction',  '_route' => 'consentimientoinformado_new',);
+            }
+
+            // consentimientoinformado_create
+            if ($pathinfo === '/aSubirImagen/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_consentimientoinformado_create;
+                }
+
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ConsentimientoInformadoController::createAction',  '_route' => 'consentimientoinformado_create',);
+            }
+            not_consentimientoinformado_create:
+
+            // consentimientoinformado_edit
+            if (preg_match('#^/aSubirImagen/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'consentimientoinformado_edit')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ConsentimientoInformadoController::editAction',));
+            }
+
+            // consentimientoinformado_update
+            if (preg_match('#^/aSubirImagen/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_consentimientoinformado_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'consentimientoinformado_update')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ConsentimientoInformadoController::updateAction',));
+            }
+            not_consentimientoinformado_update:
+
+            // consentimientoinformado_delete
+            if (preg_match('#^/aSubirImagen/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_consentimientoinformado_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'consentimientoinformado_delete')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ConsentimientoInformadoController::deleteAction',));
+            }
+            not_consentimientoinformado_delete:
+
+            // aSubirImagen
+            if ($pathinfo === '/aSubirImagen/aSubirImagen') {
+                return array (  '_controller' => 'ConnectionBDBundle\\Controller\\ConsentimientoInformadoController::aSubirImagenAction',  '_route' => 'aSubirImagen',);
+            }
+
+        }
+
         // estudiante_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'estudiante_homepage')), array (  '_controller' => 'EstudianteBundle\\Controller\\DefaultController::indexAction',));
