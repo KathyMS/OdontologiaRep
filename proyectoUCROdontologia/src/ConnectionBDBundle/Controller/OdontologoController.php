@@ -2,25 +2,24 @@
 
 namespace ConnectionBDBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use ConnectionBDBundle\Entity\Odontologo;
 use ConnectionBDBundle\Form\OdontologoType;
+use OdontologoPdf;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Odontologo controller.
  *
  */
-class OdontologoController extends Controller
-{
+class OdontologoController extends Controller {
 
     /**
      * Lists all Odontologo entities.
      *
      */
-    public function indexAction(Request $request)
-    {
+    public function indexAction(Request $request) {
         $session = $request->getSession();
         if ($session->has("id")) {
             $em = $this->getDoctrine()->getManager();
@@ -59,7 +58,7 @@ class OdontologoController extends Controller
 
             return $this->render('ConnectionBDBundle:Odontologo:new.html.twig', array(
                         'entity' => $entity,
-                        'form' => $form->createView(), ));
+                        'form' => $form->createView(),));
         } else {
             $this->get('session')->getFlashBag()->add(
                     'mensaje', 'Debe estar logueado para ver este contenido');
@@ -72,16 +71,15 @@ class OdontologoController extends Controller
      *
      * @param Odontologo $entity The entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
-    private function createCreateForm(Odontologo $entity)
-    {
+    private function createCreateForm(Odontologo $entity) {
         $form = $this->createForm(new OdontologoType(), $entity, array(
             'action' => $this->generateUrl('odontologo_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Crear', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm')));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-primary btn-sm')));
 
         return $form;
     }
@@ -112,9 +110,8 @@ class OdontologoController extends Controller
      * Finds and displays a Odontologo entity.
      *
      */
-    public function showAction($id,Request $request)
-    {
-            $session = $request->getSession();
+    public function showAction($id, Request $request) {
+        $session = $request->getSession();
         if ($session->has("id")) {
             $em = $this->getDoctrine()->getManager();
 
@@ -142,8 +139,7 @@ class OdontologoController extends Controller
      * Displays a form to edit an existing Odontologo entity.
      *
      */
-    public function editAction($id,Request $request)
-    {
+    public function editAction($id, Request $request) {
         $session = $request->getSession();
         if ($session->has("id")) {
             $em = $this->getDoctrine()->getManager();
@@ -171,29 +167,28 @@ class OdontologoController extends Controller
     }
 
     /**
-    * Creates a form to edit a Odontologo entity.
-    *
-    * @param Odontologo $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Odontologo $entity)
-    {
+     * Creates a form to edit a Odontologo entity.
+     *
+     * @param Odontologo $entity The entity
+     *
+     * @return Form The form
+     */
+    private function createEditForm(Odontologo $entity) {
         $form = $this->createForm(new OdontologoType(), $entity, array(
             'action' => $this->generateUrl('odontologo_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Editar', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm')));
+        $form->add('submit', 'submit', array('label' => 'Editar', 'attr' => array('class' => 'btn btn-primary btn-sm')));
 
         return $form;
     }
+
     /**
      * Edits an existing Odontologo entity.
      *
      */
-    public function updateAction(Request $request, $id)
-    {
+    public function updateAction(Request $request, $id) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('ConnectionBDBundle:Odontologo')->find($id);
@@ -213,17 +208,17 @@ class OdontologoController extends Controller
         }
 
         return $this->render('ConnectionBDBundle:Odontologo:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Odontologo entity.
      *
      */
-    public function deleteAction(Request $request, $id)
-    {
+    public function deleteAction(Request $request, $id) {
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
@@ -247,15 +242,24 @@ class OdontologoController extends Controller
      *
      * @param mixed $id The entity id
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
-    private function createDeleteForm($id)
-    {
+    private function createDeleteForm($id) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('odontologo_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Eliminar', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm')))
-            ->getForm()
+                        ->setAction($this->generateUrl('odontologo_delete', array('id' => $id)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Eliminar', 'attr' => array('class' => 'btn btn-primary btn-sm')))
+                        ->getForm()
         ;
     }
+
+    public function pdfAction($id) {
+        include ('OdontologoPdf.php');
+
+        $pdf = new OdontologoPdf();
+        $pdf->pdf($id);
+
+        return $this->redirect($this->generateUrl('paciente'));
+    }
+
 }

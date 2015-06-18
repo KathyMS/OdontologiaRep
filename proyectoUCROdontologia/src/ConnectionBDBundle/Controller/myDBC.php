@@ -102,5 +102,27 @@ class myDBC {
         //Regresa array asociativo
         return $valores;
     }
+    public function seleccionar_odontologo($id) {
+        $q = 'select * from odontologo where id ='.$id;
+
+        $result = $this->mysqli->query($q);
+
+        //Array asociativo que contendrá los datos
+        $valores = array();
+
+        if ($result->num_rows == 0) {
+            echo'<script type="text/javascript">
+                alert("ningun registro");
+                </script>';
+        } else {
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                //Se crea un arreglo asociativo
+                array_push($valores, $row);
+            }
+        }
+        //Regresa array asociativo
+        return $valores;
+    }
 }
 

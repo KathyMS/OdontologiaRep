@@ -1,3 +1,7 @@
+odontologo_pdf:
+    path:     /{id}/edit
+    defaults: { _controller: "ConnectionBDBundle:Odontologo:pdf" }
+    
 odontologo:
     path:     /
     defaults: { _controller: "ConnectionBDBundle:Odontologo:index" }

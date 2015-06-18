@@ -631,6 +631,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/odontologo')) {
+            // odontologo_pdf
+            if (preg_match('#^/odontologo/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'odontologo_pdf')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\OdontologoController::pdfAction',));
+            }
+
             // odontologo
             if (rtrim($pathinfo, '/') === '/odontologo') {
                 if (substr($pathinfo, -1) !== '/') {
