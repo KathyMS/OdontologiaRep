@@ -2,11 +2,12 @@
 
 namespace ConnectionBDBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use ConnectionBDBundle\Entity\ExamenRadiologico;
 use ConnectionBDBundle\Form\ExamenRadiologicoType;
+use ExamenRadioLogicoPdf;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * ExamenRadiologico controller.
@@ -79,7 +80,7 @@ class ExamenRadiologicoController extends Controller
      *
      * @param ExamenRadiologico $entity The entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
     private function createCreateForm(ExamenRadiologico $entity)
     {
@@ -189,7 +190,7 @@ class ExamenRadiologicoController extends Controller
     *
     * @param ExamenRadiologico $entity The entity
     *
-    * @return \Symfony\Component\Form\Form The form
+    * @return Form The form
     */
     private function createEditForm(ExamenRadiologico $entity)
     {
@@ -261,7 +262,7 @@ class ExamenRadiologicoController extends Controller
      *
      * @param mixed $id The entity id
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
     private function createDeleteForm($id)
     {
@@ -269,5 +270,13 @@ class ExamenRadiologicoController extends Controller
             ->setAction($this->generateUrl('examenradiologico_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm' )))->getForm();
+    }
+       public function pdfAction($id) {
+        include ('ExamenRadioLogicoPdf.php');
+
+        $pdf = new ExamenRadioLogicoPdf();
+        $pdf->pdf($id);
+
+        return $this->redirect($this->generateUrl('examenradiologico'));
     }
 }

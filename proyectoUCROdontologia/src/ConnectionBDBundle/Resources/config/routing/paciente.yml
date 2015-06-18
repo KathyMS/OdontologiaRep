@@ -1,3 +1,7 @@
+paciente_pdf:
+    path:     /{id}/pdf
+    defaults: { _controller: "ConnectionBDBundle:Paciente:pdf" }
+
 paciente:
     path:     /
     defaults: { _controller: "ConnectionBDBundle:Paciente:index" }

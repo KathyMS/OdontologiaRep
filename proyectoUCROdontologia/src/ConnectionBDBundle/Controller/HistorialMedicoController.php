@@ -2,11 +2,12 @@
 
 namespace ConnectionBDBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use ConnectionBDBundle\Entity\HistorialMedico;
 use ConnectionBDBundle\Form\HistorialMedicoType;
+use HistorialMedicoPdf;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * HistorialMedico controller.
@@ -73,7 +74,7 @@ class HistorialMedicoController extends Controller
      *
      * @param HistorialMedico $entity The entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
     private function createCreateForm(HistorialMedico $entity)
     {
@@ -178,7 +179,7 @@ class HistorialMedicoController extends Controller
     *
     * @param HistorialMedico $entity The entity
     *
-    * @return \Symfony\Component\Form\Form The form
+    * @return Form The form
     */
     private function createEditForm(HistorialMedico $entity)
     {
@@ -250,7 +251,7 @@ class HistorialMedicoController extends Controller
      *
      * @param mixed $id The entity id
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
     private function createDeleteForm($id)
     {
@@ -261,5 +262,14 @@ class HistorialMedicoController extends Controller
             ->getForm()
         ;
     }
+            public function pdfAction($id) {
+       include ('HistorialMedicoPdf.php');
+//include ('fpdf/fpdf.php');
+        $pdf = new HistorialMedicoPdf();
+        $pdf->pdf($id);
+
+        return $this->redirect($this->generateUrl('vigilanciaepidemiologica'));
+    }
+    
     
 }

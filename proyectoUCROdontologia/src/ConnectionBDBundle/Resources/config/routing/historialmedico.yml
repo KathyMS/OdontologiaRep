@@ -1,3 +1,7 @@
+historialmedico_pdf:
+    path:     /{id}/pdf
+    defaults: { _controller: "ConnectionBDBundle:HistorialMedico:pdf" }
+
 historialmedico:
     path:     /
     defaults: { _controller: "ConnectionBDBundle:HistorialMedico:index" }

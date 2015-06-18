@@ -1,3 +1,7 @@
+examenradiologico_pdf:
+    path:     /{id}/pdf
+    defaults: { _controller: "ConnectionBDBundle:ExamenRadiologico:pdf" }
+    
 examenradiologico:
     path:     /
     defaults: { _controller: "ConnectionBDBundle:ExamenRadiologico:index" }

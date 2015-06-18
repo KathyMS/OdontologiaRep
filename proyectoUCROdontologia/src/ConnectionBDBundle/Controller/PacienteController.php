@@ -2,11 +2,12 @@
 
 namespace ConnectionBDBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use ConnectionBDBundle\Entity\Paciente;
 use ConnectionBDBundle\Form\PacienteType;
+use pdfPaciente;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Paciente controller.
@@ -75,7 +76,7 @@ class PacienteController extends Controller
      *
      * @param Paciente $entity The entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
     private function createCreateForm(Paciente $entity)
     {
@@ -177,7 +178,7 @@ class PacienteController extends Controller
     *
     * @param Paciente $entity The entity
     *
-    * @return \Symfony\Component\Form\Form The form
+    * @return Form The form
     */
     private function createEditForm(Paciente $entity)
     {
@@ -249,7 +250,7 @@ class PacienteController extends Controller
      *
      * @param mixed $id The entity id
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
     private function createDeleteForm($id)
     {
@@ -260,6 +261,14 @@ class PacienteController extends Controller
             ->add('submit', 'submit', array('label' => 'Eliminar', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm' )))
             ->getForm()
         ;
+    }
+        public function pdfAction($id) {
+        include ('pdfPaciente.php');
+
+        $pdf = new pdfPaciente();
+        $pdf->pdf($id);
+
+        return $this->redirect($this->generateUrl('paciente'));
     }
       
 }

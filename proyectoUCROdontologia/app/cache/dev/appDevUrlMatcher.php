@@ -248,6 +248,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/examenradiologico')) {
+            // examenradiologico_pdf
+            if (preg_match('#^/examenradiologico/(?P<id>[^/]++)/pdf$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'examenradiologico_pdf')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\ExamenRadiologicoController::pdfAction',));
+            }
+
             // examenradiologico
             if (rtrim($pathinfo, '/') === '/examenradiologico') {
                 if (substr($pathinfo, -1) !== '/') {
@@ -308,6 +313,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/historialmedico')) {
+            // historialmedico_pdf
+            if (preg_match('#^/historialmedico/(?P<id>[^/]++)/pdf$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'historialmedico_pdf')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\HistorialMedicoController::pdfAction',));
+            }
+
             // historialmedico
             if (rtrim($pathinfo, '/') === '/historialmedico') {
                 if (substr($pathinfo, -1) !== '/') {
@@ -429,6 +439,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             if (0 === strpos($pathinfo, '/paciente')) {
+                // paciente_pdf
+                if (preg_match('#^/paciente/(?P<id>[^/]++)/pdf$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'paciente_pdf')), array (  '_controller' => 'ConnectionBDBundle\\Controller\\PacienteController::pdfAction',));
+                }
+
                 // paciente
                 if (rtrim($pathinfo, '/') === '/paciente') {
                     if (substr($pathinfo, -1) !== '/') {
