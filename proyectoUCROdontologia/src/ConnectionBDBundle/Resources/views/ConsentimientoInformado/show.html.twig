@@ -1,32 +1,30 @@
-{% extends '::base.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
+<h1>Consentimiento Informado</h1>
 
-{% block body -%}
-    <h1>ConsentimientoInformado</h1>
+<div class="box col-md-12">
+    <div class="box-inner">
+        <div class="box-header well" data-original-title="">
+        </div>
+        <div class="box-content">
+            <table c>
+                <tbody>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ entity.rutaImagen }}</td>
+                    </tr> 
+                    <tr>
+                        <th>Imagen</th>
+                        <td>
+                            
+                            {% set foo ='imagenes_consentimientos/' ~ entity.rutaImagen %}    
+                            <img src="{{asset(foo)}}" alt="one" height="800px" width="500px">
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Rutaimagen</th>
-                <td>{{ entity.rutaImagen }}</td>
-            </tr>
-        </tbody>
-    </table>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('consentimientoinformado') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('consentimientoinformado_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
-{% endblock %}
+        </div>
+
+        {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

@@ -21,13 +21,13 @@ class ConsentimientoInformadoController extends Controller
      */
     public function indexAction()
     {
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $entities = $em->getRepository('ConnectionBDBundle:ConsentimientoInformado')->findAll();
-//
-//        return $this->render('ConnectionBDBundle:ConsentimientoInformado:index.html.twig', array(
-//            'entities' => $entities,
-//        ));
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('ConnectionBDBundle:ConsentimientoInformado')->findAll();
+
+        return $this->render('ConnectionBDBundle:ConsentimientoInformado:index.html.twig', array(
+            'entities' => $entities,
+        ));
          return $this->render('ConnectionBDBundle:ConsentimientoInformado:index.html.twig'
         );
     }
@@ -35,56 +35,62 @@ class ConsentimientoInformadoController extends Controller
      * Creates a new ConsentimientoInformado entity.
      *
      */
-    
-    
     public function aSubirImagenAction(Request $request) {
+        $hostname = $this->container->getParameter('database_host');
+        $user = $this->container->getParameter('database_user');
+        $pass = $this->container->getParameter('database_password');
+        $dataBase = $this->container->getParameter('database_name');
+        mysql_connect($hostname, $user, $pass);
+        mysql_select_db($dataBase);
+
+
+
+
         if ($request->getMethod() == 'POST') {
-                $descripcion = $request->get('descripcion');
-                $imagen = $request->get('archivo');
-                if ((!$descripcion == "") || (!$imagen == "")) {
-                         $file   = $_FILES['archivo'];
-                         // print_r($file);  just checking File properties
+            $idExp = $request->get('idExp');
+            $imagen = $request->get('archivo');
+            $file = $_FILES['archivo'];
+            // print_r($file);  just checking File properties
+            // File Properties
+            $file_name = $file['name'];
+            $file_tmp = $file['tmp_name'];
 
-                          // File Properties
-                          $file_name  = $file['name'];
-                          $file_tmp   = $file['tmp_name'];
-                          
-                          
 
-                            // Working With File Extension
-                          $file_ext   = explode('.', $file_name);
-                          $file_fname = explode('.', $file_name);
 
-                          $file_fname = strtolower(current($file_fname));
-                          $file_ext   = strtolower(end($file_ext));
-                          $allowed    = array('jpg', 'jpeg', 'png');
+            // Working With File Extension
+            $file_ext = explode('.', $file_name);
+            $file_fname = explode('.', $file_name);
 
-                        if (in_array($file_ext,$allowed)) {
-                            $root = getcwd();
-                            move_uploaded_file($_FILES['archivo']['tmp_name'],$root.'/imagenes_consentimientos/'.$_FILES['archivo']['name']);
-//                            $archivo = new Galeria();
-//                            $archivo->setImagen($file_name);
-//                            $archivo->setDescripcion($descripcion);
-//
-//                            $em = $this->getDoctrine()->getManager();
-//                            $em->persist($archivo);
-//                            $em->flush();
-                            $message = '¡Archivo cargado correctamente!';
-                            return $this->render('ConnectionBDBundle:ConsentimientoInformado:index.html.twig', array('message' => $message));
-                         }//fin validadicon de formato
-                         else {
-                             $error = '¡Informato incorrecto!';
-                             return $this->render('ConnectionBDBundle:ConsentimientoInformado:index.html.twig', array('error' => $error));
-                         }
-                }//fin validacion campos vacios
-                else {
-                    $error = '¡Por favor complete todos los espacios solicitados!';
-                    return $this->render('ConnectionBDBundle:ConsentimientoInformado:index.html.twig', array('error' => $error));
-            }//else error
+            $file_fname = strtolower(current($file_fname));
+            $file_ext = strtolower(end($file_ext));
+            $allowed = array('jpg', 'jpeg', 'png');
+
+            
+            
+        $qry = "INSERT INTO consentimiento_informado(idExpediente,ruta_imagen) VALUES
+                ('2','".$file_name."')";
+
+        mysql_query($qry);
+            
+            
+            if (in_array($file_ext, $allowed)) {
+                $root = getcwd();
+                move_uploaded_file($_FILES['archivo']['tmp_name'], $root . '/imagenes_consentimientos/' . $_FILES['archivo']['name']);
+                $message = '¡Archivo cargado correctamente!';
+
+
+
+                return $this->redirect($this->generateUrl('consentimientoinformado'));
+            }//fin validadicon de formato
+            else {
+                $error = '¡Informato incorrecto!';
+                return $this->redirect($this->generateUrl('consentimientoinformado'));
+            }
         }
-        return $this->render('ConnectionBDBundle:ConsentimientoInformado:index.html.twig');
-    }
 
+        return $this->redirect($this->generateUrl('consentimientoinformado'));
+
+    }
     
     
     public function createAction(Request $request)

@@ -1,15 +1,71 @@
-{% extends '::base.html.twig' %}
-
+{% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
+{% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
 {% block body -%}
-    <h1>ConsentimientoInformado creation</h1>
+<div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2>Crear Consentimiento Informado</h2>
+            </div>
+            <center>
+                <div class="box-content">
+                    <table class="table table-bordered table-striped table-condensed">
+                        {{ form_start(form)}}
+                        {{form_errors(form)}}
+                        <tbody>
+                            <tr>
+                                <th style="width: 400px;"> {{ form_label(form.idexpediente) }}</th>
+                                <td>{{form_widget(form.idexpediente)}}
+                                    {{ form_errors(form.idexpediente) }}</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th style="width: 400px;"> {{form_label(form.rutaImagen)}}</th>
+                                <td> {{form_widget(form.rutaImagen)}}
+                                    {{ form_errors(form.rutaImagen) }}</td>
+                            </tr>
 
-    {{ form(form) }}
+                           
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('consentimientoinformado') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                          
+                    </table>
+                </div>
+
+                            <table hidden="true">
+                    <tr>
+
+                        <td> {{form_widget(form.submit)}}
+                        </td>
+                        <td>  <a href="{{ path('paciente') }}" class="btn btn-primary btn-sm">
+                                Volver
+                            </a>
+                        </td>
+
+                    </tr>
+                </table>
+
+                {{ form_end(form)}}
+            </center>
+        </div>
+    
+    <div class="box-content">
+        <form role="form" method="POST" enctype="multipart/form-data" action="aSubirImagen">
+            {% if message is defined%}
+                <p class="help-block"><font color="088A08">{{message}}</font></p>
+                {% endif %}
+                {% if error is defined %}
+                <p class="help-block"><font color="#FF0000">{{error}}</font></p>
+                {% endif %}
+            <h4>Busque la imagen del consentimiento informado</h4>
+
+          
+            <div class="form-group">
+                <label for="exampleInputFile">Imagen</label>
+                <input type="file" id="exampleInputFile" name="archivo">
+
+            </div>
+
+            <button class="btn btn-info btn-sm">Guardar</button>
+        </form>
+    </div>
+
 {% endblock %}
+{% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}

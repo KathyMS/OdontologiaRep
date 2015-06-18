@@ -1,32 +1,39 @@
 {% include 'AdministradorBundle:Default:administrador_header.html.twig' %}
 {% include 'AdministradorBundle:Default:administrador_menu_horizontal.html.twig' %}
 
+    <h1>Consentimiento Informado </h1>
 
-<center>
-    <div class="box-content">
-        <form role="form" method="POST" enctype="multipart/form-data" action="{{path('aSubirImagen')}}">
-            {% if message is defined%}
-                <p class="help-block"><font color="088A08">{{message}}</font></p>
-                {% endif %}
-                {% if error is defined %}
-                <p class="help-block"><font color="#FF0000">{{error}}</font></p>
-                {% endif %}
-            <h4>Busque la imagen del consentimiento informado</h4>
+    <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Rutaimagen</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('consentimientoinformado_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.rutaImagen }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('consentimientoinformado_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                   
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-            <div class="form-group">
-                <label for="exampleInputEmail1">Descripción</label>
-                <input type="text" class="form-control" id="inputSuccess1" name="descripcion">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputFile">Imagen</label>
-                <input type="file" id="exampleInputFile" name="archivo">
-
-            </div>
-
-            <button class="btn btn-info btn-sm">Guardar</button>
-        </form>
-    </div>
-</center>
+        <ul>
+        <li>
+            <a href="{{ path('consentimientoinformado_new') }}">
+            Nuevo consentimiento            </a>
+        </li>
+    </ul>
 
 {% include 'AdministradorBundle:Default:administrador_footer.html.twig' %}
-

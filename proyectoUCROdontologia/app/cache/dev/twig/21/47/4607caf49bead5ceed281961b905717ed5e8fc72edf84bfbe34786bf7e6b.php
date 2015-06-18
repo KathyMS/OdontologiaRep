@@ -21,6 +21,7 @@ class __TwigTemplate_21474607caf49bead5ceed281961b905717ed5e8fc72edf84bfbe34786b
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_menu_vertical.html.twig")->display($context);
         // line 3
         echo "
+
   
 
 
@@ -37,9 +38,9 @@ class __TwigTemplate_21474607caf49bead5ceed281961b905717ed5e8fc72edf84bfbe34786b
       
 
 ";
-        // line 19
-        $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
         // line 20
+        $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
+        // line 21
         echo "
 ";
     }
@@ -56,6 +57,6 @@ class __TwigTemplate_21474607caf49bead5ceed281961b905717ed5e8fc72edf84bfbe34786b
 
     public function getDebugInfo()
     {
-        return array (  43 => 20,  41 => 19,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  44 => 21,  42 => 20,  23 => 3,  21 => 2,  19 => 1,);
     }
 }

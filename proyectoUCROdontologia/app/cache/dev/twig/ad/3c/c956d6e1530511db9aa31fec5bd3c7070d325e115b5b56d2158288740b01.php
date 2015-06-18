@@ -25,7 +25,7 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
 ";
         // line 4
         $this->displayBlock('body', $context, $blocks);
-        // line 95
+        // line 96
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
 
@@ -74,7 +74,7 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
             // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "cedula", array()), "html", null, true);
             echo "</td>
-                                
+
                                 <td>";
             // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "edad", array()), "html", null, true);
@@ -118,6 +118,10 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
             // line 58
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("paciente_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">Editar</a>
+                                        <a href=\"";
+            // line 59
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("paciente_pdf", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-primary btn-sm\" style=\"width:40px; height:30px\">PDF</a>
 
                                     </ul>
                                 </td>
@@ -128,34 +132,34 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 65
+        // line 66
         echo "                    </tbody>
                 </table>
-<center>
-                <ul class=\"pagination pagination-centered\">
-                    <li><a href=\"#\">Anterior</a></li>
-                    <li class=\"active\">
-                        <a href=\"#\">1</a>
-                    </li>
-                    <li><a href=\"#\">2</a></li>
-                    <li><a href=\"#\">3</a></li>
-                    <li><a href=\"#\">4</a></li>
-                    <li><a href=\"#\">Siguiente</a></li>
-                </ul>
-    </center>
+                <center>
+                    <ul class=\"pagination pagination-centered\">
+                        <li><a href=\"#\">Anterior</a></li>
+                        <li class=\"active\">
+                            <a href=\"#\">1</a>
+                        </li>
+                        <li><a href=\"#\">2</a></li>
+                        <li><a href=\"#\">3</a></li>
+                        <li><a href=\"#\">4</a></li>
+                        <li><a href=\"#\">Siguiente</a></li>
+                    </ul>
+                </center>
             </div>
-<center>
-            <ul>
+            <center>
+                <ul>
 
-                <a href=\"";
-        // line 83
+                    <a href=\"";
+        // line 84
         echo $this->env->getExtension('routing')->getPath("paciente_new");
         echo "\">
-                    <strong>Ingresar un nuevo paciente </strong>
-                </a>
+                        <strong>Ingresar un nuevo paciente </strong>
+                    </a>
 
-            </ul>
-</center>
+                </ul>
+            </center>
         </div>
 
     </div><!--/span-->
@@ -176,6 +180,6 @@ class __TwigTemplate_ad3cc956d6e1530511db9aa31fec5bd3c7070d325e115b5b56d21582887
 
     public function getDebugInfo()
     {
-        return array (  152 => 83,  132 => 65,  119 => 58,  113 => 55,  105 => 50,  101 => 49,  95 => 46,  91 => 45,  86 => 43,  80 => 40,  75 => 38,  69 => 37,  65 => 35,  61 => 34,  36 => 11,  33 => 4,  29 => 95,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  156 => 84,  136 => 66,  123 => 59,  119 => 58,  113 => 55,  105 => 50,  101 => 49,  95 => 46,  91 => 45,  86 => 43,  80 => 40,  75 => 38,  69 => 37,  65 => 35,  61 => 34,  36 => 11,  33 => 4,  29 => 96,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
     }
 }
