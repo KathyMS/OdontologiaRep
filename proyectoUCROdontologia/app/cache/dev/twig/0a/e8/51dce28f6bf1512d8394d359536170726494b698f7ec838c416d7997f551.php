@@ -25,7 +25,7 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
 ";
         // line 4
         $this->displayBlock('body', $context, $blocks);
-        // line 90
+        // line 92
         echo "            ";
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
@@ -63,19 +63,19 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
             // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("historialmedico_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">
-                                    ";
+                                        ";
             // line 26
             if (($this->getAttribute($context["entity"], "historialSocialTabaquismo", array()) == 1)) {
                 // line 27
-                echo "                                        &#x2713 
-                                    ";
+                echo "                                            &#x2713 
+                                        ";
             }
             // line 29
-            echo "                                    ";
+            echo "                                        ";
             if (($this->getAttribute($context["entity"], "historialSocialTabaquismo", array()) != 1)) {
                 // line 30
-                echo "                                        Sin Sintomas
-                                    ";
+                echo "                                            Sin Sintomas
+                                        ";
             }
             // line 31
             echo "</a></td>
@@ -97,7 +97,7 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
             // line 39
             echo "                                </td>
                                 <td>
-                                ";
+                                    ";
             // line 41
             if (($this->getAttribute($context["entity"], "historiaDentalDolorMasticar", array()) == 1)) {
                 // line 42
@@ -105,7 +105,7 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
                                     ";
             }
             // line 44
-            echo "                                ";
+            echo "                                    ";
             if (($this->getAttribute($context["entity"], "historiaDentalDolorMasticar", array()) != 1)) {
                 // line 45
                 echo "                                        &#x2713 
@@ -114,7 +114,7 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
             // line 46
             echo "</td>
                                 <td>
-                                ";
+                                    ";
             // line 48
             if (($this->getAttribute($context["entity"], "historiaDentalRechinadoDientes", array()) == 1)) {
                 // line 49
@@ -122,7 +122,7 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
                                     ";
             }
             // line 51
-            echo "                                ";
+            echo "                                    ";
             if (($this->getAttribute($context["entity"], "historiaDentalRechinadoDientes", array()) != 1)) {
                 // line 52
                 echo "                                        Sin Sintomas 
@@ -137,8 +137,13 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("historialmedico_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">Ver</a>
 
+
                                         <a href=\"";
-            // line 58
+            // line 59
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("historialmedico_pdf", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-primary btn-sm\" style=\"width:40px; height:30px\">PDF</a>
+                                        <a href=\"";
+            // line 60
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("historialmedico_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">Editar</a>
 
@@ -150,7 +155,7 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 64
+        // line 66
         echo "                    </tbody>
                 </table>
                 <center>
@@ -169,7 +174,7 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
                     <ul>
 
                         <a href=\"";
-        // line 81
+        // line 83
         echo $this->env->getExtension('routing')->getPath("historialmedico_new");
         echo "\">
                             Crear un nuevo historial médico
@@ -194,6 +199,6 @@ class __TwigTemplate_0ae851dce28f6bf1512d8394d359536170726494b698f7ec838c416d799
 
     public function getDebugInfo()
     {
-        return array (  173 => 81,  154 => 64,  142 => 58,  137 => 56,  132 => 53,  128 => 52,  125 => 51,  121 => 49,  119 => 48,  115 => 46,  111 => 45,  108 => 44,  104 => 42,  102 => 41,  98 => 39,  94 => 37,  91 => 36,  87 => 34,  85 => 33,  81 => 31,  77 => 30,  74 => 29,  70 => 27,  68 => 26,  64 => 25,  61 => 24,  57 => 23,  37 => 5,  34 => 4,  29 => 90,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  178 => 83,  159 => 66,  147 => 60,  143 => 59,  137 => 56,  132 => 53,  128 => 52,  125 => 51,  121 => 49,  119 => 48,  115 => 46,  111 => 45,  108 => 44,  104 => 42,  102 => 41,  98 => 39,  94 => 37,  91 => 36,  87 => 34,  85 => 33,  81 => 31,  77 => 30,  74 => 29,  70 => 27,  68 => 26,  64 => 25,  61 => 24,  57 => 23,  37 => 5,  34 => 4,  29 => 92,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

@@ -22,7 +22,7 @@ class __TwigTemplate_dde6f893a4a7143591697119f7554e0cf599b04966c7ae6ed6af80898de
         // line 3
         echo "
     <h1>Consentimiento Informado </h1>
-
+    <div class=\"box-content\">
     <table class=\"table table-bordered table-striped table-condensed\">
         <thead>
             <tr>
@@ -79,7 +79,7 @@ class __TwigTemplate_dde6f893a4a7143591697119f7554e0cf599b04966c7ae6ed6af80898de
             Nuevo consentimiento            </a>
         </li>
     </ul>
-
+</div>
 ";
         // line 39
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);

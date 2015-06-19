@@ -128,8 +128,24 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
 
 
             </a>
+        </div> 
+                <div class=\"col-md-3 col-sm-3 col-xs-6\">
+            <a data-toggle=\"tooltip\" title=\"12 new messages.\" class=\"well top-block\" href=\"";
+        // line 85
+        echo $this->env->getExtension('routing')->getUrl("vigilanciaepidemiologica");
+        echo "\">
+                <i class=\"glyphicon glyphicon-envelope red\"></i>
+
+                <div>Vigilancia Epidemiologica</div>
+
+
+            </a>
         </div>
     </div>
+                
+                
+       
+
 
     <div class=\"row\">
         <div class=\"box col-md-12\">
@@ -148,6 +164,6 @@ class __TwigTemplate_29e70953cee973840ddd345ed9b4ca15b64d761db289677a4a72edd9030
 
     public function getDebugInfo()
     {
-        return array (  123 => 76,  109 => 65,  96 => 55,  83 => 45,  70 => 35,  50 => 18,  45 => 16,  40 => 14,  35 => 12,  30 => 10,  19 => 1,);
+        return array (  135 => 85,  123 => 76,  109 => 65,  96 => 55,  83 => 45,  70 => 35,  50 => 18,  45 => 16,  40 => 14,  35 => 12,  30 => 10,  19 => 1,);
     }
 }

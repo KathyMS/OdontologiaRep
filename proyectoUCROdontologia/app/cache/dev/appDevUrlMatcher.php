@@ -127,6 +127,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // odontograma
+        if ($pathinfo === '/odontograma') {
+            return array (  '_controller' => 'ConnectionBDBundle\\Controller\\OdontogramaController::createAction',  '_route' => 'odontograma',);
+        }
+
         if (0 === strpos($pathinfo, '/cita')) {
             // cita
             if (rtrim($pathinfo, '/') === '/cita') {

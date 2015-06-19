@@ -25,7 +25,7 @@ class __TwigTemplate_b5f355ce778d16b247f5ce78f09057ebc546496aca9c4a0dfdd9fc81717
 ";
         // line 4
         $this->displayBlock('body', $context, $blocks);
-        // line 70
+        // line 71
         echo "            ";
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
@@ -105,6 +105,10 @@ class __TwigTemplate_b5f355ce778d16b247f5ce78f09057ebc546496aca9c4a0dfdd9fc81717
             // line 40
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("odontologo_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">Editar</a>
+ <a href=\"";
+            // line 41
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("odontologo_pdf", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-primary btn-sm\" style=\"width:40px; height:30px\">PDF</a>
 
                                     </ul>
                                 </td>
@@ -114,7 +118,7 @@ class __TwigTemplate_b5f355ce778d16b247f5ce78f09057ebc546496aca9c4a0dfdd9fc81717
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 47
         echo "                    </tbody>
                 </table>
                 <center>
@@ -133,7 +137,7 @@ class __TwigTemplate_b5f355ce778d16b247f5ce78f09057ebc546496aca9c4a0dfdd9fc81717
                     <ul>
 
                         <a href=\"";
-        // line 63
+        // line 64
         echo $this->env->getExtension('routing')->getPath("odontologo_new");
         echo "\">
                             Crear un nuevo odontólogo
@@ -156,6 +160,6 @@ class __TwigTemplate_b5f355ce778d16b247f5ce78f09057ebc546496aca9c4a0dfdd9fc81717
 
     public function getDebugInfo()
     {
-        return array (  137 => 63,  118 => 46,  106 => 40,  101 => 38,  95 => 35,  92 => 34,  88 => 33,  85 => 32,  81 => 30,  79 => 29,  75 => 28,  71 => 27,  65 => 26,  62 => 25,  58 => 24,  37 => 5,  34 => 4,  29 => 70,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  141 => 64,  122 => 47,  110 => 41,  106 => 40,  101 => 38,  95 => 35,  92 => 34,  88 => 33,  85 => 32,  81 => 30,  79 => 29,  75 => 28,  71 => 27,  65 => 26,  62 => 25,  58 => 24,  37 => 5,  34 => 4,  29 => 71,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

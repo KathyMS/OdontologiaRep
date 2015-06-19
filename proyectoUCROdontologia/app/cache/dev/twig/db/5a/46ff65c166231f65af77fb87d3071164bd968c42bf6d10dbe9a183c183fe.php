@@ -20,14 +20,14 @@ class __TwigTemplate_db5a46ff65c166231f65af77fb87d3071164bd968c42bf6d10dbe9a183c
         // line 2
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_menu_horizontal.html.twig")->display($context);
         // line 3
-        echo "<h1>ConsentimientoInformado</h1>
+        echo "<h1>Consentimiento Informado</h1>
 
 <div class=\"box col-md-12\">
     <div class=\"box-inner\">
         <div class=\"box-header well\" data-original-title=\"\">
         </div>
         <div class=\"box-content\">
-            <table class=\"table table-bordered table-striped table-condensed\">
+            <table c>
                 <tbody>
                     <tr>
                         <th>Nombre</th>

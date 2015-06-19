@@ -26,10 +26,10 @@ class __TwigTemplate_a745a2fa7c64a40a193a6dd258bc8130d9beeb13c77158fe87007cb058a
 ";
         // line 5
         $this->displayBlock('body', $context, $blocks);
-        // line 79
+        // line 80
         echo "
 ";
-        // line 80
+        // line 81
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
 
@@ -105,6 +105,10 @@ class __TwigTemplate_a745a2fa7c64a40a193a6dd258bc8130d9beeb13c77158fe87007cb058a
             // line 42
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("examenradiologico_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\"class=\"btn btn-primary btn-sm\">Editar</a>
+<a href=\"";
+            // line 43
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("examenradiologico_pdf", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            echo "\"class=\"btn btn-primary btn-sm\" style=\"width:40px; height:30px\">PDF</a>
 
                                     </ul>
                                 </td>
@@ -114,7 +118,7 @@ class __TwigTemplate_a745a2fa7c64a40a193a6dd258bc8130d9beeb13c77158fe87007cb058a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 49
         echo "                    </tbody>
                 </table>
 
@@ -136,7 +140,7 @@ class __TwigTemplate_a745a2fa7c64a40a193a6dd258bc8130d9beeb13c77158fe87007cb058a
                 <ul>
 
                     <a href=\"";
-        // line 68
+        // line 69
         echo $this->env->getExtension('routing')->getPath("examenradiologico_new");
         echo "\">
                         <strong>Ingresar un Nuevo Examen Radiológico </strong>
@@ -163,6 +167,6 @@ class __TwigTemplate_a745a2fa7c64a40a193a6dd258bc8130d9beeb13c77158fe87007cb058a
 
     public function getDebugInfo()
     {
-        return array (  140 => 68,  118 => 48,  106 => 42,  101 => 40,  95 => 37,  91 => 36,  87 => 35,  83 => 34,  79 => 33,  74 => 31,  70 => 30,  67 => 29,  63 => 28,  40 => 7,  37 => 5,  33 => 80,  30 => 79,  28 => 5,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  144 => 69,  122 => 49,  110 => 43,  106 => 42,  101 => 40,  95 => 37,  91 => 36,  87 => 35,  83 => 34,  79 => 33,  74 => 31,  70 => 30,  67 => 29,  63 => 28,  40 => 7,  37 => 5,  33 => 81,  30 => 80,  28 => 5,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

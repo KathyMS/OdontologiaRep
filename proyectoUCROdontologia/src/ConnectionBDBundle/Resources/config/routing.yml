@@ -1,3 +1,7 @@
+connection_bd_odontograma:
+    resource: "@ConnectionBDBundle/Resources/config/routing/odontograma.yml"
+    prefix:   /
+
 connection_bd_consentimientoinformado:
     resource: "@ConnectionBDBundle/Resources/config/routing/consentimientoinformado.yml"
     prefix:   /consentimientoinformado

@@ -1,0 +1,5 @@
+odontograma:
+    path:     /odontograma
+    defaults: { _controller: "ConnectionBDBundle:Odontograma:create" }
+
+
