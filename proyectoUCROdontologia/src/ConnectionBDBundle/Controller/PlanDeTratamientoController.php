@@ -251,7 +251,7 @@ class PlanDeTratamientoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('plandetratamiento_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm')))
+            ->add('submit', 'submit', array('label' => 'Eliminar', 'attr'  => array ( 'class'  =>  'btn btn-primary btn-sm')))
             ->getForm()
         ;
     }

@@ -22,7 +22,7 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_menu_horizontal.html.twig")->display($context);
         // line 3
         $this->displayBlock('body', $context, $blocks);
-        // line 111
+        // line 141
         echo "        ";
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
@@ -62,15 +62,27 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
                         </tr>
                         <tr>
                             <th>Sexo</th>
-                            <td>";
+                            ";
         // line 27
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "sexo", array()), "html", null, true);
-        echo "</td>
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "sexo", array()) == 1)) {
+            // line 28
+            echo "                            <td> Masculino </td>
+                            ";
+        }
+        // line 30
+        echo "                            ";
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "sexo", array()) == 2)) {
+            // line 31
+            echo "                            <td> Femenino </td>
+                            ";
+        }
+        // line 32
+        echo "                            
                         </tr>
                         <tr>
                             <th>Edad</th>
                             <td>";
-        // line 31
+        // line 36
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "edad", array()), "html", null, true);
         echo "</td>
                         </tr>
@@ -78,84 +90,141 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
                         <tr>
                             <th>Ocupacion</th>
                             <td>";
-        // line 36
+        // line 41
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "ocupacion", array()), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Carne</th>
                             <td>";
-        // line 40
+        // line 45
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "carne", array()), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Apartado postal</th>
                             <td>";
-        // line 44
+        // line 49
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "apartadoPostal", array()), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Beca</th>
-                            <td>";
-        // line 48
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "beca", array()), "html", null, true);
-        echo "</td>
-                        </tr>
+                            ";
+        // line 53
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "beca", array()) == 1)) {
+            // line 54
+            echo "                            <td> Beca 1 </td>
+                            ";
+        }
+        // line 56
+        echo "                            ";
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "beca", array()) == 2)) {
+            // line 57
+            echo "                            <td> Beca 2 </td>
+                            ";
+        }
+        // line 59
+        echo "                            ";
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "beca", array()) == 3)) {
+            // line 60
+            echo "                            <td> Beca 3 </td>
+                            ";
+        }
+        // line 62
+        echo "                            ";
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "beca", array()) == 4)) {
+            // line 63
+            echo "                            <td> Beca 4 </td>
+                            ";
+        }
+        // line 65
+        echo "                            ";
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "beca", array()) == 5)) {
+            // line 66
+            echo "                            <td> Beca 5 </td>
+                            ";
+        }
+        // line 68
+        echo "                        </tr>
                         <tr>
                             <th>Carrera</th>
                             <td>";
-        // line 52
+        // line 71
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "carrera", array()), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
-                            <th>Estado civil</th>
-                            <td>";
-        // line 56
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "estadoCivil", array()), "html", null, true);
-        echo "</td>
-                        </tr>
+                             <th>Estado civil</th>
+                            ";
+        // line 75
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "estadoCivil", array()) == 1)) {
+            // line 76
+            echo "                            <td> Soltero </td>
+                            ";
+        }
+        // line 78
+        echo "                            ";
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "estadoCivil", array()) == 2)) {
+            // line 79
+            echo "                            <td> Casado </td>
+                            ";
+        }
+        // line 81
+        echo "                            ";
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "estadoCivil", array()) == 3)) {
+            // line 82
+            echo "                            <td> Divorciado </td>
+                            ";
+        }
+        // line 84
+        echo "                            ";
+        if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "estadoCivil", array()) == 4)) {
+            // line 85
+            echo "                            <td> Viudo </td>
+                            ";
+        }
+        // line 87
+        echo "                        </tr>
                         <tr>
                             <th>Direccion</th>
                             <td>";
-        // line 60
+        // line 90
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "direccion", array()), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Telefono de habitacion</th>
                             <td>";
-        // line 64
+        // line 94
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "telefonoHabitacion", array()), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Telefono de trabajo</th>
                             <td>";
-        // line 68
+        // line 98
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "telefonoTrabajo", array()), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Telefono movil</th>
                             <td>";
-        // line 72
+        // line 102
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "telefonoMovil", array()), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Correo electronico</th>
                             <td>";
-        // line 76
+        // line 106
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "correoElectronico", array()), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Sintoma</th>
                             <td>";
-        // line 80
+        // line 110
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "sintoma", array()), "html", null, true);
         echo "</td>
                         </tr>
@@ -168,7 +237,7 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
                                     <ul class=\"record_actions\">
                                         <td>
                                             <a href=\"";
-        // line 90
+        // line 120
         echo $this->env->getExtension('routing')->getPath("paciente");
         echo "\"class=\"btn btn-primary btn-sm\">
                                                 Volver
@@ -176,7 +245,7 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
                                         </td>
                                         <td>
                                             <a href=\"";
-        // line 95
+        // line 125
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("paciente_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
         echo " \" class=\"btn btn-primary btn-sm\">
                                                  Editar
@@ -184,17 +253,17 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
                                         </td>
 
                                         ";
-        // line 100
+        // line 130
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
         echo "
                                         <td>      
                                             ";
-        // line 102
+        // line 132
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'widget');
         echo " 
                                         </td>
                                         ";
-        // line 104
+        // line 134
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
         echo "
                                        
@@ -217,6 +286,6 @@ class __TwigTemplate_a334c05d0c5430cd64677b9ed2a04cec110456812917533b4dd6d0a9d50
 
     public function getDebugInfo()
     {
-        return array (  198 => 104,  193 => 102,  188 => 100,  180 => 95,  172 => 90,  159 => 80,  152 => 76,  145 => 72,  138 => 68,  131 => 64,  124 => 60,  117 => 56,  110 => 52,  103 => 48,  96 => 44,  89 => 40,  82 => 36,  74 => 31,  67 => 27,  60 => 23,  53 => 19,  46 => 15,  34 => 5,  31 => 3,  26 => 111,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  267 => 134,  262 => 132,  257 => 130,  249 => 125,  241 => 120,  228 => 110,  221 => 106,  214 => 102,  207 => 98,  200 => 94,  193 => 90,  188 => 87,  184 => 85,  181 => 84,  177 => 82,  174 => 81,  170 => 79,  167 => 78,  163 => 76,  161 => 75,  154 => 71,  149 => 68,  145 => 66,  142 => 65,  138 => 63,  135 => 62,  131 => 60,  128 => 59,  124 => 57,  121 => 56,  117 => 54,  115 => 53,  108 => 49,  101 => 45,  94 => 41,  86 => 36,  80 => 32,  76 => 31,  73 => 30,  69 => 28,  67 => 27,  60 => 23,  53 => 19,  46 => 15,  34 => 5,  31 => 3,  26 => 141,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

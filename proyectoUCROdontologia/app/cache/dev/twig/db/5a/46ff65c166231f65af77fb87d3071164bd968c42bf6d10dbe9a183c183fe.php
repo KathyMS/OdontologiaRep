@@ -20,14 +20,14 @@ class __TwigTemplate_db5a46ff65c166231f65af77fb87d3071164bd968c42bf6d10dbe9a183c
         // line 2
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_menu_horizontal.html.twig")->display($context);
         // line 3
-        echo "<h1>Consentimiento Informado</h1>
+        echo "<div class=\"box col-md-12\">
+        <div class=\"box-inner\">
+            <div class=\"box-header well\" data-original-title=\"\">
+                <h2>Consentimiento Informado</h2>
+            </div>
 
-<div class=\"box col-md-12\">
-    <div class=\"box-inner\">
-        <div class=\"box-header well\" data-original-title=\"\">
-        </div>
-        <div class=\"box-content\">
-            <table c>
+           <div class=\"box-content\">
+            <table class=\"table table-bordered table-striped table-condensed\">
                 <tbody>
                     <tr>
                         <th>Nombre</th>
@@ -48,16 +48,17 @@ class __TwigTemplate_db5a46ff65c166231f65af77fb87d3071164bd968c42bf6d10dbe9a183c
         // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((isset($context["foo"]) ? $context["foo"] : $this->getContext($context, "foo"))), "html", null, true);
         echo "\" alt=\"one\" height=\"800px\" width=\"500px\">
-
                         </td>
                     </tr> 
                 </tbody>
             </table>
 
+       
         </div>
+</div>
 
         ";
-        // line 30
+        // line 31
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
 
@@ -73,6 +74,6 @@ class __TwigTemplate_db5a46ff65c166231f65af77fb87d3071164bd968c42bf6d10dbe9a183c
 
     public function getDebugInfo()
     {
-        return array (  61 => 30,  49 => 21,  45 => 20,  36 => 14,  23 => 3,  21 => 2,  19 => 1,);
+        return array (  62 => 31,  49 => 21,  45 => 20,  36 => 14,  23 => 3,  21 => 2,  19 => 1,);
     }
 }

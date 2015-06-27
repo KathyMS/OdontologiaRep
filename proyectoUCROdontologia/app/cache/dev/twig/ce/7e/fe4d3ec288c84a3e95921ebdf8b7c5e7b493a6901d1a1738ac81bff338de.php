@@ -22,7 +22,7 @@ class __TwigTemplate_ce7efe4d3ec288c84a3e95921ebdf8b7c5e7b493a6901d1a1738ac81bff
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_menu_horizontal.html.twig")->display($context);
         // line 3
         $this->displayBlock('body', $context, $blocks);
-        // line 71
+        // line 70
         $this->env->loadTemplate("AdministradorBundle:Default:administrador_footer.html.twig")->display($context);
     }
 
@@ -48,10 +48,7 @@ class __TwigTemplate_ce7efe4d3ec288c84a3e95921ebdf8b7c5e7b493a6901d1a1738ac81bff
         echo "
                         <tbody>
                             <tr>
-                                <th style=\"width: 400px;\"> ";
-        // line 16
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "idexpediente", array()), 'label');
-        echo "</th>
+                                <th style=\"width: 400px;\">  Paciente </th>
                                 <td>";
         // line 17
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "idexpediente", array()), 'widget');
@@ -79,69 +76,68 @@ class __TwigTemplate_ce7efe4d3ec288c84a3e95921ebdf8b7c5e7b493a6901d1a1738ac81bff
                            
 
                           
-                    </table>
-                </div>
+                    </table>     
+                            
+                                    <table hidden=\"true\">
+                                        <tr>
 
-                            <table hidden=\"true\">
-                    <tr>
-
-                        <td> ";
-        // line 35
+                                            <td> ";
+        // line 34
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "submit", array()), 'widget');
         echo "
-                        </td>
-                        <td>  <a href=\"";
-        // line 37
+                                            </td>
+                                            <td>  <a href=\"";
+        // line 36
         echo $this->env->getExtension('routing')->getPath("paciente");
         echo "\" class=\"btn btn-primary btn-sm\">
-                                Volver
-                            </a>
-                        </td>
+                                                    Volver
+                                                </a>
+                                            </td>
 
-                    </tr>
-                </table>
-
-                ";
+                                        </tr>
+                                    </table>
+                                                    
+                                    <form role=\"form\" method=\"POST\" enctype=\"multipart/form-data\" action=\"aSubirImagen\">
+                                        ";
         // line 45
+        if (array_key_exists("message", $context)) {
+            // line 46
+            echo "                                            <p class=\"help-block\"><font color=\"088A08\">";
+            echo twig_escape_filter($this->env, (isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "html", null, true);
+            echo "</font></p>
+                                            ";
+        }
+        // line 48
+        echo "                                            ";
+        if (array_key_exists("error", $context)) {
+            // line 49
+            echo "                                            <p class=\"help-block\"><font color=\"#FF0000\">";
+            echo twig_escape_filter($this->env, (isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "html", null, true);
+            echo "</font></p>
+                                            ";
+        }
+        // line 51
+        echo "                                        <h4>Busque la imagen del consentimiento informado</h4>
+
+
+                                        <div class=\"form-group\">
+                                            <label for=\"exampleInputFile\">Imagen</label>
+                                            <input type=\"file\" id=\"exampleInputFile\" name=\"archivo\">
+
+                                        </div>
+
+                                        <button class=\"btn btn-primary btn-sm\">Guardar</button>
+                                    </form>
+                </div>
+
+                  
+                ";
+        // line 65
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
             </center>
         </div>
     
-    <div class=\"box-content\">
-        <form role=\"form\" method=\"POST\" enctype=\"multipart/form-data\" action=\"aSubirImagen\">
-            ";
-        // line 51
-        if (array_key_exists("message", $context)) {
-            // line 52
-            echo "                <p class=\"help-block\"><font color=\"088A08\">";
-            echo twig_escape_filter($this->env, (isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "html", null, true);
-            echo "</font></p>
-                ";
-        }
-        // line 54
-        echo "                ";
-        if (array_key_exists("error", $context)) {
-            // line 55
-            echo "                <p class=\"help-block\"><font color=\"#FF0000\">";
-            echo twig_escape_filter($this->env, (isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "html", null, true);
-            echo "</font></p>
-                ";
-        }
-        // line 57
-        echo "            <h4>Busque la imagen del consentimiento informado</h4>
-
-          
-            <div class=\"form-group\">
-                <label for=\"exampleInputFile\">Imagen</label>
-                <input type=\"file\" id=\"exampleInputFile\" name=\"archivo\">
-
-            </div>
-
-            <button class=\"btn btn-info btn-sm\">Guardar</button>
-        </form>
-    </div>
-
 ";
     }
 
@@ -157,6 +153,6 @@ class __TwigTemplate_ce7efe4d3ec288c84a3e95921ebdf8b7c5e7b493a6901d1a1738ac81bff
 
     public function getDebugInfo()
     {
-        return array (  132 => 57,  126 => 55,  123 => 54,  117 => 52,  115 => 51,  106 => 45,  95 => 37,  90 => 35,  75 => 23,  71 => 22,  67 => 21,  61 => 18,  57 => 17,  53 => 16,  47 => 13,  43 => 12,  33 => 4,  30 => 3,  26 => 71,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  136 => 65,  120 => 51,  114 => 49,  111 => 48,  105 => 46,  103 => 45,  91 => 36,  86 => 34,  72 => 23,  68 => 22,  64 => 21,  58 => 18,  54 => 17,  47 => 13,  43 => 12,  33 => 4,  30 => 3,  26 => 70,  24 => 3,  22 => 2,  20 => 1,);
     }
 }
